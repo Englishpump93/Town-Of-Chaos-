@@ -603,7 +603,7 @@ Bring the person back to life that you report.<br>
 Team: Crewmate<br>
 Basis: Crewmate<br>
 
-When the Kamikaze dies they take their killer with them but watch out everyone can see your role when lights are out. NINJA DOESNT DIE TO KAMIKAZE<br>
+When the Kamikaze dies they take their killer with them but watch out everyone can see your role when lights are out.<br>
 
 ### Dictator
 

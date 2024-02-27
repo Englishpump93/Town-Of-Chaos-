@@ -1784,18 +1784,7 @@ namespace TownOfHost
         public static void Postfix(PlayerControl __instance, [HarmonyArgument(0)] PlayerControl target)
         {
             if (!target.Data.IsDead || !AmongUsClient.Instance.AmHost) return;
-            //shield fix maybe 
-            // Play shield animation on killer
-            if (__instance != null)
-            {
-                __instance.gameObject.GetComponent<Animator>().SetTrigger("ShowShield");
-            }
-
-            if (target.IsProtected())
-            {
-                // Play shield animation on protected target
-                target.gameObject.GetComponent<Animator>().SetTrigger("ShowShield");
-            }
+            
 
             PlayerControl killer = __instance; //読み替え変数
             Main.DeadPlayersThisRound.Add(target.PlayerId);

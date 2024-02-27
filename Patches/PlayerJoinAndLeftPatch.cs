@@ -55,29 +55,7 @@ namespace TownOfHost
             }
         }
 
-        public static void AwardServerBoosterTag(PlayerControl player, string tagId)
-        {
-            string rtag = "";
-            bool flag = false;
-            switch (tagId)
-            {
-                
-                    
-                default:
-                    flag = true;
-                    Logger.SendInGame($"Server Booster tag was found for {player.FriendCode}, but no saved gradient tag was found in code.\nPlease alert the developer of the mod, or update your version of the mod to have the tag.");
-                    break;
-            }
-            if (flag) return;
-            if (rtag == "") return;
-            List<string> response = CustomTags.ReturnTagInfoFromString(rtag);
-            Main.devNames.Add(player.PlayerId, player.Data.PlayerName);
-            string fontSizee = "1.2";
-            string fontSizee2 = "1.5";
-            string tag = $"<size={fontSizee}>{Helpers.ColorString(Utils.GetHexColor(response[1]), $"{response[2]}")}</size>";
-            string realname = tag + "\r\n" + $"<size={fontSizee2}>{response[3]}</size>";
-            player.RpcSetName($"{Helpers.ColorString(Utils.GetHexColor(response[1]), realname)}");
-        }
+        
         public static void Postfix(AmongUsClient __instance)
         {
             Logger.Info($"{__instance.GameId}に参加", "OnGameJoined");
@@ -179,10 +157,7 @@ namespace TownOfHost
                                         string name = sb + "\r\n" + $"<size={fontSize2}>{rname}</size>";
                                         PlayerControl.LocalPlayer.RpcSetName($"{Helpers.ColorString(nameColor, name)}");
                                     }
-                                    else if (typeOfTag == "gradient")
-                                    {
-                                        AwardServerBoosterTag(PlayerControl.LocalPlayer, typeOfTagArray[2]);
-                                    }
+                                    
                                 }
                             }
                         }
@@ -532,10 +507,7 @@ namespace TownOfHost
                                         string name = sb + "\r\n" + $"<size={fontSize2}>{rname}</size>";
                                         client.Character.RpcSetName($"{Helpers.ColorString(nameColor, name)}");
                                     }
-                                    else if (typeOfTag == "gradient")
-                                    {
-                                        OnGameJoinedPatch.AwardServerBoosterTag(client.Character, typeOfTagArray[2]);
-                                    }
+                                    
                                 }
                             }
                         }
