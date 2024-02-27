@@ -11,9 +11,9 @@ Support us keep to keep the mod going: https://ko-fi.com/pumpkingaming
 
 AmongUs Version: **2023.11.28**<br>
 
-**Latest Version:[Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/tag/Chaos2.5)**
+**Latest Version: [Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/latest)**
 
-Old Versions:[Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/tag/Chaos)
+Old Versions: [Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/)
 
 ## KNOWN BUGS
 
@@ -27,9 +27,9 @@ KNOWN BUGS:
 
 This mod only needs to be installed on the host's client to work, and works regardless of whether or not other client mods have been installed, and regardless of the type of device.<br>
 Unlike mods that use custom servers, there is no need to add servers by editing URLs or files.<br>
-If you are going to play on Custom Servers, such as MNA and MEU, it would require everyone to have the mods the host has.<br>
+If you are going to play on Custom Servers, such as MNA and MEU, it would require everyone to have the mods the host has. You can get custom servers [here.](https://aumods.xyz)<br>
 
-New contend with Town of Chaos added to this game:
+New content with Town of Chaos added to this game:
 
 
 New Crewmate Roles:
@@ -52,16 +52,16 @@ New Modifiers:
 - Doctor
 - Veteran
 - Transporter
-- Demo
-- PumpkinsPotion
+- Demolitionist.
+- Pumpkin's Potion
 - Bastion
-- trapper
+- Trapper
 
-New Aditions:
+New Additions:
 
 - Sheriff can 1v1
 - Modifiers shows next to your name
-- RSETTINGS file, this allows you to change recommended settings (this is needed for confime ejects to work)
+- RSETTINGS file, this allows you to change recommended settings (this is needed for confirm ejects to work.)
 - Roles file you can edit so it changes what /r or /info says
 - Most roles can now vent 
 - more changes but honestly i forgot
@@ -69,7 +69,7 @@ New Aditions:
 However, please note that the following restrictions apply.<br>
 
 - If the host changes and does not have this installed, the server isn't modded and is now just a regular Among Us game.<br>
-- If someone will original TOH and TOH: TOR, joins a TOC lobby, they may experience graphical issues such as blackscreens.<br>
+- If someone with the original TOH or its forks joins a TOC lobby, they may experience graphical issues such as blackscreens.<br>
 
 Note that if a player other than the host plays with this mod installed, the following changes will be made.<br>
 
@@ -88,7 +88,7 @@ Note that if a player other than the host plays with this mod installed, the fol
 | `Ctrl`+`N`          | Show active role descriptions  | Lobby&In Game   |
 | `C`                 | Cancel game start              | In Countdown    |
 | `Shift`             | Start the game immediately     | In Countdown    |
-| `Ctrl`+`Delete`     | Set default all options        | In TOH Settings |
+| `Ctrl`+`Delete`     | Set default all options        | In TOC Settings |
 | `Ctrl`+`RMB`        | Execute clicked player         | In Meeting      |
 | `RightCtrl`+`RMB`   | Kill clicked player            | In Meeting      |
 
@@ -146,7 +146,7 @@ Also, you can break lines by writing `\n` in the sentence like `tag:line breaks 
 
 #### Welcome Message
 If the tag is set to "welcome" in the template function, it will be sent automatically when a player joins.<br>
-For example: `welcome:This room is using the mod Town Of Roles.`
+For example: `welcome:This room is using the mod Town Of Chaos.`
 
 ### Impostor Disconnect Detection
 If all Impostors leave the game, the game will automatically end with the unused Impostor Disconnected screen. This was done as all impostors leaving the game would black screen all players who do not use desynced Impostor roles after the next meeting.
@@ -172,9 +172,9 @@ Below is an example:
 | [Warlock](#warlock)                 | [SpeedBooster](#speedbooster)     | [Amnesiac](#amnesiac)             | [Crewpostor](#crewpostor)       |                                | [Mayor](#mayor)               | 
 | [Witch](#witch)                     | [Psychic](#psychic)               | [Phantom](#phantom)               | [Dracula](#dracula)             |                                | [Trapper](#trapper)           |
 | [Mafia](#mafia)                     | [Kamikaze](#kamikaze)             | [Swapper](#swapper)               | [Hustler](#hustler)             |                                | [Veteran](#veteran)           |
-| [Madmate](#madmate)                 | [Paramedic](#paramedic)           | [Hitman](#hitman)                 | [Magician](#magician)           |                                |[Demolitionist](#demolitionist)                           |
-| [MadGuardian](#madguardian)         | [Vigilante](#guesser)             | [Lawyer](#lawyer)                 |                                 |                                |  [Bastion](#bastion)                            |
-| [MadSnitch](#madsnitch)			  | [Child](#child)                   |	                                  |                                 |                                 [Doctor](#doctor)         |
+| [Madmate](#madmate)                 | [Paramedic](#paramedic)           | [Hitman](#hitman)                 | [Magician](#magician)           |                                | [Demolitionist](#demolitionist)                           |
+| [MadGuardian](#madguardian)         | [Vigilante](#guesser)             | [Lawyer](#lawyer)                 |                                 |                                |  [Bastion](#bastion)                            |                                   |                                   |                                 |                                   
+| [MadSnitch](#madsnitch)			  | [Child](#child)                   |	                                  |                                 |                                |   [Doctor](#doctor)       |
 | [SidekickMadmate](#sidekickmadmate) |                                   |                                   |                                 |                                |                            |
 | [Silencer](#silencer)               |                                   |                                   |                                 |                                |                            |
 | [Traitor](#traitor)                 |                                   |                                   |                                 |                            
