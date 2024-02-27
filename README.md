@@ -4,14 +4,16 @@
 
 This mod is not affiliated with Among Us or Innersloth LLC, Town Of Host, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
 
-DISCORD SERVER: https://discord.gg/gBcfeqkh --- Recommended after Innersloth introduced randomized lobby names
+DISCORD SERVER: https://discord.gg/jnJrZSHrN8 --- Recommended after Innersloth introduced randomized lobby names
+
 Support us keep to keep the mod going: https://ko-fi.com/pumpkingaming
 ## Releases
 
 AmongUs Version: **2023.11.28**<br>
-**Latest Version:[Here]()**
 
-Old Versions:[Here]()
+**Latest Version:[Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/tag/Chaos)**
+
+Old Versions:[Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/tag/Chaos)
 
 ## KNOWN BUGS
 

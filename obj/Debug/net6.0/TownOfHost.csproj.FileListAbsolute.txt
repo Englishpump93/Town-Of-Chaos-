@@ -2586,3 +2586,4 @@ C:\Users\benn9\Desktop\Chaos Github\obj\Debug\net6.0\TownOfHost.dll
 C:\Users\benn9\Desktop\Chaos Github\obj\Debug\net6.0\refint\TownOfHost.dll
 C:\Users\benn9\Desktop\Chaos Github\obj\Debug\net6.0\TownOfHost.pdb
 C:\Users\benn9\Desktop\Chaos Github\obj\Debug\net6.0\ref\TownOfHost.dll
+C:\Users\benn9\Desktop\Chaos Github\obj\Debug\net6.0\TownOfHost.sourcelink.json
