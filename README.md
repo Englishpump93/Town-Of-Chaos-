@@ -175,7 +175,7 @@ Below is an example:
 | [Madmate](#madmate)                 | [Paramedic](#paramedic)           | [Hitman](#hitman)                 | [Magician](#magician)           |                                | [Demolitionist](#demolitionist)                           |
 | [MadGuardian](#madguardian)         | [Vigilante](#guesser)             | [Lawyer](#lawyer)                 |                                 |                                |  [Bastion](#bastion)                            |                                   |                                   |                                 |                                   
 | [MadSnitch](#madsnitch)			  | [Child](#child)                   |	                                  |                                 |                                |   [Doctor](#doctor)       |
-| [SidekickMadmate](#sidekickmadmate) |                                   |                                   |                                 |                                |                            |
+| [SidekickMadmate](#sidekickmadmate) |                                   |                                   |                                 |                         |  [Pumpkin's Potion](#PumpkinsPotion)                           |
 | [Silencer](#silencer)               |                                   |                                   |                                 |                                |                            |
 | [Traitor](#traitor)                 |                                   |                                   |                                 |                            
 | [Assassin](#guesser)                |                                   |                                   |                                 |                                             |
@@ -570,7 +570,7 @@ There is also a neutral Guesser called Pirate. Their goal is guess a number of p
 
 ## Crewmate
 
- ### Paramedic
+### Paramedic
 
 Team: Crew<br>
 Basis: Scientist<br>
@@ -596,14 +596,15 @@ The Wizard can only vent to go invisible.<br>
 Team: Crewmate<br>
 Basis: Crewmate<br>
 
-Bring the person back to life that you report.<br>
+Revives the first player that you report.<br>
 
 ### Kamikaze
 
 Team: Crewmate<br>
 Basis: Crewmate<br>
 
-When the Kamikaze dies they take their killer with them but watch out everyone can see your role when lights are out.<br>
+When the Kamikaze dies, they take their killer with them.<br>
+Watch out though, everyone can see your role when lights are out.<br>
 
 ### Dictator
 
@@ -1335,7 +1336,7 @@ The Bastion can also bomb themselves or other Bastions.<br>
 Created by Discussions<br>
 Original Idea by Mek<br>
 
-Team : modifier<br>
+Team : Modifier<br>
 Basis : Crewmate<br>
 
 When a killer kills the Demolitionist, they have a few seconds to go hide and vent, or else they will die with the Suicide Death Reason.<br>
@@ -1382,7 +1383,7 @@ Depending on the options, they can call emergency meeting by entering vents.<br>
 
 ### Doctor
 
-Team : modifier<br>
+Team : Modifier<br>
 Basis : Scientist<br>
 
 The doctor can see when Crewmates die using vitals anywhere in the map.<br>
@@ -1398,6 +1399,23 @@ By closing the chat, the doctor can see the dead players cause of death next to 
 | Name              |
 | ----------------- |
 | Kill Multiplier   |
+
+### PumpkinsPotion
+
+Original Idea and Created by: PUMPKin<br>
+
+Assigned to: All<br>
+Basis: Engineer<br>
+
+Pumpkin's Potion is a modifier that allows you to turn invisible.<br>
+By using a vent, you can turn invisible.
+
+#### Game Options
+| Name                             |
+|----------------------------------|
+| PUMPkinsPotion can Vent Invisible|
+| PUMPkinsPotion Cooldown          |
+| PUMPkinsPotion Duration          |
 
 
 ## Attribute
@@ -1630,7 +1648,7 @@ Roles from:
 
 
 ## Developers
-Orinal Develipors:
+Original Develipors:
 - [Discussions](https://github.com/music-discussion) ([YouTube](https://www.youtube.com/channel/UCAawAIWR5XfJE6T0JdYpzzg)) - Coding
 - [MC-AS-Huier](https://github.com/MC-AS-Huier) - SChinese Translations
 - [Tommy-XL](https://github.com/Tommy-XL) - Rus Translations
