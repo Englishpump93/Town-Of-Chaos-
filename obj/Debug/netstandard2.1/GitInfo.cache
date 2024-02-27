@@ -1,0 +1,17 @@
+GitBranch=master;
+GitCommit=;
+GitSha=;
+GitBaseVersion=0.0.0;
+GitBaseVersionSource=;
+GitBaseVersionMajor=0;
+GitBaseVersionMinor=0;
+GitBaseVersionPatch=0;
+GitCommits=0;
+GitTag=;
+GitBaseTag=;
+GitSemVerMajor=0;
+GitSemVerMinor=0;
+GitSemVerPatch=0;
+GitSemVerLabel=;
+GitSemVerDashLabel=;
+GitSemVerSource=Default
