@@ -11,7 +11,7 @@ Support us keep to keep the mod going: https://ko-fi.com/pumpkingaming
 
 AmongUs Version: **2023.11.28**<br>
 
-**Latest Version:[Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/tag/Chaos)**
+**Latest Version:[Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/tag/Chaos2.5)**
 
 Old Versions:[Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/tag/Chaos)
 
