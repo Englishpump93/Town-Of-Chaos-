@@ -1,6 +1,0 @@
-C:\Users\benn9\Desktop\Toc Server Test\obj\Debug\netstandard2.1\GitInfo.cache
-C:\Users\benn9\Desktop\Toc Server Test\obj\Debug\netstandard2.1\TownOfHost.csproj.AssemblyReference.cache
-C:\Users\benn9\Desktop\Toc Server Test\obj\Debug\netstandard2.1\TownOfHost.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\benn9\Desktop\Toc Server Test\obj\Debug\netstandard2.1\TownOfHost.AssemblyInfoInputs.cache
-C:\Users\benn9\Desktop\Toc Server Test\obj\Debug\netstandard2.1\TownOfHost.AssemblyInfo.cs
-C:\Users\benn9\Desktop\Toc Server Test\obj\Debug\netstandard2.1\TownOfHost.csproj.CoreCompileInputs.cache
