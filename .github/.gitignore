@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 bin/
 obj/
 bin/
 .vs/
+=======
+bin/
+obj/
+bin/
+.vs/
+>>>>>>> f07b182e8c3be0e15e15fbc67dd391f89118aa58
 .vscode/

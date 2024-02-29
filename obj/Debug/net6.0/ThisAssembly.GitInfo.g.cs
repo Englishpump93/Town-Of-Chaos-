@@ -41,20 +41,20 @@ namespace
       /// <summary>Branch: main</summary>
       public const string Branch = "main";
 
-      /// <summary>Commit: 9911fc0</summary>
-      public const string Commit = "9911fc0";
+      /// <summary>Commit: 8825093</summary>
+      public const string Commit = "8825093";
 
-      /// <summary>Sha: 9911fc05f36e7747889b17ed0d4ff37de432e89f</summary>
-      public const string Sha = "9911fc05f36e7747889b17ed0d4ff37de432e89f";
+      /// <summary>Sha: 8825093534d13e6ef5ba37ec026c3606f6c5be58</summary>
+      public const string Sha = "8825093534d13e6ef5ba37ec026c3606f6c5be58";
 
-      /// <summary>Commits on top of base version: 4</summary>
-      public const string Commits = "4";
+      /// <summary>Commits on top of base version: 5</summary>
+      public const string Commits = "5";
 
-      /// <summary>Tag: </summary>
-      public const string Tag = "";
+      /// <summary>Tag: Chaos2.5-2-g8825093</summary>
+      public const string Tag = "Chaos2.5-2-g8825093";
 
-      /// <summary>Base tag: </summary>
-      public const string BaseTag = "";
+      /// <summary>Base tag: Chaos2.5</summary>
+      public const string BaseTag = "Chaos2.5";
 
       /// <summary>Provides access to the base version information used to determine the <see cref="SemVer" />.</summary>      
       public partial class BaseVersion
@@ -78,8 +78,8 @@ namespace
         /// <summary>Minor: 0</summary>
         public const string Minor = "0";
 
-        /// <summary>Patch: 4</summary>
-        public const string Patch = "4";
+        /// <summary>Patch: 5</summary>
+        public const string Patch = "5";
 
         /// <summary>Label: </summary>
         public const string Label = "";
