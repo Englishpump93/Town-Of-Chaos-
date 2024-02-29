@@ -2504,196 +2504,9 @@ namespace TownOfHost
                 ; */
 
             //stops reviver report imps
-            if (__instance.Is(CustomRoles.Reviver))
-            {
+            
 
-                // Get the target's PlayerControl
-                var targetPlayer = Utils.GetPlayerById(target.PlayerId);
-
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Pickpocket))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.LastImpostor))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Assassin))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Disperser))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.CorruptedSheriff))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Ninja))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Miner))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Cleaner))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Freezer))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Grenadier))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.YingYanger))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Camouflager))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Swooper))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Sniper))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Manipulator))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Bomber))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.IdentityTheft))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.FireWorks))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.TimeThief))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Mafia))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Puppeteer))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.ImpostorGhost))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Mare))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.SerialKiller))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Morphling))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Consort))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Warlock))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Silencer))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Witch))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Creeper))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Escapist))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Vampire))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Vampress))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Impostor))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Shapeshifter))
-
-                {
-                    return false;
-                }
-                if (targetPlayer != null && targetPlayer.Is(CustomRoles.BountyHunter))
-
-                {
-                    return false;
-                }
-
-            }
-
-            return true;
+            
 
         
 
@@ -2942,17 +2755,7 @@ namespace TownOfHost
                     //return false;
                 }
             }
-            if (target != null) //Reviver message
-            {
-                if (__instance.Is(CustomRoles.Reviver))
-                {
-                    var reported = Utils.GetPlayerById(target.PlayerId);
-                    Utils.SendMessage("The Reviver saved your life unless a NK role(PLEASE ONLY REVEAL THE ONE WHO KILLED YOU! DONT WALK THOUGH WALLS YOU WILL BE KILLED/BANNED)! Because of this u are now a crewmate.", reported.PlayerId);
-                    reported.SetDefaultRole();
-                    // attempted revive fix
-                    //return false;
-                }
-            }
+           
             foreach (var key in Main.IsShapeShifted)
             {
                 var shifter = Utils.GetPlayerById(key);
@@ -3268,6 +3071,194 @@ namespace TownOfHost
             //=============================================
 
             Utils.CustomSyncAllSettings();
+            if (__instance.Is(CustomRoles.Reviver))
+            {
+
+                // Get the target's PlayerControl
+                var targetPlayer = Utils.GetPlayerById(target.PlayerId);
+
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Pickpocket))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.LastImpostor))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Assassin))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Disperser))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.CorruptedSheriff))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Ninja))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Miner))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Cleaner))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Freezer))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Grenadier))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.YingYanger))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Camouflager))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Swooper))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Sniper))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Manipulator))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Bomber))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.IdentityTheft))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.FireWorks))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.TimeThief))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Mafia))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Puppeteer))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.ImpostorGhost))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Mare))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.SerialKiller))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Morphling))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Consort))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Warlock))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Silencer))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Witch))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Creeper))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Escapist))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Vampire))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Vampress))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Impostor))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Shapeshifter))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.BountyHunter))
+
+                {
+                    return false;
+                }
+
+            }
             return true;
         }
         public static async void ChangeLocalNameAndRevert(string name, int time)
@@ -4079,6 +4070,7 @@ namespace TownOfHost
                             RealName = $"</size>\r\n{Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Demolitionist), "You killed Demolitionist!")}";
                         if (Main.KilledKami.Contains(seer.PlayerId))
                             RealName = $"</size>\r\n{Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Kamikaze), "You killed Kamikaze Rip!")}";
+
                     }
                     if (target.GetCustomRole().IsImpostor() && seer.GetCustomRole().HostRedName())
                         RealName = Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Crewmate), RealName);

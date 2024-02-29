@@ -572,6 +572,7 @@ namespace TownOfHost
             Main.witchMeeting = false;
             Ninja.NewNinjaKillTarget();
         }
+
         public static void Postfix(MeetingHud __instance)
         {
             if (GameStates.IsFreePlay) return;
@@ -1103,6 +1104,7 @@ namespace TownOfHost
             }
         }
     }
+    
     [HarmonyPatch(typeof(PlayerVoteArea), nameof(PlayerVoteArea.SetHighlighted))]
     class SetHighlightedPatch
     {
