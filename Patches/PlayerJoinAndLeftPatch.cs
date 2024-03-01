@@ -85,11 +85,12 @@ namespace TownOfHost
                     {
                         bool customTag = false;
                         string rname = PlayerControl.LocalPlayer.Data.PlayerName;
-                        
-                        
-                        
+
+
+
 
                         if (AmongUsClient.Instance.AmHost)
+                        {
                             if (File.Exists(CustomTags.GetFilePath(PlayerControl.LocalPlayer.FriendCode)))
                             {
                                 List<string> response = CustomTags.ReturnTagInfo(PlayerControl.LocalPlayer.FriendCode);
@@ -118,49 +119,10 @@ namespace TownOfHost
                                         break;
                                 }
                             }
-
-                        if (!customTag)
-                        {
-                            // this checks for a Server Booster Tag.
-                            string[] lineBreaks = Tags.Split("\n");
-                            foreach (string line in lineBreaks)
-                            {
-                                if (!line.Contains(":"))
-                                {
-                                    continue;
-                                }
-                                string[] typeOfTagArray = line.Split(":");
-                                if (typeOfTagArray.Length == 0) continue;
-                                if (typeOfTagArray[0].Contains(PlayerControl.LocalPlayer.FriendCode))
-                                {
-                                    string typeOfTag = typeOfTagArray[1];
-                                    if (typeOfTag == "static")
-                                    {
-                                        Color nameColor = Utils.GetRoleColor(CustomRoles.serverbooster);
-                                        string toptext = "Server Booster";
-                                        Logger.Info(typeOfTagArray.Count().ToString(), "tagCheck");
-                                        if (typeOfTagArray.Count() > 2)
-                                        {
-                                            toptext = typeOfTagArray[2];
-                                            Logger.Info($"({typeOfTagArray[2]})", "tagCheck");
-                                        }
-                                        if (typeOfTagArray.Count() > 3)
-                                        {
-                                            Logger.Info($"({typeOfTagArray[3]})", "tagCheck");
-                                            ColorUtility.TryParseHtmlString(typeOfTagArray[3], out Color c);
-                                            nameColor = c;
-                                        }
-                                        Main.devNames.Add(PlayerControl.LocalPlayer.PlayerId, rname);
-                                        string fontSize = "1.2";
-                                        string fontSize2 = "1.5";
-                                        string sb = $"<size={fontSize}>{Helpers.ColorString(nameColor, toptext)}</size>";
-                                        string name = sb + "\r\n" + $"<size={fontSize2}>{rname}</size>";
-                                        PlayerControl.LocalPlayer.RpcSetName($"{Helpers.ColorString(nameColor, name)}");
-                                    }
-                                    
-                                }
-                            }
                         }
+                    
+
+                        
                     }
                     //nice
                 }, 3f, "Welcome Message & Name Check");
@@ -466,51 +428,7 @@ namespace TownOfHost
 
 
 
-                        if (!customTag)
-                        {
-                            // this checks for a "" Tag.
-                            string[] lineBreaks = OnGameJoinedPatch.Tags.Split("\n");
-                            foreach (string line in lineBreaks)
-                            {
-                                if (!line.Contains(":"))
-                                {
-                                    continue;
-                                }
-                                string[] typeOfTagArray = line.Split(":");
-                                if (typeOfTagArray.Length == 0) continue;
-                                if (typeOfTagArray[0].Contains(client.Character.FriendCode))
-                                {
-                                    Logger.Info($"Found Match for {client.Character.FriendCode}! ({typeOfTagArray[0]})", "tagCheck");
-                                    string typeOfTag = typeOfTagArray[1];
-
-                                    customTag = true;
-                                    if (typeOfTag == "static")
-                                    {
-                                        Color nameColor = Utils.GetRoleColor(CustomRoles.serverbooster);
-                                        string toptext = "Server Booster";
-                                        Logger.Info(typeOfTagArray.Count().ToString(), "tagCheck");
-                                        if (typeOfTagArray.Count() > 2)
-                                        {
-                                            toptext = typeOfTagArray[2];
-                                            Logger.Info($"({typeOfTagArray[2]})", "tagCheck");
-                                        }
-                                        if (typeOfTagArray.Count() > 3)
-                                        {
-                                            Logger.Info($"({typeOfTagArray[3]})", "tagCheck");
-                                            ColorUtility.TryParseHtmlString(typeOfTagArray[3], out Color c);
-                                            nameColor = c;
-                                        }
-                                        Main.devNames.Add(client.Character.PlayerId, rname);
-                                        string fontSize = "1.0";
-                                        string fontSize2 = "1.2";
-                                        string sb = $"<size={fontSize}>{Helpers.ColorString(nameColor, toptext)}</size>";
-                                        string name = sb + "\r\n" + $"<size={fontSize2}>{rname}</size>";
-                                        client.Character.RpcSetName($"{Helpers.ColorString(nameColor, name)}");
-                                    }
-                                    
-                                }
-                            }
-                        }
+                        
 
                         if (!customTag)
                             if (File.Exists(CustomTags.GetFilePath(client.FriendCode)))

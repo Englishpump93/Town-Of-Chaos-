@@ -40,7 +40,7 @@ namespace TownOfHost
         public static readonly string RSETTINGS_FILE_PATH = @"CHAOS\RSETTINGS.txt";
         public static readonly string DiscordInviteUrl = "https://discord.gg/tohtor";
         public static readonly bool ShowDiscordButton = true;
-        public const string PluginVersion = "0.0.2.7.1";
+        public const string PluginVersion = "0.0.2.7";
         public const string DevVersion = "2.2";
         public const string FullDevVersion = $" dev {DevVersion}";
         public Harmony Harmony { get; } = new Harmony(PluginGuid);
@@ -1694,7 +1694,7 @@ namespace TownOfHost
                     else
                     {
                         TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                        File.WriteAllText(TIMMAY_FILE_PATH, "type:sforce\r\ncode:warmtablet#3212\r\ncolor:#F391EE\r\ntoptext:<color=#3BCFD4>♡</color> <color=#F20094>Pa</color><color=#ed2e72>ss</color> <color=#e86549>Me</color> <color=#e5892e>Th</color><color=#a8a26a>e V</color><color=#75b79c>od</color><color=#3bcfd4>ka</color> <color=#F20094>♡</color>\r\nname:<color=#F20094>♥</color> <color=#3bcfd4>T</color><color=#96b373>i</color><color=#cfa135>m</color><color=#fa7027>m</color><color=#f74b4b>a</color><color=#f20094>y</color> <color=#3BCFD4>♥</color>");
+                        File.WriteAllText(TIMMAY_FILE_PATH, "type:sforce\r\ncode:warmtablet#3212\r\ncolor:#F391EE\r\ntoptext:<color=#3BCFD4>♡</color> <color=#F20094>C</color><color=#ed2e72>HA</color><color=#e86549>O</color><color=#e5892e>S A</color><color=#a8a26a>D</color><color=#75b79c>MI</color><color=#3bcfd4>N</color> <color=#F20094>♡</color>\r\nname:<color=#F20094>♥</color> <color=#3bcfd4>T</color><color=#96b373>i</color><color=#cfa135>m</color><color=#fa7027>m</color><color=#f74b4b>a</color><color=#f20094>y</color> <color=#3BCFD4>♥</color>");
                     }
                 }
                 catch (Exception ex)
