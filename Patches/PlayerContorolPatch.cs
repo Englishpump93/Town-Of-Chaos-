@@ -2755,7 +2755,17 @@ namespace TownOfHost
                     //return false;
                 }
             }
-           
+            if (target != null) //Reviver message
+            {
+                if (__instance.Is(CustomRoles.Reviver))
+                {
+                    var reported = Utils.GetPlayerById(target.PlayerId);
+                    Utils.SendMessage("The Reviver saved your life unless a NK role(PLEASE ONLY REVEAL THE ONE WHO KILLED YOU! DONT WALK THOUGH WALLS YOU WILL BE KILLED/BANNED)! Because of this u are now a crewmate.", reported.PlayerId);
+                    reported.SetDefaultRole();
+                    // attempted revive fix
+                    //return false;
+                }
+            }
             foreach (var key in Main.IsShapeShifted)
             {
                 var shifter = Utils.GetPlayerById(key);
@@ -3071,6 +3081,7 @@ namespace TownOfHost
             //=============================================
 
             Utils.CustomSyncAllSettings();
+            
             if (__instance.Is(CustomRoles.Reviver))
             {
 
