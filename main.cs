@@ -40,7 +40,7 @@ namespace TownOfHost
         public static readonly string RSETTINGS_FILE_PATH = @"CHAOS\RSETTINGS.txt";
         public static readonly string DiscordInviteUrl = "https://discord.gg/tohtor";
         public static readonly bool ShowDiscordButton = true;
-        public const string PluginVersion = "0.0.2.6";
+        public const string PluginVersion = "0.0.2.7";
         public const string DevVersion = "2.2";
         public const string FullDevVersion = $" dev {DevVersion}";
         public Harmony Harmony { get; } = new Harmony(PluginGuid);

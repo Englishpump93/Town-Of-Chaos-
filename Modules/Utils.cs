@@ -893,6 +893,76 @@ namespace TownOfHost
             */
             SendMessage(text, PlayerId);
         }
+        public static void killercount(PlayerControl callingPlayer)
+        {
+
+            // Count living players by role
+            int impostors = 0;
+            int neutrals = 0;
+            int kneutrals = 0;
+            int crewmates = 0;
+
+            foreach (PlayerControl p in PlayerControl.AllPlayerControls)
+            {
+                if (!p.Data.IsDead)
+                {
+                    if (p.IsImpostor())
+                    {
+                        impostors++;
+                    }
+                    else if (p.IsNeutral())
+                    {
+                        neutrals++;
+                    }
+                    else if (p.IskNeutral())
+                    {
+                        kneutrals++;
+                    }
+                    else if (p.IsCrewmate())
+                    {
+                        crewmates++;
+                    }
+
+                }
+            }
+
+            // Build message
+            string message = $"<color=#f21b1b>Impostors: {impostors}</color>,\r\n<color=#f7b61e>Neutral non killers: {neutrals}</color>,\r\n<color=#1ef77c>Neutral Killers: {kneutrals}</color>,\r\n<color=#1ee1f7>Crewmates: {crewmates}</color>";
+
+            // Send message
+            SendMessage(message, callingPlayer.PlayerId);
+
+        }
+        public static void ShowDeathReason(PlayerControl player)
+        {
+
+            if (player.Data.IsDead)
+            {
+
+
+                byte killedId = player.PlayerId;
+
+                // Lookup killer id
+                byte killerId = Main.whoKilledWho[killedId];
+
+                // Get killer player
+                PlayerControl killer = Utils.GetPlayerById(killerId);
+
+                // Build message  
+                string killerName = killer.Data.PlayerName;
+                string reason = player.GetDeathReason();
+
+                string message = $"You were killed by {killerName}. Your death reason: {reason}";
+
+                SendMessage(message, player.PlayerId);
+
+            }
+            else
+            {
+                SendMessage("You must be dead to use this command!", player.PlayerId);
+            }
+
+        }
         public static void ShowActiveRoles(byte PlayerId = byte.MaxValue)
         {
             var text = GetString("Roles") + ":";

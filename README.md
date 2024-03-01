@@ -63,7 +63,9 @@ New Additions:
 - Modifiers shows next to your name
 - RSETTINGS file, this allows you to change recommended settings (this is needed for confirm ejects to work.)
 - Roles file you can edit so it changes what /r or /info says
-- Most roles can now vent 
+- Most roles can now vent
+- Added /kc or /kcount to tell u how many killers are alive only works in meeting
+- Added /death commmand only works when in a meeting
 - more changes but honestly i forgot
 
 However, please note that the following restrictions apply.<br>

@@ -1926,11 +1926,137 @@ namespace TownOfHost
             if (player.GetCustomRole().IsCoven() && Options.SnitchCanFindCoven.GetBool()) return true;
             return
                 player.GetCustomRole() is
-                CustomRoles.Pickpocket or
+                CustomRoles.Shapeshifter or
+                CustomRoles.BountyHunter or
                 CustomRoles.Vampire or
+                CustomRoles.Vampress or
+                CustomRoles.Escapist or
+                CustomRoles.Creeper or
+                CustomRoles.Witch or
+                CustomRoles.Silencer or
+                CustomRoles.Warlock or
+                CustomRoles.Consort or
+                CustomRoles.Morphling or
+                CustomRoles.SerialKiller or
+                CustomRoles.Mare or
+                CustomRoles.ImpostorGhost or
+                CustomRoles.Puppeteer or
+                CustomRoles.TimeThief or
+                CustomRoles.Mafia or
+                CustomRoles.FireWorks or
+                CustomRoles.IdentityTheft or
+                CustomRoles.Bomber or
+                CustomRoles.Manipulator or
+                CustomRoles.Sniper or
+                CustomRoles.Swooper or
+                CustomRoles.Camouflager or
+                CustomRoles.Pickpocket or
+                CustomRoles.YingYanger or
+                CustomRoles.Grenadier or
+                CustomRoles.Freezer or
+                CustomRoles.Cleaner or
+                CustomRoles.Miner or
+                CustomRoles.Ninja or
+                CustomRoles.CorruptedSheriff or
+                CustomRoles.Disperser or
                 CustomRoles.Assassin or
-                CustomRoles.Swooper;
-                
+                CustomRoles.Impostor or
+                //  CustomRoles.Reborn or
+                CustomRoles.LastImpostor;
+
+
+        }
+        public static bool IskNeutral(this PlayerControl player)
+        {
+            if (player.GetCustomRole().IsCoven()) return true;
+            return
+                player.GetCustomRole() is
+
+                CustomRoles.Arsonist or
+                CustomRoles.Egoist or
+                CustomRoles.AgiTater or
+                CustomRoles.EgoSchrodingerCat or
+                CustomRoles.Hitman or
+                CustomRoles.CrewPostor or
+                CustomRoles.Satan or
+                CustomRoles.Magician or
+                CustomRoles.Hustler or
+                CustomRoles.Marksman or
+                CustomRoles.PoisonMaster or
+                CustomRoles.Jackal or
+                CustomRoles.PlagueBearer or
+                CustomRoles.Pestilence or
+                CustomRoles.TheGlitch or
+                CustomRoles.Postman or
+                CustomRoles.Werewolf or
+                CustomRoles.Swapper or
+                CustomRoles.GuardianAngelTOU or
+                CustomRoles.NeutWitch or
+                CustomRoles.Juggernaut or
+                CustomRoles.Sidekick or
+                CustomRoles.JSchrodingerCat or
+                CustomRoles.Hacker or
+                CustomRoles.BloodKnight or
+                CustomRoles.Dracula or
+                CustomRoles.HASTroll or
+                CustomRoles.Painter or
+                CustomRoles.HASFox or // CAT
+                CustomRoles.BKSchrodingerCat or
+                CustomRoles.CPSchrodingerCat or
+                CustomRoles.MGSchrodingerCat or
+                CustomRoles.RBSchrodingerCat or
+                CustomRoles.JugSchrodingerCat or
+                CustomRoles.MMSchrodingerCat or
+                CustomRoles.PesSchrodingerCat or
+                CustomRoles.WWSchrodingerCat or
+                CustomRoles.TGSchrodingerCat;
+
+        }
+        public static bool IsNeutral(this PlayerControl player)
+        {
+            if (player.GetCustomRole().IsCoven()) return true;
+            return
+                player.GetCustomRole() is
+                CustomRoles.Vulture or
+                CustomRoles.Opportunist or
+                CustomRoles.Survivor or
+                CustomRoles.SchrodingerCat or
+                CustomRoles.Terrorist or
+                CustomRoles.Executioner or
+                CustomRoles.Pirate or
+                CustomRoles.GuardianAngelTOU or
+                CustomRoles.Lawyer or
+                CustomRoles.Amnesiac or
+                CustomRoles.Phantom or
+                CustomRoles.Jester or
+                CustomRoles.HASTroll or
+                CustomRoles.Painter or
+                CustomRoles.HASFox;
+
+        }
+        public static bool IsCrewmate(this PlayerControl player)
+        {
+            if (player.GetCustomRole().IsCoven()) return true;
+            return
+                player.GetCustomRole() is
+                CustomRoles.Snitch or
+                CustomRoles.Wizard or
+                CustomRoles.Paramedic or
+                CustomRoles.Reviver or
+                CustomRoles.Oracle or
+                CustomRoles.Investigator or
+                CustomRoles.Dictator or
+                CustomRoles.Medic or
+                CustomRoles.Lighter or
+                CustomRoles.SabotageMaster or
+                CustomRoles.Sheriff or
+                CustomRoles.Chancer or
+                CustomRoles.Sellout or
+                CustomRoles.SpeedBooster or
+                CustomRoles.Child or
+                CustomRoles.Kamikaze or
+                CustomRoles.NiceGuesser or
+                CustomRoles.Psychic;
 
         }
 

@@ -292,6 +292,15 @@ namespace TownOfHost
                                 break;
                         }
                         break;
+                    case "/death":
+                        Utils.ShowDeathReason(player);
+                        canceled = true;
+                        break;
+                    case "/kc":
+                    case "/kcount":
+                        Utils.killercount(player);
+                        canceled = true;
+                        break;
                     case "/perc":
                     case "/percentages":
                         canceled = true;
@@ -1087,6 +1096,15 @@ namespace TownOfHost
                     subArgs = args.Length < 2 ? "" : args[1];
                     string subArgs1 = args.Length < 3 ? "" : args[2];
                     Guesser.GuesserShootByID(player, subArgs, subArgs1);
+                    break;
+                case "/death":
+                    Utils.ShowDeathReason(player);
+
+                    break;
+                case "/kc":
+                case "/kcount":
+                    Utils.killercount(player);
+
                     break;
                 case "/perc":
                 case "/percentages":
