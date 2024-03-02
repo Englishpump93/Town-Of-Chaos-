@@ -2056,6 +2056,7 @@ namespace TownOfHost
                 CustomRoles.Child or
                 CustomRoles.Kamikaze or
                 CustomRoles.NiceGuesser or
+                CustomRoles.Bodyguard or
                 CustomRoles.Psychic;
 
         }

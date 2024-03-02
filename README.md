@@ -65,6 +65,12 @@ New Additions:
 - Roles file you can edit so it changes what /r or /info says
 - Most roles can now vent
 - Added /kc or /kcount to tell u how many killers are alive only works in meeting
+- bewiler text changed
+- reviver fix added
+- BG added to /kc was missing
+- lights and swooper need testing as moving reviver might of fixxed this
+- BG info updated
+- /say added for hosts 
 - Added /death commmand only works when in a meeting
 - more changes but honestly i forgot
 

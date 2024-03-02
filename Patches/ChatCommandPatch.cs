@@ -306,6 +306,12 @@ namespace TownOfHost
                         canceled = true;
                         Utils.ShowPercentages();
                         break;
+                    case "/say":
+                        canceled = true;
+                        var fullMessage = String.Join(" ", args.Skip(1).ToArray());
+                        Utils.SendHostMessage2(fullMessage, player.PlayerId);
+
+                        break;
                     case "/dis":
                         canceled = true;
                         subArgs = args.Length < 2 ? "" : args[1];
@@ -1109,6 +1115,10 @@ namespace TownOfHost
                 case "/perc":
                 case "/percentages":
                     Utils.ShowPercentages(player.PlayerId);
+                    break;
+                case "/say":
+                    Utils.SendNonHostMessage(args[1], "", player.PlayerId);
+
                     break;
                 case "/m":
                 case "/myrole":

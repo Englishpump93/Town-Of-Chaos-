@@ -963,6 +963,46 @@ namespace TownOfHost
             }
 
         }
+        public static void SendHostMessage2(string message, byte senderId, byte PlayerId = byte.MaxValue)
+        {
+
+            // Construct text using full message
+            var text = "<color=#ED4EED>乂</color><color=#D178E0>乂</color><color=#B5A1D2>乂</color><color=#FF2222>MESSAGE FROM HOST</color><color=#B5A1D2>乂</color><color=#D178E0>乂</color><color=#ED4EED>乂</color>\r\n<color=#22F37D> " + message;
+
+            // Remove any splitting or taking first word
+
+            foreach (CustomRoles role in Enum.GetValues(typeof(CustomRoles)))
+            {
+                if (role.IsVanilla()) continue;
+            }
+
+            SendMessage(text, PlayerId);
+
+        }
+
+        public static void SendNonHostMessage(string message, string message1 = "", byte PlayerId = byte.MaxValue)
+        {
+            string text;
+
+
+
+            if (message1 != "")
+            {// THIS IS A HOST ONLY COMMAND
+                text = "<color=#D178E0>乂</color><color=#B5A1D2>乂</color><color=#ED4EED>T</color><color=#D178E0>H</color><color=#B5A1D2>I</color><color=#ED4EED>S</color><color=#D178E0> I</color><color=#B5A1D2>S </color><color=#ED4EED>A </color><color=#D178E0>H</color><color=#B5A1D2>O</color><color=#ED4EED>S</color><color=#D178E0>T </color><color=#B5A1D2>O</color><color=#ED4EED>N</color><color=#D178E0>L</color><color=#B5A1D2>Y</color><color=#ED4EED> C</color><color=#D178E0>O</color><color=#B5A1D2>M</color><color=#ED4EED>M</color><color=#D178E0>A</color><color=#B5A1D2>N</color><color=#ED4EED>D </color><color=#D178E0>乂</color><color=#B5A1D2>乂</color>";
+            }
+            else
+            {
+                text = "<color=#D178E0>乂</color><color=#B5A1D2>乂</color><color=#ED4EED>T</color><color=#D178E0>H</color><color=#B5A1D2>I</color><color=#ED4EED>S</color><color=#D178E0> I</color><color=#B5A1D2>S </color><color=#ED4EED>A </color><color=#D178E0>H</color><color=#B5A1D2>O</color><color=#ED4EED>S</color><color=#D178E0>T </color><color=#B5A1D2>O</color><color=#ED4EED>N</color><color=#D178E0>L</color><color=#B5A1D2>Y</color><color=#ED4EED> C</color><color=#D178E0>O</color><color=#B5A1D2>M</color><color=#ED4EED>M</color><color=#D178E0>A</color><color=#B5A1D2>N</color><color=#ED4EED>D </color><color=#D178E0>乂</color><color=#B5A1D2>乂</color>";
+
+            }
+            foreach (CustomRoles role in Enum.GetValues(typeof(CustomRoles)))
+            {
+                // if (role.RoleCannotBeInList()) continue;
+                if (role.IsVanilla()) continue;
+
+            }
+            SendMessage(text, PlayerId);
+        }
         public static void ShowActiveRoles(byte PlayerId = byte.MaxValue)
         {
             var text = GetString("Roles") + ":";
