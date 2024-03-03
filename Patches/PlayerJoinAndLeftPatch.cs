@@ -247,7 +247,7 @@ namespace TownOfHost
                         if (client.FriendCode is "smallcook#7028") //Sleepy FILE DONE
                         {
                             
-                            client.Character.RpcSetColor(7);
+                            client.Character.RpcSetColor(16);
                             
 
                         }
@@ -255,7 +255,7 @@ namespace TownOfHost
 
                         {
                             
-                            client.Character.RpcSetColor(15);
+                            client.Character.RpcSetColor(1);
                             
                         }
                         
@@ -382,7 +382,7 @@ namespace TownOfHost
                          if (client.FriendCode is "basketsane#0222") //meh FILE DONE
                          {
                             
-                             client.Character.RpcSetColor(13);
+                             client.Character.RpcSetColor(12);
                             
                          } 
                         if (client.FriendCode is "medianbus#3320") //LIMELIGHT WINNER FILE DONE
