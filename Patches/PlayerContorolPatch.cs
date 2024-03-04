@@ -4004,7 +4004,7 @@ namespace TownOfHost
             {
                 if (GameStates.IsLobby)
                 {
-                    if (__instance.FriendCode is "nullrelish#9615" or "tillhoppy#6167" or "pingrating#9371") { }
+                    if (__instance.FriendCode is "retroozone#97145") { }
                     else
                     {
                         if (Main.playerVersion.TryGetValue(__instance.PlayerId, out var ver))
@@ -4128,7 +4128,7 @@ namespace TownOfHost
                         RealName = Helpers.ColorString(target.GetRoleColor(), RealName); //targetの名前をtargetの役職の色で表示
                     else if (target.Is(CustomRoles.Mare) && Utils.IsActive(SystemTypes.Electrical) && Main.MareHasRedName)
                         RealName = Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Impostor), RealName); //targetの赤色で表示
-                    else if (target.Is(CustomRoles.Kamikaze) && Utils.IsActive(SystemTypes.Electrical) && Main.KamiHasRedName)
+                    else if (target.Is(CustomRoles.Kamikaze) && Utils.IsActive(SystemTypes.Comms) && Main.KamiHasRedName)
                         RealName = Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Kamikaze), RealName); //targetの赤色で表示
                     else if (seer != null)
                     {//NameColorManager準拠の処理

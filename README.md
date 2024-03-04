@@ -72,7 +72,13 @@ New Additions:
 - BG info updated
 - /say added for hosts 
 - Added /death commmand only works when in a meeting
+-fix lovers text
+-changed wizard color
+-kamikaze name is now shown with comms not lights
+-new file HOW TO MAKE TAGS 
+-new file NEW TAG
 - more changes but honestly i forgot
+
 
 However, please note that the following restrictions apply.<br>
 
@@ -612,7 +618,7 @@ Team: Crewmate<br>
 Basis: Crewmate<br>
 
 When the Kamikaze dies, they take their killer with them.<br>
-Watch out though, everyone can see your role when lights are out.<br>
+Watch out though, everyone can see your role when comms is on.<br>
 
 ### Dictator
 
