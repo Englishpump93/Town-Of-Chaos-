@@ -2,9 +2,9 @@
 
 ## Regarding this mod
 
-This mod is not affiliated with Among Us or Innersloth LLC, Town Of Host, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
+> This mod is not affiliated with Among Us or Innersloth LLC, Town Of Host, and the content contained therein is not endorsed or otherwise sponsored by Innersloth LLC. Portions of the materials contained herein are property of Innersloth LLC. © Innersloth LLC.
 
-DISCORD SERVER: https://discord.gg/jnJrZSHrN8 --- Recommended after Innersloth introduced randomized lobby names
+DISCORD SERVER: https://discord.gg/jnJrZSHrN8 --- Recommended to join!
 
 Support us keep to keep the mod going: https://ko-fi.com/pumpkingaming
 ## Releases
@@ -19,9 +19,9 @@ Old Versions: [Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/)
 
 KNOWN BUGS:
 
--can black screen when dead this will fix after a meeting or 2 
+- Can black screen when dead. (This will fix after a meeting or two.)
 
--doctor can not show deaths if someone leaves in a meeting 
+- Doctor can not show deaths if someone leaves in a meeting.
 
 ## Features
 
@@ -29,8 +29,7 @@ This mod only needs to be installed on the host's client to work, and works rega
 Unlike mods that use custom servers, there is no need to add servers by editing URLs or files.<br>
 If you are going to play on Custom Servers, such as MNA and MEU, it would require everyone to have the mods the host has. You can get custom servers [here.](https://aumods.xyz)<br>
 
-New content with Town of Chaos added to this game:
-
+#### __New content with Town of Chaos added to this game:__
 
 New Crewmate Roles:
 
@@ -64,15 +63,15 @@ New Additions:
 - RSETTINGS file, this allows you to change recommended settings (this is needed for confirm ejects to work.)
 - Roles file you can edit so it changes what /r or /info says
 - Most roles can now vent
-- Added /kc or /kcount to tell u how many killers are alive only works in meeting
-- bewiler text changed
-- reviver fix added
+- Added /kc or /kcount to tell you how many killers are alive only works in meeting.
+- Bewilderer text changed.
+- Reviver has been fixed.
 - BG added to /kc was missing
-- lights and swooper need testing as moving reviver might of fixxed this
+- Lights and Swooper need testing as moving Reviver might of fixed this.
 - BG info updated
-- /say added for hosts 
-- Added /death commmand only works when in a meeting
-- more changes but honestly i forgot
+- /say added for hosts.
+- Added /death commmand, only works when in a meeting
+- More changes but honestly i forgot
 
 However, please note that the following restrictions apply.<br>
 
@@ -126,6 +125,7 @@ You can execute chat commands by typing in chat.
 | /help now<br>/help n                                  | Show active setting descriptions                  |
 | /changerole <crewmate, impostor, engineer...>         | Change your In-Game Role                          |
 | /level <0-2147483647>                                 | Change your Among Us level                        |
+| /say <message>                                        | Allows host to send a message, dead or alive.     |
 
 #### MOD Client Only
 | Command        | Function                    |
@@ -158,11 +158,6 @@ For example: `welcome:This room is using the mod Town Of Chaos.`
 
 ### Impostor Disconnect Detection
 If all Impostors leave the game, the game will automatically end with the unused Impostor Disconnected screen. This was done as all impostors leaving the game would black screen all players who do not use desynced Impostor roles after the next meeting.
-
-### Developer Tag
-Developers get a tag while in the lobby to indicate that they're a mod dev.
-Below is an example:
-![Dev tag in use](https://cdn.discordapp.com/attachments/771109338521141298/1021443349821001818/unknown.png)
 
 ## Roles
 
