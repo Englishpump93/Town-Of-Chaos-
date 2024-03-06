@@ -311,7 +311,8 @@ namespace TownOfHost
         private static bool CheckAndEndGameForPestiWin(ShipStatus __instance, PlayerStatistics statistics)
         {
             if (statistics.TeamPestiAlive >= statistics.TotalAlive - statistics.TeamPestiAlive &&
-                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJuggernautAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0
+                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJuggernautAlive <= 0 &&
+                statistics.TeamJackalAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0
                 && statistics.TeamWolfAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.TeamGlitchAlive <= 0 && statistics.TeamArsoAlive <= 0 && statistics.TeamAgiAlive <= 0)
             {
                 if (Options.IsStandardHAS && statistics.TotalAlive - statistics.TeamPestiAlive != 0) return false;
@@ -338,7 +339,7 @@ namespace TownOfHost
         {
             if (1 >= statistics.TotalAlive - 1 &&
                 statistics.TeamImpostorsAlive <= 0 && statistics.TeamJuggernautAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0 && statistics.TeamAgiAlive <= 0
-                && statistics.TeamWolfAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.TeamGlitchAlive <= 0 && statistics.TeamArsoAlive <= 1 && Options.TOuRArso.GetBool())
+                && statistics.TeamWolfAlive <= 0 && statistics.TeamJackalAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.TeamGlitchAlive <= 0 && statistics.TeamArsoAlive <= 1 && Options.TOuRArso.GetBool())
             {
                 if (Options.IsStandardHAS && statistics.TotalAlive - 1 != 0) return false;
                 __instance.enabled = false;
@@ -380,7 +381,7 @@ namespace TownOfHost
         private static bool CheckAndEndGameForJuggyWin(ShipStatus __instance, PlayerStatistics statistics)
         {
             if (statistics.TeamJuggernautAlive >= statistics.TotalAlive - statistics.TeamJuggernautAlive && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 &&
-                statistics.TeamImpostorsAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamMarksAlive <= 0
+                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJackalAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamMarksAlive <= 0
                 && statistics.TeamWolfAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.TeamGlitchAlive <= 0 && statistics.TeamArsoAlive <= 0 && statistics.TeamAgiAlive <= 0)
             {
                 if (Options.IsStandardHAS && statistics.TotalAlive - statistics.TeamJuggernautAlive != 0) return false;
@@ -446,7 +447,7 @@ namespace TownOfHost
         private static bool CheckAndEndGameForPoisonerWin(ShipStatus __instance, PlayerStatistics statistics)
         {
             if (statistics.TeamPoisonerAlive >= statistics.TotalAlive - statistics.TeamPoisonerAlive &&
-                statistics.TeamImpostorsAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0
+                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJackalAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamAgiAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0
                 && statistics.TeamWolfAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.TeamGlitchAlive <= 0 && statistics.TeamArsoAlive <= 0 && statistics.TeamJuggernautAlive <= 0)
             {
                 if (Options.IsStandardHAS && statistics.TotalAlive - statistics.TeamPoisonerAlive != 0) return false;
@@ -471,7 +472,7 @@ namespace TownOfHost
         private static bool CheckAndEndGameForMagicianWin(ShipStatus __instance, PlayerStatistics statistics)
         {
             if (statistics.TeamMagicAlive >= statistics.TotalAlive - statistics.TeamMagicAlive &&
-                statistics.TeamImpostorsAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0
+                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJackalAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamAgiAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0
                 && statistics.TeamWolfAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.TeamGlitchAlive <= 0 && statistics.TeamArsoAlive <= 0 && statistics.TeamJuggernautAlive <= 0)
             {
                 if (Options.IsStandardHAS && statistics.TotalAlive - statistics.TeamMagicAlive != 0) return false;
@@ -496,7 +497,7 @@ namespace TownOfHost
         private static bool CheckAndEndGameForHustlerWin(ShipStatus __instance, PlayerStatistics statistics)
         {
             if (statistics.TeamHustlerAlive >= statistics.TotalAlive - statistics.TeamHustlerAlive &&
-                statistics.TeamImpostorsAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0
+                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJackalAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamAgiAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamMarksAlive <= 0
                 && statistics.TeamWolfAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.TeamGlitchAlive <= 0 && statistics.TeamArsoAlive <= 0 && statistics.TeamJuggernautAlive <= 0)
             {
                 if (Options.IsStandardHAS && statistics.TotalAlive - statistics.TeamHustlerAlive != 0) return false;
@@ -627,7 +628,7 @@ namespace TownOfHost
         private static bool CheckAndEndGameForWolfWin(ShipStatus __instance, PlayerStatistics statistics)
         {
             if (statistics.TeamWolfAlive >= statistics.TotalAlive - statistics.TeamWolfAlive &&
-                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJuggernautAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamMarksAlive <= 0
+                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJackalAlive <= 0 && statistics.TeamJuggernautAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamMarksAlive <= 0
                 && statistics.TeamGlitchAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.TeamArsoAlive <= 0 && statistics.TeamAgiAlive <= 0)
             {
                 if (Options.IsStandardHAS && statistics.TotalAlive - statistics.TeamWolfAlive != 0) return false;
@@ -653,7 +654,7 @@ namespace TownOfHost
         private static bool CheckAndEndGameForGlitchWin(ShipStatus __instance, PlayerStatistics statistics)
         {
             if (statistics.TeamGlitchAlive >= statistics.TotalAlive - statistics.TeamGlitchAlive &&
-                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJuggernautAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamMarksAlive <= 0
+                statistics.TeamImpostorsAlive <= 0 && statistics.TeamJackalAlive <= 0 && statistics.TeamJuggernautAlive <= 0 && statistics.TeamHustlerAlive <= 0 && statistics.TeamMagicAlive <= 0 && statistics.TeamPoisonerAlive <= 0 && statistics.TeamPestiAlive <= 0 && statistics.TeamMarksAlive <= 0
                 && statistics.TeamWolfAlive <= 0 && statistics.TeamCovenAlive <= 0 && statistics.sheriffAlive <= 0 && statistics.TeamArsoAlive <= 0 && statistics.TeamKnightAlive <= 0 && statistics.TeamAgiAlive <= 0)
             {
                 if (Options.IsStandardHAS && statistics.TotalAlive - statistics.TeamGlitchAlive != 0) return false;
