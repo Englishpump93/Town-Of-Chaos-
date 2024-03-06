@@ -127,22 +127,10 @@ namespace TownOfHost
                         pc.RpcSetColor(17);
                 }
                 Main.RealOptionsData = GameOptionsManager.Instance.CurrentGameOptions.DeepCopy();
-                PlayerControl.LocalPlayer.RpcSyncSettings(Main.RealOptionsData.ToBytes());
+                var opt = Main.NormalOptions.Cast<IGameOptions>();
+                PlayerControl.LocalPlayer.RpcSyncSettings(GameOptionsManager.Instance.gameOptionsFactory.ToBytes(opt, true));
             }
-            else
-            {
-                Options.DefaultKillCooldown = GameOptionsManager.Instance.CurrentGameOptions.AsHnsOptions()!.KillCooldown;
-                Main.LastKillCooldown.Value = GameOptionsManager.Instance.CurrentGameOptions.AsHnsOptions()!.KillCooldown;
-                // GameOptionsManager.Instance.CurrentGameOptions.AsHnsOptions()!.KillCooldown = 0.1f;
-                foreach (var pc in PlayerControl.AllPlayerControls)
-                {
-                    if (pc == null || pc.Data.Disconnected) continue;
-                    if (pc.CurrentOutfit.ColorId > 17)
-                        pc.RpcSetColor(17);
-                }
-                Main.RealOptionsData = GameOptionsManager.Instance.CurrentGameOptions.DeepCopy();
-                PlayerControl.LocalPlayer.RpcSyncSettings(Main.RealOptionsData.ToBytes());
-            }
+            
         }
         public static bool Prefix(GameStartRandomMap __instance)
         {
@@ -180,7 +168,7 @@ namespace TownOfHost
             if (GameStates.IsCountDown)
             {
                 GameOptionsManager.Instance.CurrentGameOptions.AsNormalOptions()!.KillCooldown = Options.DefaultKillCooldown;
-                PlayerControl.LocalPlayer.RpcSyncSettings(GameOptionsManager.Instance.CurrentGameOptions.ToBytes());
+                PlayerControl.LocalPlayer.RpcSyncSettings(GameOptionsManager.Instance.gameOptionsFactory.ToBytes(GameOptionsManager.Instance.CurrentGameOptions, true));
             }
         }
     }
