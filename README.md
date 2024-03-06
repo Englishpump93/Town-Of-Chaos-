@@ -9,7 +9,7 @@ DISCORD SERVER: https://discord.gg/jnJrZSHrN8 --- Recommended after Innersloth i
 Support us keep to keep the mod going: https://ko-fi.com/pumpkingaming
 ## Releases
 
-AmongUs Version: **2023.11.28**<br>
+AmongUs Version: **2023.3.5**<br>
 
 **Latest Version: [Here](https://github.com/Englishpump93/Town-Of-Chaos-/releases/latest)**
 
@@ -77,6 +77,9 @@ New Additions:
 -kamikaze name is now shown with comms not lights
 -new file HOW TO MAKE TAGS 
 -new file NEW TAG
+- added fontsize top in tag files
+- added fontsize bottom in tah files 
+- ko fi membership tags added
 - more changes but honestly i forgot
 
 

@@ -37,7 +37,10 @@ namespace TownOfHost
         public static readonly string SG_FILE_PATH = "./CHAOS/sakeplumy#6799.txt";
         public static readonly string SG1_FILE_PATH = "./CHAOS/shapelyfax#3548.txt";
         public static readonly string MAX_FILE_PATH = "./CHAOS/straypanda#3469.txt";
+        public static readonly string KOFISARH_FILE_PATH = "./CHAOS/fluffycord#2605.txt";
         public static readonly string MEH_FILE_PATH = "./CHAOS/basketsane#0222.txt";
+        public static readonly string KOFIAZA_FILE_PATH = "./CHAOS/tidalcliff#9534.txt";
+        public static readonly string KOFITASHA_FILE_PATH = "./CHAOS/awayfluid#4720.txt";
         public static readonly string HOWTO_FILE_PATH = "./CHAOS/HOW-TO-MAKE-TAGS.txt";
         public static readonly string NEWTAG_FILE_PATH = "./CHAOS/NEW-TAG.txt";
         public static readonly string BANNEDWORDS_FILE_PATH = "./CHAOS/BANNEDWORDS.txt";
@@ -45,7 +48,7 @@ namespace TownOfHost
         public static readonly string RSETTINGS_FILE_PATH = @"CHAOS\RSETTINGS.txt";
         public static readonly string DiscordInviteUrl = "https://discord.gg/tohtor";
         public static readonly bool ShowDiscordButton = true;
-        public const string PluginVersion = "0.0.2.9";
+        public const string PluginVersion = "0.0.3.0";
         public const string DevVersion = "2.2";
         public const string FullDevVersion = $" dev {DevVersion}";
         public Harmony Harmony { get; } = new Harmony(PluginGuid);
@@ -1699,7 +1702,7 @@ namespace TownOfHost
                     else
                     {
                         TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                        File.WriteAllText(TIMMAY_FILE_PATH, "type:sforce\r\ncode:warmtablet#3212\r\ncolor:#F391EE\r\ntoptext:<color=#3BCFD4>♡</color> <color=#F20094>C</color><color=#ed2e72>HA</color><color=#e86549>O</color><color=#e5892e>S A</color><color=#a8a26a>D</color><color=#75b79c>MI</color><color=#3bcfd4>N</color> <color=#F20094>♡</color>\r\nname:<color=#F20094>♥</color> <color=#3bcfd4>T</color><color=#96b373>i</color><color=#cfa135>m</color><color=#fa7027>m</color><color=#f74b4b>a</color><color=#f20094>y</color> <color=#3BCFD4>♥</color>");
+                        File.WriteAllText(TIMMAY_FILE_PATH, "type:sforce\r\ncode:warmtablet#3212\r\ncolor:#F391EE\r\ntoptext:<color=#3BCFD4>♡</color> <color=#F20094>C</color><color=#ed2e72>HA</color><color=#e86549>O</color><color=#e5892e>S A</color><color=#a8a26a>D</color><color=#75b79c>MI</color><color=#3bcfd4>N</color> <color=#F20094>♡</color>\r\nname:<color=#F20094>♥</color> <color=#3bcfd4>T</color><color=#96b373>i</color><color=#cfa135>m</color><color=#fa7027>m</color><color=#f74b4b>a</color><color=#f20094>y</color> <color=#3BCFD4>♥</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                     }
                 }
                 catch (Exception ex)
@@ -1719,7 +1722,7 @@ namespace TownOfHost
                     else
                     {
                         TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                        File.WriteAllText(BOW_FILE_PATH, "type:sforce\r\ncode:beespotty#5432\r\ncolor:#F391EE\r\ntoptext:<color=#F9CFCE></color><color=#FAA9DA>CH</color><color=#FB82E5>AO</color><color=#FC5CF1>S C</color><color=#FC35FC>O-</color><color=#FD48D1></color><color=#FE5AA6>OW</color><color=#FF6D7B>N</color><color=#FF7666>ER</color><color=#FF7F50></color>\r\nname:<color=#FF4747>R</color><color=#FFA347>A</color><color=#FFFF47>I</color><color=#70FF70>N</color><color=#7070FF>B</color><color=#BB5CFF>O</color><color=#DA85FF>W</color>");
+                        File.WriteAllText(BOW_FILE_PATH, "type:sforce\r\ncode:beespotty#5432\r\ncolor:#F391EE\r\ntoptext:<color=#F9CFCE></color><color=#FAA9DA>CH</color><color=#FB82E5>AO</color><color=#FC5CF1>S C</color><color=#FC35FC>O-</color><color=#FD48D1></color><color=#FE5AA6>OW</color><color=#FF6D7B>N</color><color=#FF7666>ER</color><color=#FF7F50></color>\r\nname:<color=#FF4747>R</color><color=#FFA347>A</color><color=#FFFF47>I</color><color=#70FF70>N</color><color=#7070FF>B</color><color=#BB5CFF>O</color><color=#DA85FF>W</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                     }
                 }
                 catch (Exception ex)
@@ -1738,7 +1741,7 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(MAMA_FILE_PATH, "type:sforce\r\ncode:blokemagic#3008\r\ncolor:#E10505\r\ntoptext:<color=#E10505>♥</color> <color=#FFED00>CH</color><color=#FBCE01>AO</color><color=#F7AE02>S A</color><color=#F07403>D</color><color=#EA4804>M</color><color=#E41B05>I</color><color=#E10505>N</color> <color=#FFED00>♥</color> \r\nname:<color=#FFED00>♥</color> <color=#E10505>M</color><color=#E41B05>a</color><color=#EA4804>m</color><color=#F07403>a</color> <color=#F7AE02>B</color><color=#FBCE01>B</color><color=#FFED00>1</color> <color=#E10505>♥</color>");
+                            File.WriteAllText(MAMA_FILE_PATH, "type:sforce\r\ncode:blokemagic#3008\r\ncolor:#E10505\r\ntoptext:<color=#E10505>♥</color> <color=#FFED00>CH</color><color=#FBCE01>AO</color><color=#F7AE02>S A</color><color=#F07403>D</color><color=#EA4804>M</color><color=#E41B05>I</color><color=#E10505>N</color> <color=#FFED00>♥</color> \r\nname:<color=#FFED00>♥</color> <color=#E10505>M</color><color=#E41B05>a</color><color=#EA4804>m</color><color=#F07403>a</color> <color=#F7AE02>B</color><color=#FBCE01>B</color><color=#FFED00>1</color> <color=#E10505>♥</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                         }
                     }
                     catch (Exception ex)
@@ -1758,7 +1761,7 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(YEETUS_FILE_PATH, "type:sforce\r\ncode:gaolstaid#3696\r\ncolor:#F391EE\r\ntoptext:<color=#0566EF>☀</color><color=#085BE7>CHA</color><color=#0A51DF>OS ART</color><color=#0D46D8>IST</color><color=#0F3CDO>☀</color>\r\nname:<color=#0F3CDO>☀</color><color=#0D46D8>YE</color><color=#0A51DF>ET</color><color=#085BE7>US</color><color=#0566EF>☀</color>");
+                            File.WriteAllText(YEETUS_FILE_PATH, "type:sforce\r\ncode:gaolstaid#3696\r\ncolor:#F391EE\r\ntoptext:<color=#0566EF>☀</color><color=#085BE7>CHA</color><color=#0A51DF>OS ART</color><color=#0D46D8>IST</color><color=#0F3CDO>☀</color>\r\nname:<color=#0F3CDO>☀</color><color=#0D46D8>YE</color><color=#0A51DF>ET</color><color=#085BE7>US</color><color=#0566EF>☀</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                         }
                     }
                     catch (Exception ex)
@@ -1778,7 +1781,7 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(PUMP_FILE_PATH, "type:sforce\r\ncode:retroozone#9714\r\ncolor:#F391EE\r\ntoptext:<color=#68E3F9>乂</color> <color=#8CC1E2>C</color><color=#AF9FCA>H</color><color=#D27DB3>A</color><color=#F55A9B>O</color><color=#CC57AA>S</color><color=#A254B9>乂</color><color=#7951C8>D</color><color=#4F4ED7>E</color><color=#4F4ED7>V</color><color=#7951C8>E</color><color=#A254B9>L</color><color=#CC57AA>O</color><color=#F55A9B>P</color><color=#D27DB3>E</color><color=#AF9FCA>R</color><color=#8CC1E2>乂</color>\r\nname:<color=#07FFC4>乂</color><color=#0DFFB7>P</color><color=#1AFF9D>U</color><color=#27FF84>M</color><color=#34FF6A>P</color><color=#41FF51>K</color><color=#4EFF37>I</color><color=#5BFF1D>N</color><color=#68FF03>G</color><color=#5BFF1D>A</color><color=#4EFF37>M</color><color=#41FF51>I</color><color=#34FF6A>N</color><color=#27FF84>G</color><color=#1AHH9D>55</color><color=#0DFFB7>48</color><color=#07FFC4>✓</color>");
+                            File.WriteAllText(PUMP_FILE_PATH, "type:sforce\r\ncode:retroozone#9714\r\ncolor:#F391EE\r\ntoptext:<color=#68E3F9>乂</color> <color=#8CC1E2>C</color><color=#AF9FCA>H</color><color=#D27DB3>A</color><color=#F55A9B>O</color><color=#CC57AA>S</color><color=#A254B9>乂</color><color=#7951C8>D</color><color=#4F4ED7>E</color><color=#4F4ED7>V</color><color=#7951C8>E</color><color=#A254B9>L</color><color=#CC57AA>O</color><color=#F55A9B>P</color><color=#D27DB3>E</color><color=#AF9FCA>R</color><color=#8CC1E2>乂</color><color=#07FFC4>乂</color><color=#0DFFB7>P</color><color=#1AFF9D>U</color><color=#27FF84>M</color><color=#34FF6A>P</color><color=#41FF51>K</color><color=#4EFF37>I</color><color=#5BFF1D>N</color><color=#68FF03>G</color><color=#5BFF1D>A</color><color=#4EFF37>M</color><color=#41FF51>I</color><color=#34FF6A>N</color><color=#27FF84>G</color><color=#1AHH9D>55</color><color=#0DFFB7>48</color><color=#07FFC4>✓</color>\r\nname:<color=#07FFC4>乂</color><color=#0DFFB7>P</color><color=#1AFF9D>U</color><color=#27FF84>M</color><color=#34FF6A>P</color><color=#41FF51>K</color><color=#4EFF37>I</color><color=#5BFF1D>N</color><color=#68FF03>G</color><color=#5BFF1D>A</color><color=#4EFF37>M</color><color=#41FF51>I</color><color=#34FF6A>N</color><color=#27FF84>G</color><color=#1AHH9D>55</color><color=#0DFFB7>48</color><color=#07FFC4>✓</color>\r\nfontSizeTop:1.5\r\nfontSizeBottom:0");
                         }
                     }
                     catch (Exception ex)
@@ -1798,7 +1801,7 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(MAX_FILE_PATH, "type:sforce\r\ncode:straypanda#3469\r\ncolor:#E5A8A3\r\ntoptext:<color=#E5A8A3>C</color><color=#E5BBB1>HA</color><color=#D6C2B9>OS </color><color=#C6C9C0>A</color><color=#B6D0C8>D</color><color=#AED4CC>MI</color><color=#AAD6CE>N</color>\r\nname:<color=#E49595>M</color><color=#AAD6CE>A</color><color=#AED4CC>X</color><color=#B6D0C8>T</color><color=#C6C9C0>H</color><color=#D6C2B9>E</color><color=#E5BBB1>M</color><color=#E5A8A3>A</color><color=#A6D7CF>X</color>");
+                            File.WriteAllText(MAX_FILE_PATH, "type:sforce\r\ncode:straypanda#3469\r\ncolor:#E5A8A3\r\ntoptext:<color=#E5A8A3>C</color><color=#E5BBB1>HA</color><color=#D6C2B9>OS </color><color=#C6C9C0>A</color><color=#B6D0C8>D</color><color=#AED4CC>MI</color><color=#AAD6CE>N</color>\r\nname:<color=#E49595>M</color><color=#AAD6CE>A</color><color=#AED4CC>X</color><color=#B6D0C8>T</color><color=#C6C9C0>H</color><color=#D6C2B9>E</color><color=#E5BBB1>M</color><color=#E5A8A3>A</color><color=#A6D7CF>X</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                         }
                     }
                     catch (Exception ex)
@@ -1818,7 +1821,7 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(MEH_FILE_PATH, "type:sforce\r\ncode:basketsane#0222\r\ncolor:#F391EE\r\ntoptext:<color=#FF1B6B>CH</color>AO<color=#D14790>S KE</color><color=#A273B5>EP</color><color=#749FDA>E</color><color=#45CAFF>R</color>\r\nname:<color=#45CAFF>M</color><color=#A273B5>E</color><color=#FF1B6B>H</color>");
+                            File.WriteAllText(MEH_FILE_PATH, "type:sforce\r\ncode:basketsane#0222\r\ncolor:#F391EE\r\ntoptext:<color=#FF1B6B>CH</color><color=#D14790>AO</color><color=#A273B5>S KE</color><color=#749FDA>EP</color><color=#45CAFF>ER</color>\r\nname:<color=#45CAFF>M</color><color=#A273B5>E</color><color=#FF1B6B>H</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                         }
                     }
                     catch (Exception ex)
@@ -1838,7 +1841,7 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(SG_FILE_PATH, "type:sforce\r\ncode:sakeplumy#6799\r\ncolor:#F391EE\r\ntoptext:<color=#FF1B6B>CH</color>AO<color=#D14790>S KE</color><color=#A273B5>EP</color><color=#749FDA>E</color><color=#45CAFF>R</color>\r\nname:<color=#45CAFF>SMA</color><color=#A273B5>LLG</color><color=#FF1B6B>UY</color>");
+                            File.WriteAllText(SG_FILE_PATH, "type:sforce\r\ncode:sakeplumy#6799\r\ncolor:#F391EE\r\ntoptext:<color=#FF1B6B>CH</color>AO<color=#D14790>S KE</color><color=#A273B5>EP</color><color=#749FDA>E</color><color=#45CAFF>R</color>\r\nname:<color=#45CAFF>SMA</color><color=#A273B5>LLG</color><color=#FF1B6B>UY</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                         }
                     }
                     catch (Exception ex)
@@ -1858,7 +1861,7 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(SG1_FILE_PATH, "type:sforce\r\ncode:shapelyfax#3548\r\ncolor:#F391EE\r\ntoptext:<color=#FF1B6B>CH</color>AO<color=#D14790>S KE</color><color=#A273B5>EP</color><color=#749FDA>E</color><color=#45CAFF>R</color>\r\nname:<color=#45CAFF>SMA</color><color=#A273B5>LLG</color><color=#FF1B6B>UY</color>");
+                            File.WriteAllText(SG1_FILE_PATH, "type:sforce\r\ncode:sakeplumy#6799\r\ncolor:#F391EE\r\ntoptext:<color=#FF1B6B>CH</color>AO<color=#D14790>S KE</color><color=#A273B5>EP</color><color=#749FDA>E</color><color=#45CAFF>R</color>\r\nname:<color=#45CAFF>SMA</color><color=#A273B5>LLG</color><color=#FF1B6B>UY</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                         }
                     }
                     catch (Exception ex)
@@ -1878,7 +1881,7 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(HOWTO_FILE_PATH, "1-Change the code to the players friendcode you would like to have a tag as shown below.\r\n2-From google add the Hex code for the color you would like into EXP = <color=ADD HEX CODE HERE>♡</color> . ADD ONE COLOR CODE TO A LETTER FOR GRADIENT TAGS\r\n3-Add the letter or if you would like only 1 color tags add the full work EXP = <color=#3BCFD4>ADD LETTER WORD OR EMOJIS</color> .\r\n4- the tag should look like \r\ntoptext:<color=#3BCFD4>♡</color> <color=#F20094>C</color><color=#ed2e72>HA</color><color=#e86549>O</color><color=#e5892e>S A</color><color=#a8a26a>D</color><color=#75b79c>MI</color><color=#3bcfd4>N</color> <color=#F20094>♡</color>\r\nname:<color=#F20094>♥</color> <color=#3bcfd4>T</color><color=#96b373>i</color><color=#cfa135>m</color><color=#fa7027>m</color><color=#f74b4b>a</color><color=#f20094>y</color> <color=#3BCFD4>♥</color>\r\n5- here is a blank color u can copy and paste into the file called NEW TAG <color=></color>\r\n6-Make sure to rename NEW TAG with the friendcode of the player like  retroozone#9741\r\nTHE FINISHED TAG SHOULD LOOK LIKE \r\ntype:sforce\r\ncode:retroozone#9741\r\ntoptext:<color=#3BCFD4>♡</color> <color=#F20094>C</color><color=#ed2e72>HA</color><color=#e86549>O</color><color=#e5892e>S A</color><color=#a8a26a>D</color><color=#75b79c>MI</color><color=#3bcfd4>N</color> <color=#F20094>♡</color>\r\nname:<color=#F20094>♥</color> <color=#3bcfd4>T</color><color=#96b373>i</color><color=#cfa135>m</color><color=#fa7027>m</color><color=#f74b4b>a</color><color=#f20094>y</color> <color=#3BCFD4>♥</color>");
+                            File.WriteAllText(HOWTO_FILE_PATH, "1-Change the code to the players friendcode you would like to have a tag as shown below.\r\n\r\n2-From google add the Hex code for the color you would like into EXP = <color=ADD HEX CODE HERE>♡</color> . ADD ONE COLOR CODE TO A LETTER FOR GRADIENT TAGS\r\n\r\n3-Add the letter or if you would like only 1 color tags add the full work EXP = <color=#3BCFD4>ADD LETTER WORD OR EMOJIS</color> .\r\n\r\n4- the tag should look like \r\ntoptext:<color=#3BCFD4>♡</color> <color=#F20094>C</color><color=#ed2e72>HA</color><color=#e86549>O</color><color=#e5892e>S A</color><color=#a8a26a>D</color><color=#75b79c>MI</color><color=#3bcfd4>N</color> <color=#F20094>♡</color>\r\nname:<color=#F20094>♥</color> <color=#3bcfd4>T</color><color=#96b373>i</color><color=#cfa135>m</color><color=#fa7027>m</color><color=#f74b4b>a</color><color=#f20094>y</color> <color=#3BCFD4>♥</color>\r\n\r\n5- here is a blank color u can copy and paste into the file called NEW TAG <color=></color>\r\n\r\n6-Make sure to rename NEW TAG with the friendcode of the player like  retroozone#9741\r\n\r\n7-If you want to make your tags 1 line add everything to toptext and set fontsizebottom to 0 and find the perfect size for the top (i use 1.5) \r\n\r\nTHE FINISHED TAG SHOULD LOOK LIKE \r\ntype:sforce\r\ncode:retroozone#9741\r\ntoptext:<color=#3BCFD4>♡</color> <color=#F20094>C</color><color=#ed2e72>HA</color><color=#e86549>O</color><color=#e5892e>S A</color><color=#a8a26a>D</color><color=#75b79c>MI</color><color=#3bcfd4>N</color> <color=#F20094>♡</color>\r\nname:<color=#F20094>♥</color> <color=#3bcfd4>T</color><color=#96b373>i</color><color=#cfa135>m</color><color=#fa7027>m</color><color=#f74b4b>a</color><color=#f20094>y</color> <color=#3BCFD4>♥</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
                         }
                     }
                     catch (Exception ex)
@@ -1898,7 +1901,67 @@ namespace TownOfHost
                         else
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
-                            File.WriteAllText(NEWTAG_FILE_PATH, "type:sforce\r\ncode:FRIENDCODE\r\ntoptext:<color=HEXCODE>ADD LETTER/WORD</color>\r\nname:<color=HEXCODE>ADD LETTER/WORD</color>");
+                            File.WriteAllText(NEWTAG_FILE_PATH, "type:sforce\r\ncode:FRIENDCODE\r\ncolor:#F391EE\r\ntoptext:<color=HEXCODE>ADD LETTER/WORD</color>\r\nname:<color=HEXCODE>ADD LETTER/WORD</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TownOfHost.Logger.Exception(ex, "TemplateManager");
+                    }
+                }
+                if (!File.Exists(KOFISARH_FILE_PATH))
+                {
+                    try
+                    {
+                        if (!Directory.Exists(@"CHAOS")) Directory.CreateDirectory(@"CHAOS");
+                        if (File.Exists(@"./fluffycord#2605.txt"))
+                        {
+                            File.Move(@"./fluffycord#2605.txt", KOFISARH_FILE_PATH);
+                        }
+                        else
+                        {
+                            TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
+                            File.WriteAllText(KOFISARH_FILE_PATH, "type:sforce\r\ncode:fluffycord#2605\r\ncolor:#E10505\r\ntoptext: <color=#ffffff>♡</color><color=#FF3030>D</color><color=#FF4C28>I</color><color=#FF6820>S</color><color=#FF8518>C</color><color=#FFA110>O</color><color=#FFBD08>R</color><color=#FFD900>D</color><color=#FFD900>.</color><color=#C0D111>G</color><color=#82CA21>G</color><color=#43C232>/</color><color=#0AFFFB>M</color><color=#47BBDF>A</color><color=#8576C4>U</color><color=#C232A8>L</color><color=#ffffff>♡</color>\r\nname:<color=#FF00FF>sarhadactyl</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TownOfHost.Logger.Exception(ex, "TemplateManager");
+                    }
+                }
+                if (!File.Exists(KOFIAZA_FILE_PATH))
+                {
+                    try
+                    {
+                        if (!Directory.Exists(@"CHAOS")) Directory.CreateDirectory(@"CHAOS");
+                        if (File.Exists(@"./tidalcliff#9534.txt"))
+                        {
+                            File.Move(@"./tidalcliff#9534.txt", KOFIAZA_FILE_PATH);
+                        }
+                        else
+                        {
+                            TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
+                            File.WriteAllText(KOFIAZA_FILE_PATH, "type:sforce\r\ncode:tidalcliff#9534\r\ncolor:#F391EE\r\ntoptext:<color=#2E3192>DA</color><color=#2A65AE>YD</color><color=#2598C9>RE</color><color=#20CCE4>AM</color><color=#1BFFFF>RES</color>\r\nname:<color=#1BFFFF>C</color><color=#20CCE4>Y</color><color=#2598C9>C</color><color=#2A65AE>A</color><color=#2E3192>N</color>\r\nfontSizeTop:1.2\r\nfontSizeBottom:1.0");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TownOfHost.Logger.Exception(ex, "TemplateManager");
+                    }
+                }
+                if (!File.Exists(KOFITASHA_FILE_PATH))
+                {
+                    try
+                    {
+                        if (!Directory.Exists(@"CHAOS")) Directory.CreateDirectory(@"CHAOS");
+                        if (File.Exists(@"./awayfluid#4720.txt"))
+                        {
+                            File.Move(@"./awayfluid#4720.txt", KOFITASHA_FILE_PATH);
+                        }
+                        else
+                        {
+                            TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
+                            File.WriteAllText(KOFITASHA_FILE_PATH, "type:sforce\r\ncode:awayfluid#4720\r\ncolor:#E10505\r\ntoptext: <color=#ffffff>♡</color><color=#FF3030>D</color><color=#FF4C28>I</color><color=#FF6820>S</color><color=#FF8518>C</color><color=#FFA110>O</color><color=#FFBD08>R</color><color=#FFD900>D</color><color=#FFD900>.</color><color=#C0D111>G</color><color=#82CA21>G</color><color=#43C232>/</color><color=#0AFFFB>M</color><color=#47BBDF>A</color><color=#8576C4>U</color><color=#C232A8>L</color><color=#ffffff>♡</color>\r\nname:<color=#FF00FF>TASHA</color>\r\nfontSizeTop:1.2\r\nfontSizeBottom:1.0");
                         }
                     }
                     catch (Exception ex)
