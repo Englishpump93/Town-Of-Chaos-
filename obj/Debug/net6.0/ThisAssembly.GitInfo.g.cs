@@ -41,17 +41,17 @@ namespace
       /// <summary>Branch: main</summary>
       public const string Branch = "main";
 
-      /// <summary>Commit: 1e6e25d</summary>
-      public const string Commit = "1e6e25d";
+      /// <summary>Commit: 85a3ed7</summary>
+      public const string Commit = "85a3ed7";
 
-      /// <summary>Sha: 1e6e25d690aee2704966496d68f46dfa878496c5</summary>
-      public const string Sha = "1e6e25d690aee2704966496d68f46dfa878496c5";
+      /// <summary>Sha: 85a3ed7bf98eb1ea1b72af54a280031b50aad4ff</summary>
+      public const string Sha = "85a3ed7bf98eb1ea1b72af54a280031b50aad4ff";
 
-      /// <summary>Commits on top of base version: 15</summary>
-      public const string Commits = "15";
+      /// <summary>Commits on top of base version: 16</summary>
+      public const string Commits = "16";
 
-      /// <summary>Tag: Chaos2.8.1</summary>
-      public const string Tag = "Chaos2.8.1";
+      /// <summary>Tag: Chaos2.8.1-1-g85a3ed7</summary>
+      public const string Tag = "Chaos2.8.1-1-g85a3ed7";
 
       /// <summary>Base tag: Chaos2.8.1</summary>
       public const string BaseTag = "Chaos2.8.1";
@@ -78,8 +78,8 @@ namespace
         /// <summary>Minor: 0</summary>
         public const string Minor = "0";
 
-        /// <summary>Patch: 15</summary>
-        public const string Patch = "15";
+        /// <summary>Patch: 16</summary>
+        public const string Patch = "16";
 
         /// <summary>Label: </summary>
         public const string Label = "";

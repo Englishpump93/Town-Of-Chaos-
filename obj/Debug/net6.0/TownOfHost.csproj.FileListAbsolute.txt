@@ -67,7 +67,6 @@ C:\Users\benn9\Desktop\Chaos Github\bin\Debug\net6.0\Unity.Addressables.dll
 C:\Users\benn9\Desktop\Chaos Github\bin\Debug\net6.0\Unity.Analytics.DataPrivacy.dll
 C:\Users\benn9\Desktop\Chaos Github\bin\Debug\net6.0\Unity.ProBuilder.dll
 C:\Users\benn9\Desktop\Chaos Github\bin\Debug\net6.0\Unity.ResourceManager.dll
-C:\Users\benn9\Desktop\Chaos Github\bin\Debug\net6.0\Unity.Services.Analytics.dll
 C:\Users\benn9\Desktop\Chaos Github\bin\Debug\net6.0\Unity.Services.Core.Configuration.dll
 C:\Users\benn9\Desktop\Chaos Github\bin\Debug\net6.0\Unity.Services.Core.Device.dll
 C:\Users\benn9\Desktop\Chaos Github\bin\Debug\net6.0\Unity.Services.Core.dll

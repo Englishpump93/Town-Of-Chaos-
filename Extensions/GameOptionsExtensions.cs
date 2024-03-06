@@ -23,6 +23,6 @@ public static class GameOptionsExtensions
 
     public static Byte[] ToBytes(this IGameOptions gameOptions)
     {
-        return GameOptionsManager.Instance.gameOptionsFactory.ToBytes(gameOptions);
+        return GameOptionsManager.Instance.gameOptionsFactory.ToBytes(gameOptions, true);
     }
 }

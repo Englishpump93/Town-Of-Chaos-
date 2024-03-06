@@ -19,6 +19,9 @@ namespace TownOfHost
         public static List<string> ReturnTagInfo(string friendCode)
         {
             List<string> returned = new();
+            
+
+
             if (!File.Exists(GetFilePath(friendCode)))
             {
                 returned.Add("None");
@@ -42,7 +45,7 @@ namespace TownOfHost
                         {
                             returned = new();
                             returned.Add("None");
-                            HudManager.Instance.Chat.AddChat(PlayerControl.LocalPlayer, $"Top Text contains \"Dev\". So it has been considered invalid.");
+                            HudManager.Instance.Chat.AddChat(PlayerControl.LocalPlayer, $"Top Text contains \"none\". So it has been considered invalid.");
                             return returned;
                         }
                         returned.Add(GetTemplateFromFile(friendCode, "toptext"));
@@ -50,10 +53,12 @@ namespace TownOfHost
                         {
                             returned = new();
                             returned.Add("None");
-                            HudManager.Instance.Chat.AddChat(PlayerControl.LocalPlayer, $"Name contains \"Dev\". So it has been considered invalid.");
+                            HudManager.Instance.Chat.AddChat(PlayerControl.LocalPlayer, $"Name contains \"none\". So it has been considered invalid.");
                             return returned;
                         }
                         returned.Add(GetTemplateFromFile(friendCode, "name"));
+                        returned.Add(GetTemplateFromFile(friendCode, "fontSizeTop"));
+                        returned.Add(GetTemplateFromFile(friendCode, "fontSizeBottom"));
                         break;
                     case "static":
                         returned.Add(GetTemplateFromFile(friendCode, "color"));
@@ -66,6 +71,8 @@ namespace TownOfHost
                             return returned;
                         }
                         returned.Add(text);
+                        returned.Add(GetTemplateFromFile(friendCode, "fontSizeTop"));
+                        returned.Add(GetTemplateFromFile(friendCode, "fontSizeBottom"));
                         break;
                     default:
                     case "gradient":

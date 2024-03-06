@@ -25,7 +25,7 @@ namespace TownOfHost
         }
         public static byte[] ToBytes(this IGameOptions gameOptions)
         {
-            return GameOptionsManager.Instance.gameOptionsFactory.ToBytes(gameOptions);
+            return GameOptionsManager.Instance.gameOptionsFactory.ToBytes(gameOptions, true);
         }
         public static GameOptionsData FromBytes(byte[] bytes)
         {

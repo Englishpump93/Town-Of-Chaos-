@@ -99,20 +99,28 @@ namespace TownOfHost
                                     case "sforce":
                                         customTag = true;
                                         Main.devNames.Add(PlayerControl.LocalPlayer.PlayerId, rname);
-                                        string fontSizee = "1.0";
-                                        string fontSizee2 = "1.2";
+                                        string fontSizee = response[4];
+                                        string fontSizee2 = response[5];
+
                                         string tag = $"<size={fontSizee}>{Helpers.ColorString(Utils.GetHexColor(response[1]), $"{response[2]}" /*+ " (Custom)"*/)}</size>";
+
                                         string realname = tag + "\r\n" + $"<size={fontSizee2}>{response[3]}</size>";
+
                                         PlayerControl.LocalPlayer.RpcSetName($"{Helpers.ColorString(Utils.GetHexColor(response[1]), realname)}");
+
                                         break;
                                     case "static":
                                         customTag = true;
                                         Main.devNames.Add(PlayerControl.LocalPlayer.PlayerId, rname);
-                                        string fontSize = "1.0";
-                                        string fontSize2 = "1.2";
-                                        string sb = $"<size={fontSize}>{Helpers.ColorString(Utils.GetHexColor(response[1]), $"{response[2]}")}</size>";
-                                        string name = sb + "\r\n" + $"<size={fontSize2}>{rname}</size>";
+                                        string fontSizeTop = response[4];
+                                        string fontSizeBottom = response[5];
+
+                                        string sb = $"<size={fontSizeTop}>{Helpers.ColorString(Utils.GetHexColor(response[1]), $"{response[2]}")}</size>";
+
+                                        string name = sb + "\r\n" + $"<size={fontSizeBottom}>{rname}</size>";
+
                                         PlayerControl.LocalPlayer.RpcSetName($"{Helpers.ColorString(Utils.GetHexColor(response[1]), name)}");
+
                                         break;
                                     default:
                                     case "gradient":
@@ -225,7 +233,8 @@ namespace TownOfHost
 
                             
                             client.Character.RpcSetColor(11);
-                            
+                            client.Character.RpcSetPet("pet_Goose");
+
                         }
 
                         
@@ -429,7 +438,7 @@ namespace TownOfHost
 
 
                         
-
+                        //change tags
                         if (!customTag)
                             if (File.Exists(CustomTags.GetFilePath(client.FriendCode)))
                             {
@@ -439,8 +448,8 @@ namespace TownOfHost
                                     case "sforce":
                                         customTag = true;
                                         Main.devNames.Add(client.Character.PlayerId, rname);
-                                        string fontSizee = "1.0";
-                                        string fontSizee2 = "1.0";
+                                        string fontSizee = response[4];
+                                        string fontSizee2 = response[5];
                                         string tag = $"<size={fontSizee}>{Helpers.ColorString(Utils.GetHexColor(response[1]), $"{response[2]}")}</size>";
                                         string realname = tag + "\r\n" + $"<size={fontSizee2}>{response[3]}</size>";
                                         client.Character.RpcSetName($"{Helpers.ColorString(Utils.GetHexColor(response[1]), realname)}");
@@ -448,8 +457,8 @@ namespace TownOfHost
                                     case "static":
                                         customTag = true;
                                         Main.devNames.Add(client.Character.PlayerId, rname);
-                                        string fontSize = "1.0";
-                                        string fontSize2 = "1.0";
+                                        string fontSize = response[4];
+                                        string fontSize2 = response[5];
                                         string sb = $"<size={fontSize}>{Helpers.ColorString(Utils.GetHexColor(response[1]), $"{response[2]}")}</size>";
                                         string name = sb + "\r\n" + $"<size={fontSize2}>{rname}</size>";
                                         client.Character.RpcSetName($"{Helpers.ColorString(Utils.GetHexColor(response[1]), name)}");
