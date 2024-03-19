@@ -80,6 +80,9 @@ New Additions:
 - added fontsize top in tag files
 - added fontsize bottom in tah files 
 - ko fi membership tags added
+- transporter now has 99
+- /perc now shows in color
+- /l and /shoot show now have color
 - more changes but honestly i forgot
 
 

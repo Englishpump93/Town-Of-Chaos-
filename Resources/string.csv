@@ -32,104 +32,104 @@ Hiderinfo,Complete tasks and be out of Seeker's sight.,Выполняйте св
 Seekerinfo,Seek out all the Hiders and kill them.,Саботируйте и не оставляйте никого в покое,Sabotage and leave none standing,找出所有躲藏者并杀死他们。
 
 # 特殊インポスター役職
-BountyHunter,Bounty Hunter,Bounty Hunter,バウンティハンター,赏金猎人,賞金獵人
-Mare,Mare,Mare,メアー,梦魇,黑暗博士
-Miner,Miner,Miner,Miner,矿工,Miner
-YingYanger,Ying Yanger,Ying Yanger,YingYanger,阴阳师,YingYanger
-FireWorks,FireWorks,FireWorks,花火職人,烟花商人,煙火工匠
-SerialKiller,Mercenary,Mercenary,シリアルキラー,嗜血杀手,連環殺手
-ShapeMaster,Shape Master,Shape Master,シェイプマスター,千面鬼,變形大師
-Vampire,Vampire,Vampire,ヴァンパイア,吸血鬼,吸血鬼
-Vampress,Vampiress,Vampress,Vampress,血族公主
-Consort,Consort,Consort,Consort,邪恶的护卫
-Morphling,Morphling,Morphling,Morphling,变形者
-ImpostorGhost,Seeker Ghost,Seeker Ghost,ImpGhost,捣蛋鬼
-Warlock,Warlock,Warlock,ウォーロック,术士,術士
-Witch,Witch,Witch,ウィッチ,女巫,女巫
-Disperser,Disperser,Disperser,Disperser,驱散者
-Mafia,Mafia,Mafia,マフィア,黑手党,黑手黨
-Freezer,Freezer,Freezer,Freezer,冰术师
-EvilWatcher,Evil Watcher,Evil Watcher,イビルウォッチャー,邪恶的窥视者,邪惡的觀察者
-Assassin,Assassin,Assassin,イビルゲッサー,邪恶的赌怪,邪惡的猜測者
-Puppeteer,Puppeteer,Puppeteer,パペッティア,傀儡师,傀儡師
-Cleaner,Cleaner,Cleaner,Cleaner,清理工
-TimeThief,Time Thief,Time Thief,タイムシーフ,蚀时者,時間小偷
-Sniper,Sniper,Sniper,スナイパー,狙击手,狙擊手
-Silencer,Silencer,Silencer,Silencer,沉默者,消音器
+BountyHunter,<color=#e61017>Bounty Hunter</color>,Bounty Hunter,バウンティハンター,赏金猎人,賞金獵人
+Mare,<color=#e61017>Mare</color>,Mare,メアー,梦魇,黑暗博士
+Miner,<color=#e61017>Miner</color>,Miner,Miner,矿工,Miner
+YingYanger,<color=#e61017>Ying Yanger</color>,Ying Yanger,YingYanger,阴阳师,YingYanger
+FireWorks,<color=#e61017>FireWorks</color>,FireWorks,花火職人,烟花商人,煙火工匠
+SerialKiller,<color=#e61017>Mercenary</color>,Mercenary,シリアルキラー,嗜血杀手,連環殺手
+ShapeMaster,<color=#e61017>Shape Master</color>,Shape Master,シェイプマスター,千面鬼,變形大師
+Vampire,<color=#e61017>Vampire,Vampire</color>,ヴァンパイア,吸血鬼,吸血鬼
+Vampress,<color=#e61017>Vampiress</color>,Vampress,Vampress,血族公主
+Consort,<color=#e61017>Consort</color>,Consort,Consort,邪恶的护卫
+Morphling,<color=#e61017>Morphling</color>,Morphling,Morphling,变形者
+ImpostorGhost,<color=#e61017>Seeker Ghost</color>,Seeker Ghost,ImpGhost,捣蛋鬼
+Warlock,<color=#e61017>Warlock</color>,Warlock,ウォーロック,术士,術士
+Witch,<color=#e61017>Witch</color>,Witch,ウィッチ,女巫,女巫
+Disperser,<color=#e61017>Disperser</color>,Disperser,Disperser,驱散者
+Mafia,<color=#e61017>Mafia</color>,Mafia,マフィア,黑手党,黑手黨
+Freezer,<color=#e61017>Freezer</color>,Freezer,Freezer,冰术师
+EvilWatcher,Evil Watcher</color>,Evil Watcher,イビルウォッチャー,邪恶的窥视者,邪惡的觀察者
+Assassin,<color=#e61017>Assassin</color>,Assassin,イビルゲッサー,邪恶的赌怪,邪惡的猜測者
+Puppeteer,<color=#e61017>Puppeteer</color>,Puppeteer,パペッティア,傀儡师,傀儡師
+Cleaner,<color=#e61017>Cleaner</color>,Cleaner,Cleaner,清理工
+TimeThief,<color=#e61017>Time Thief</color>,Time Thief,タイムシーフ,蚀时者,時間小偷
+Sniper,<color=#e61017>Sniper</color>,Sniper,スナイパー,狙击手,狙擊手
+Silencer,<color=#e61017>Silencer</color>,Silencer,Silencer,沉默者,消音器
 CorruptedSheriff,Traitor,Traitor,CorruptedSheriff,背叛的警长,腐敗的警官
-Swooper,Swooper,Swooper,Swooper,隐身人
-Creeper,Creeper,Creeper,Creeper,Creeper
-Camouflager,Camouflager,Camouflager,Camouflager,隐蔽者
-Ninja,Ninja,Ninja,ニンジャ,忍者
-Grenadier,Grenadier,Grenadier,Grenadier,致盲师
-Pickpocket,Pickpocket,Pickpocket,Pickpocket,窃票者,Pickpocket
-Manipulator,Manipulator,Manipulator,Manipulator,机械师,Manipulator
-IdentityTheft,Identity Thief,Identity Theft,IdentityTheft,身份窃贼,IdentityTheft
-Escapist,Escapist,Escapist,Escapist,Escapist
-Bomber,Bomber,Bomber,Bomber,Bomber
+Swooper,<color=#e61017>Swooper</color>,Swooper,Swooper,隐身人
+Creeper,<color=#e61017>Creeper</color>,Creeper,Creeper,Creeper
+Camouflager,<color=#e61017>Camouflager</color>,Camouflager,Camouflager,隐蔽者
+Ninja,<color=#e61017>Ninja</color>,Ninja,ニンジャ,忍者
+Grenadier,<color=#e61017>Grenadier</color>,Grenadier,Grenadier,致盲师
+Pickpocket,<color=#e61017>Pickpocket</color>,Pickpocket,Pickpocket,窃票者,Pickpocket
+Manipulator,<color=#e61017>Manipulator</color>,Manipulator,Manipulator,机械师,Manipulator
+IdentityTheft,<color=#e61017>Identity Thief</color>,Identity Theft,IdentityTheft,身份窃贼,IdentityTheft
+Escapist,<color=#e61017>Escapist</color>,Escapist,Escapist,Escapist
+Bomber,<color=#e61017>Bomber</color>,Bomber,Bomber,Bomber
 
 # マッドメイト系役職
-Madmate,Madmate,Madmate,マッドメイト,叛徒,叛徒
-Parasite,Parasite,Parasite,Parasite,寄居者,Parasite
-MadGuardian,MadGuardian,MadGuardian,マッドガーディアン,背叛的守卫,背叛的天使
-MadSnitch,MadSnitch,MadSnitch,マッドスニッチ,背叛的告密者,背叛的告密者
-SKMadmate,SideKickMadmate,SideKickMadmate,サイドキックマッドメイト,叛徒小弟,叛徒跟班
-CrewPostor,CrewPostor,CrewPostor,CrewPostor,舰长
-Magician,Magician,Magician,Magician,舰长
+Madmate,<color=#e61017>Madmate</color>,Madmate,マッドメイト,叛徒,叛徒
+Parasite,<color=#e61017>Parasite</color>,Parasite,Parasite,寄居者,Parasite
+MadGuardian,<color=#e61017>MadGuardian</color>,MadGuardian,マッドガーディアン,背叛的守卫,背叛的天使
+MadSnitch,<color=#e61017>MadSnitch</color>,MadSnitch,マッドスニッチ,背叛的告密者,背叛的告密者
+SKMadmate,<color=#e61017>SideKickMadmate</color>,SideKickMadmate,サイドキックマッドメイト,叛徒小弟,叛徒跟班
+CrewPostor,<color=#DC6601>CrewPostor</color>,CrewPostor,CrewPostor,舰长
+Magician,<color=#66FFC2>Magician</color>,Magician,Magician,舰长
 
 # 両陣営可能役職
-Watcher,Watcher,Watcher,ウォッチャー,窥视者,觀察者
+Watcher,<color=#800080>Watcher</color>,Watcher,ウォッチャー,窥视者,觀察者
 Guesser,Guesser,Guesser,ゲッサー,赌怪,猜測者
 
 # 特殊クルー役職
 NiceWatcher,Nice Watcher,Nice Watcher,ナイスウォッチャー,正义的窥视者,正義的觀察者
-NiceGuesser,Vigilante,Vigilante,ナイスゲッサー,正义的赌怪,正義的猜測者
-Bait,Bait,Bait,ベイト,诱饵,誘餌
-Bodyguard,Bodyguard,Bodyguard,Bodyguard,保镖
-Oracle,Oracle,Oracle,Oracle,神谕者
+NiceGuesser,<color=#E4E085>Vigilante</color>,Vigilante,ナイスゲッサー,正义的赌怪,正義的猜測者
+Bait,<color=#00B3B3>Bait</color>,Bait,ベイト,诱饵,誘餌
+Bodyguard,<color=#5d5d5d>Bodyguard</color>,Bodyguard,Bodyguard,保镖
+Oracle,<color=#c88dd0>Oracle</color>,Oracle,Oracle,神谕者
 Forecaster,Forecaster,Forecaster,Forecaster,神谕者
-Medic,Medic,Medic,Medic,医师
-Paramedic,Paramedic,Paramedic,Paramedic,医师
-Veteran,Veteran,Veteran,Veteran,老兵,老將
-Survivor,Survivor,Survivor,Survivor,求生者
-Escort,Escort,Escort,Escort,护卫
-Crusader,Crusader,Crusader,Crusader,十字军
-Transporter,Transporter,Transporter,Transporter,传送师
+Medic,<color=#006600>Medic</color>,Medic,Medic,医师
+Paramedic,<color=#FF6200>Paramedic</color>,Paramedic,Paramedic,医师
+Veteran,<color=#998040>Veteran</color>,Veteran,Veteran,老兵,老將
+Survivor,<color=#FFE64D>Survivor</color>,Survivor,Survivor,求生者
+Escort,<color=#ffb9eb>Escort</color>,Escort,Escort,护卫
+Crusader,<color=#c65c39>Crusader</color>,Crusader,Crusader,十字军
+Transporter,<color=#00EEFF>Transporter</color>,Transporter,Transporter,传送师
 Mechanic,Mechanic,Mechanic,Mechanic,工程师
-Lighter,Lighter,Lighter,ライター,执灯人,小燈人
-Mayor,Mayor,Mayor,メイヤー,市长,市長
-SabotageMaster,SabotageMaster,SabotageMaster,サボタージュマスター,修理大师,破壞大師
-Sheriff,Sheriff,Sheriff,シェリフ,警长,警長
-Investigator,Investigator,Investigator,Investigator,调查员
-Mystic,Mystic,Mystic,Nystic,灵媒
-Arsonist,Arsonist,Arsonist,アーソニスト,纵火犯,縱火犯
-Snitch,Snitch,Snitch,スニッチ,告密者,告密者
-SpeedBooster,SpeedBooster,SpeedBooster,スピードブースター,增速者,加速器
-Physicist,Physicist,Physicist,Physicist,科学家,Physicist
-Doctor,Doctor,Doctor,ドクター,医生,醫生
+Lighter,<color=#eee5be>Lighter</color>,Lighter,ライター,执灯人,小燈人
+Mayor,<color=#204d42>Mayor</color>,Mayor,メイヤー,市长,市長
+SabotageMaster,<color=#0000ff>SabotageMaster</color>,SabotageMaster,サボタージュマスター,修理大师,破壞大師
+Sheriff,<color=#f8cd46>Sheriff</color>,Sheriff,シェリフ,警长,警長
+Investigator,<color=#ffca81>Investigator</color>,Investigator,Investigator,调查员
+Mystic,<color=#4D99E6>Mystic</color>,Mystic,Nystic,灵媒
+Arsonist,<color=#ff6633>Arsonist</color>,Arsonist,アーソニスト,纵火犯,縱火犯
+Snitch,<color=#b8fb4f>Snitch</color>,Snitch,スニッチ,告密者,告密者
+SpeedBooster,<color=#00ffff>SpeedBooster</color>,SpeedBooster,スピードブースター,增速者,加速器
+Physicist,<color=#b6f0ff>Physicist</color>,Physicist,Physicist,科学家,Physicist
+Doctor,<color=#80ffdd>Doctor</color>,Doctor,ドクター,医生,醫生
 CrewmateGhost,Hider Ghost,Hider Ghost,CrewmateGhost,胆小鬼,CrewmateGhost
-Trapper,Trapster,Trapster,トラッパー,陷阱师,設陷者
-Dictator,Dictator,Dictator,ディクテーター,独裁者,獨裁主義者
-Child,Child,Child,Child,小孩,小孩
-Sleuth,Sleuth,Sleuth,Sleuth,侦探,偵探
-Psychic,Psychic,Psychic,Psychic,通灵师,Psychic
+Trapper,<color=#5a8fd0>Trapster</color>,Trapster,トラッパー,陷阱师,設陷者
+Dictator,<color=#df9b00>Dictator</color>,Dictator,ディクテーター,独裁者,獨裁主義者
+Child,<color=#FFFFFF>Child</color>,Child,Child,小孩,小孩
+Sleuth,<color=#803333>Sleuth</color>,Sleuth,Sleuth,侦探,偵探
+Psychic,<color=#6F698C>Psychic</color>,Psychic,Psychic,通灵师,Psychic
 Alturist,Altruist,Altruist,Alturist,祭师
-Medium,Medium,Medium,Medium,警探
-Bastion,Bastion,Bastion,Bastion,埋雷兵,炸彈師
-Demolitionist,Demolitionist,Demolitionist,Demolitionist,同命爆手,拆遷者
-Kamikaze,Kamikaze,Kamikaze,Kamikaze,Kamikaze
+Medium,<color=#A680FF>Medium</color>,Medium,Medium,警探
+Bastion,<color=#524f4d>Bastion</color>,Bastion,Bastion,埋雷兵,炸彈師
+Demolitionist,<color=#5e2801>Demolitionist</color>,Demolitionist,Demolitionist,同命爆手,拆遷者
+Kamikaze,<color=#03fc9d>Kamikaze</color>,Kamikaze,Kamikaze,Kamikaze
 TimeManager,Time Manager,Time Manager,タイムシーフ,蚀时者,時間小偷
-Reviver,Reviver,Reviver,Reviver,窃忆者,遗忘大师
-Wizard,Wizard,Wizard,Wizard,隐身人
-PUMPkinsPotion,PUMPkins Potion,PUMPkinsPotion,PUMPkinsPotion,隐身人
+Reviver,<color=#C547FF>Reviver</color>,Reviver,Reviver,窃忆者,遗忘大师
+Wizard,<color=#1D90E8>Wizard</color>,Wizard,Wizard,隐身人
+PUMPkinsPotion,<color=#FF6700>PUMPkins Potion</color>,PUMPkinsPotion,PUMPkinsPotion,隐身人
 
 # 第三陣営役職
-Jester,Jester,Jester,ジェスター,小丑,小丑
-Phantom,Phantom,Phantom,Phantom,幻影
-Terrorist,Terrorist,Terrorist,テロリスト,恐怖分子,恐怖分子
-Executioner,Executioner,Executioner,エクスキューショナー,处刑人,劊子手
-Swapper,Swapper,Swapper,Swapper,挑衅者,Swapper
-SchrodingerCat,SchrodingerCat,SchrodingerCat,シュレディンガーの猫,薛定谔的猫,薛定諤的貓
+Jester,<color=#ec62a5>Jester</color>,Jester,ジェスター,小丑,小丑
+Phantom,<color=#662962>Phantom</color>,Phantom,Phantom,幻影
+Terrorist,<color=#00ff00>Terrorist</color>,Terrorist,テロリスト,恐怖分子,恐怖分子
+Executioner,<color=#C96600>Executioner</color>,Executioner,エクスキューショナー,处刑人,劊子手
+Swapper,<color=#66E666>Swapper</color>,Swapper,Swapper,挑衅者,Swapper
+SchrodingerCat,<color=#696969>SchrodingerCat</color>,SchrodingerCat,シュレディンガーの猫,薛定谔的猫,薛定諤的貓
 CSchrodingerCat,SchrodingerCat,SchrodingerCat,シュレディンガーの猫,薛定谔的猫,薛定諤的貓
 MSchrodingerCat,SchrodingerCat,SchrodingerCat,シュレディンガーの猫,薛定谔的猫,薛定諤的貓
 EgoSchrodingerCat,SchrodingerCat,SchrodingerCat,シュレディンガーの猫,薛定谔的猫,薛定諤的貓
@@ -143,59 +143,59 @@ MMSchrodingerCat,SchrodingerCat,SchrodingerCat,シュレディンガーの猫,�
 PesSchrodingerCat,SchrodingerCat,SchrodingerCat,シュレディンガーの猫,薛定谔的猫,薛定諤的貓
 WWSchrodingerCat,SchrodingerCat,SchrodingerCat,シュレディンガーの猫,薛定谔的猫,薛定諤的貓
 TGSchrodingerCat,SchrodingerCat,SchrodingerCat,シュレディンガーの猫,薛定谔的猫,薛定諤的貓
-Opportunist,Opportunist,Opportunist,オポチュニスト,投机者,投機主義者
-Chancer,Super Spy,Chancer,オポチュニスト,投机者,投機主義者
-Sellout,Super Spy,Sellout,オポチュニスト,投机者,投機主義者
+Opportunist,<color=#00ff00>Opportunist</color>,Opportunist,オポチュニスト,投机者,投機主義者
+Chancer,<color=#2AF5FF>Super Spy</color>,Chancer,オポチュニスト,投机者,投機主義者
+Sellout,<color=#2AF5FF>Super Spy</color>,Sellout,オポチュニスト,投机者,投機主義者
 Satan,Satan,Satan,オポチュニスト,投机者,投機主義者
-Hitman,Hitman,Hitman,Hitman,雇佣杀手
-Egoist,Egoist,Egoist,エゴイスト,野心家,利己主義者
-Lovers,Lovers,Lovers,恋人,恋人,戀人
-LoversRecode,Lovers,Lovers,恋人,恋人,戀人
-LoversWin,Lovers,Lovers,恋人,恋人,戀人
-Jackal,Serial Killer,Serial Killer,ジャッカル,豺狼,豺狼
-AgiTater,AgiTater,AgiTater,AgiTater,煽动者,AgiTater
-NeutWitch,Witch,Witch,Witch,巫女,Witch
-Sidekick,Hunter,Hunter,Sidekick,跟班
-PlagueBearer,PlagueBearer,PlagueBearer,PlagueBearer,疫医,疫醫
-Pestilence,Pestilence,Pestilence,Pestilence,瘟神,感染者
-Juggernaut,Juggernaut,Juggernaut,Juggernaut,欲望杀手,剑圣
-Postman,Postman,Postman,Postman,邮递员,Postman
-Marksman,Marksman,Marksman,Marksman,神射手
-PoisonMaster,Poison Master,Poison Master,Poison Master,制毒师
-Vulture,Vulture,Vulture,Vulture,秃鹫,禿鷹
-Werewolf,Werewolf,Werewolf,Werewolf,狼人,狼人
-TheGlitch,The Glitch,The Glitch,The Glitch,混沌,毛刺
+Hitman,<color=#ce1924>Hitman</color>,Hitman,Hitman,雇佣杀手
+Egoist,<color=#5600ff>Egoist</color>,Egoist,エゴイスト,野心家,利己主義者
+Lovers,<color=#FF66CC>Lovers</color>,Lovers,恋人,恋人,戀人
+LoversRecode,<color=#FF66CC>Lovers</color>,Lovers,恋人,恋人,戀人
+LoversWin,<color=#FF66CC>Lovers</color>,Lovers,恋人,恋人,戀人
+Jackal,<color=#00b4eb>Serial Killer</color>,Serial Killer,ジャッカル,豺狼,豺狼
+AgiTater,<color=#F4A460>AgiTater</color>,AgiTater,AgiTater,煽动者,AgiTater
+NeutWitch,<color=#592e98>Witch</color>,Witch,Witch,巫女,Witch
+Sidekick,<color=#00b4eb>Hunter</color>,Hunter,Sidekick,跟班
+PlagueBearer,<color=#E6FFB3>PlagueBearer</color>,PlagueBearer,PlagueBearer,疫医,疫醫
+Pestilence,<color=#670038>Pestilence</color>,Pestilence,Pestilence,瘟神,感染者
+Juggernaut,<color=#670038>Juggernaut</color>,Juggernaut,Juggernaut,欲望杀手,剑圣
+Postman,<color=#989898>Postman</color>,Postman,Postman,邮递员,Postman
+Marksman,<color=#440101>Marksman</color>,Marksman,Marksman,神射手
+PoisonMaster,<color=#ed2f91>Poison Master</color>,Poison Master,Poison Master,制毒师
+Vulture,<color=#a36727>Vulture</color>,Vulture,Vulture,秃鹫,禿鷹
+Werewolf,<color=#A86629>Werewolf</color>,Werewolf,Werewolf,狼人,狼人
+TheGlitch,<color=#00FF00>The Glitch</color>,The Glitch,The Glitch,混沌,毛刺
 GuardianAngelTOU,Guardian Angel,Guardian Angel,Guardian Angel,守护天使,守護天使
-Amnesiac,Amnesiac,Amnesiac,Amnesiac,窃忆者,遗忘大师
-Hacker,Hacker,Hacker,Hacker,黑客,黑客
-BloodKnight,Blood Knight,Blood Knight,BloodKnight,嗜血骑士
-Pirate,Pirate,Pirate,Pirate,海盗
-Dracula,Dracula,Dracula,Dracula,Dracula,Dracula
-Lawyer,Lawyer,Lawyer,Lawyer,Lawyer,Lawyer
-Hustler,Hustler,Hustler,Hustler,窃票者,Hustler
+Amnesiac,<color=#81DDFC>Amnesiac</color>,Amnesiac,Amnesiac,窃忆者,遗忘大师
+Hacker,<color=#358013>Hacker</color>,Hacker,Hacker,黑客,黑客
+BloodKnight,<color=#630000>Blood Knight</color>,Blood Knight,BloodKnight,嗜血骑士
+Pirate,<color=#EDC240>Pirate</color>,Pirate,Pirate,海盗
+Dracula,<color=#FA6C6C>Dracula</color>,Dracula,Dracula,Dracula,Dracula
+Lawyer,<color=#9F9314>Lawyer</color>,Lawyer,Lawyer,Lawyer,Lawyer
+Hustler,<color=#93E1D8>Hustler</color>,Hustler,Hustler,窃票者,Hustler
 
 # Coven 
-Coven,Coven,Coven,Coven,巫师,巫師
-Poisoner,Poisoner,Poisoner,Poisoner,毒师,毒藥
-CovenWitch,Coven Leader,Witch,Witch,巫师团领袖,巫婆
-HexMaster,Hex Master,Hex Master,Hex Master,魔法师,妖術大師
-PotionMaster,Potion Master,Potion Master,Potion Master,药剂师,藥水大師
-Medusa,Medusa,Medusa,Medusa,美杜莎,美杜莎
-Mimic,Mimic,Mimic,Mimic,模仿师,模仿者
-Necromancer,Necromancer,Necromancer,Necromancer,亡灵法师,死靈法師
-Conjuror,Conjuror,Conjuror,Conjuror,魔术师,魔術師
+Coven,<color=#bd5dfd>Coven</color>,Coven,Coven,巫师,巫師
+Poisoner,<color=#bd5dfd>Poisoner</color>,Poisoner,Poisoner,毒师,毒藥
+CovenWitch,<color=#bd5dfd>Coven Leader</color>,Witch,Witch,巫师团领袖,巫婆
+HexMaster,<color=#bd5dfd>Hex Master</color>,Hex Master,Hex Master,魔法师,妖術大師
+PotionMaster,<color=#bd5dfd>Potion Master</color>,Potion Master,Potion Master,药剂师,藥水大師
+Medusa,<color=#bd5dfd>Medusa</color>,Medusa,Medusa,美杜莎,美杜莎
+Mimic,<color=#bd5dfd>Mimic</color>,Mimic,Mimic,模仿师,模仿者
+Necromancer,<color=#bd5dfd>Necromancer</color>v,Necromancer,Necromancer,亡灵法师,死靈法師
+Conjuror,<color=#bd5dfd>Conjuror</color>,Conjuror,Conjuror,魔术师,魔術師
 
 # Modifiers
-Flash,Flash,Flash,Flash,闪电侠,閃電俠
-TieBreaker,TieBreaker,TieBreaker,TieBreaker,破局者,殘局終結者
-Diseased,Diseased,Diseased,Diseased,患者,Diseased
-Obvious,Obvious,Obvious,Obvious,广播员,Obvious
-Oblivious,Oblivious,Oblivious,Oblivious,胆小鬼,膽小鬼
-Bewilder,Bewilder,Bewilder,Bewilder,迷幻者,致幻師
-Torch,Torch,Torch,Torch,火炬手,火炬手
+Flash,<color=#FF8080>Flash</color>,Flash,Flash,闪电侠,閃電俠
+TieBreaker,<color=#99E699>TieBreaker</color>,TieBreaker,TieBreaker,破局者,殘局終結者
+Diseased,<color=#AAAAAA>Diseased</color>,Diseased,Diseased,患者,Diseased
+Obvious,<color=#D3D3D3>Obvious</color>,Obvious,Obvious,广播员,Obvious
+Oblivious,<color=#808080>Oblivious</color>,Oblivious,Oblivious,胆小鬼,膽小鬼
+Bewilder,<color=#292644>Bewilder</color>,Bewilder,Bewilder,迷幻者,致幻師
+Torch,<color=#FFFF99>Torch</color>,Torch,Torch,火炬手,火炬手
 NoSubRoleAssigned,None,Нету,NoSubRoleAssigned,无,NoSubRoleAssigned
-Escalation,Escalation,Escalation,Escalation,恐惧者,Escalation
-DoubleShot,Double Shot,DoubleShot,DoubleShot,DoubleShot
+Escalation,<color=#FFB34D>Escalation</color>,Escalation,Escalation,恐惧者,Escalation
+DoubleShot,<color=#ff0000>Double Shot</color>,DoubleShot,DoubleShot,DoubleShot
 
 # HideAndSeek
 HASFox,Fox,Fox,狐,狐狸,狐妖
@@ -485,7 +485,7 @@ MediumInfoLong,"(Crewmates):\nThe Medium is basically Sleuth but for the killer.
 AlturistInfoLong,"(Crewmates):\nThe Alturist can use the report button to revive someone back from the dead. Due to bugs, the revived person will self report the Alturist's body as the game still thinks they are dead and gives them Ghost Powers.","(Член Экипажа):\nАльтурист может нажать на кнопку репорта, чтобы воскресить игрока из мертвых. Из-за ошибок возрожденный игрок сам зарепортит труп Альтруиста, поскольку игра все еще считает его мертвым и дает ему призрачные силы.","(Crewmates):\nInfo unfinished.","(船员阵营):\n祭师可以使用报告键牺牲将人救活。但是有一个bug，按下报告键后，被复活的玩家会自我报告尸体，游戏仍然判定他们已经死亡，让他可以与幽灵聊天"
 TimeManagerInfoLong,"(Crewmates):\nEvery kill adds time to discussion and voting time in meeting.\nDepending on option, the gained time is returned after they die.","(Предатель):\nКаждое его убийство сокращает время обсуждения и голосования на собраниях.\nВ зависимости от настроек потерянное время возвращается после того как он будет убит или изгнан","(インポスター陣営):\nキルを行うと会議時間が減少する。\nタイムシーフが追放または殺害されると、失われた会議時間が返ってきます。","(伪装者阵营):\n蚀时者每击杀一个人，会议持续时间将减少一定时间。\n如果蚀时者死亡，被偷取的时间的会议时间会返还。","(狼人陣營):\n時間小偷每次殺人將會減少會議時間\n如果時間小偷被丟出或被殺死,減少的會議時間將會回來"
 ReviverInfoLong,"<color=#C547FF>(Crewmates):\nBring the person back to life that you report. You cant report Imp bodys. ","(Нейтрал):\nУкради чью-то роль, нажав кнопку репорта.","(Neutral):\nInfo unfinished.","(中立阵营):\n通过点击报告键，来窃取其他人的职业。"
-WizardInfoLong,"<color=#D0FF00>(Crewmates):\nThe Wizard can vent to temporarily turn invisible. \nVent to turn invisible. \nThe Wizard can only vent to go insivible.","(伪装者阵营):\n隐身人可以通过使用通风管道键在一段时间隐身，这意味着当隐身人杀死同命爆手后，他的隐身效果就结束了。\n隐身人永远不能长时间使用通风通风口。"
+WizardInfoLong,"<color=#1D90E8>(Crewmates):\nThe Wizard can vent to temporarily turn invisible. \nVent to turn invisible. \nThe Wizard can only vent to go insivible.","(伪装者阵营):\n隐身人可以通过使用通风管道键在一段时间隐身，这意味着当隐身人杀死同命爆手后，他的隐身效果就结束了。\n隐身人永远不能长时间使用通风通风口。"
 KamikazeInfoLong,"<color=#13eaed>(Crewmate):\nWhen the Kamikaze dies they take their killer with them but watch out everyone can see your role when comms is on.","(Член Экипажа):\nКогда Kamikaze убивают, он залаживает бомбу в убийцу, давая ему несколько секунд, чтобы найти вентиляцию. \nЕсли он не вентанёться за какое то вовремя, то убийца совершает самоубийство.\nУбийца отмечен как Arsonist в виде треугольника.","(Crewmates):\nInfo unfinished.","(船员阵营):\n当同命爆手被击杀时，会对凶手的地面进行破坏，给凶手几秒中的时间去寻找通风通风口。\n如果没有在规定时间内进入通风通风口，凶手将会死亡。\n凶手会被标记“纵火犯”的三角形图标。"
 
 

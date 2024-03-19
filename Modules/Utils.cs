@@ -1023,6 +1023,7 @@ namespace TownOfHost
                 // if (role.RoleCannotBeInList()) continue;
                 if (role.IsVanilla()) continue;
                 if (role.IsEnable()) text += string.Format("\n{0}:{1}x{2}", GetRoleName(role), $"{PercentageChecker.CheckPercentage(role.ToString(), PlayerId, role: role)}%", role.GetCount());
+                
             }
             SendMessage(text, PlayerId);
         }
@@ -2750,9 +2751,9 @@ namespace TownOfHost
 
             return (infected, all);
         }
-        public static string SummaryTexts(byte id, bool disableColor = true)
+        public static string SummaryTexts(byte id, bool disableColor = false)
         {
-            string summary = $"{Helpers.ColorString(Main.PlayerColors[id], Main.AllPlayerNames[id])}<pos=25%> {Helpers.ColorString(GetRoleColor(Main.LastPlayerCustomRoles[id]), GetRoleName(Main.LastPlayerCustomRoles[id]))}{GetShowLastSubRolesText(id)}</pos><pos=44%> {GetProgressText(id)}</pos><pos=51%> {GetVitalText(id)}</pos>";
+            string summary = $"{Helpers.ColorString(Main.PlayerColors[id], Main.AllPlayerNames[id])}<pos=25%> {Helpers.ColorString(GetRoleColor(Main.LastPlayerCustomRoles[id]), GetRoleName(Main.LastPlayerCustomRoles[id]))}{GetShowLastSubRolesText(id)}</pos><pos=80%> {GetProgressText(id)}</pos><pos=90%> {GetVitalText(id)}</pos>";
             var killCountFound = Main.KillCount.TryGetValue(id, out var killAmt);
             if (killCountFound && killAmt != 0)
                 summary += $" [Kill Count: {killAmt}]";

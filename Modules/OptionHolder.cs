@@ -926,8 +926,8 @@ namespace TownOfHost
             SetupRoleOptions(20800, CustomRoles.Trapper, AmongUsExtensions.OptionType.Crewmate);
             TrapperBlockMoveTime = CustomOption.Create(20810, Color.white, "TrapperBlockMoveTime", AmongUsExtensions.OptionType.Crewmate, 5f, 1f, 180, 1, CustomRoleSpawnChances[CustomRoles.Trapper]);
             SetupSingleRoleOptions(200100, CustomRoles.Transporter, 1, AmongUsExtensions.OptionType.Crewmate);
-            NumOfTransports = CustomOption.Create(200110, Color.white, "NumOfTransports", AmongUsExtensions.OptionType.Crewmate, 10, 1, 15, 1, CustomRoleSpawnChances[CustomRoles.Transporter]);
-            TransportCooldown = CustomOption.Create(200120, Color.white, "TransportCooldown", AmongUsExtensions.OptionType.Crewmate, 20, 2.5f, 180, 2.5f, CustomRoleSpawnChances[CustomRoles.Transporter]);
+            NumOfTransports = CustomOption.Create(200110, Color.white, "NumOfTransports", AmongUsExtensions.OptionType.Crewmate, 10, 1, 99, 1, CustomRoleSpawnChances[CustomRoles.Transporter]);
+            TransportCooldown = CustomOption.Create(200120, Color.white, "TransportCooldown", AmongUsExtensions.OptionType.Crewmate, 20, 1f, 180, 2.5f, CustomRoleSpawnChances[CustomRoles.Transporter]);
             SetupRoleOptions(20002, CustomRoles.Demolitionist, AmongUsExtensions.OptionType.Crewmate);
             DemoSuicideTime = CustomOption.Create(20004, Color.white, "DemoSuicideTime", AmongUsExtensions.OptionType.Crewmate, 5f, 1f, 180, 1, CustomRoleSpawnChances[CustomRoles.Demolitionist]);
             SetupSingleRoleOptions(20010, CustomRoles.Veteran, 1, AmongUsExtensions.OptionType.Crewmate);

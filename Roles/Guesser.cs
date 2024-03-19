@@ -319,19 +319,19 @@ namespace TownOfHost
                 case CustomRoles.Assassin:
                     for (var n = 1; n <= RoleAndNumberAss.Count(); n++)
                     {
-                        text += string.Format("{0}:{1}\n", RoleAndNumberAss[n], n);
+                        text += string.Format("{0}:{1}\n", Utils.GetRoleName(RoleAndNumberAss[n]), n);
                     }
                     break;
                 case CustomRoles.NiceGuesser:
                     for (var n = 1; n <= RoleAndNumber.Count(); n++)
                     {
-                        text += string.Format("{0}:{1}\n", RoleAndNumber[n], n);
+                        text += string.Format("{0}:{1}\n", Utils.GetRoleName(RoleAndNumber[n]), n);
                     }
                     break;
                 case CustomRoles.Pirate:
                     for (var n = 1; n <= RoleAndNumberPirate.Count(); n++)
                     {
-                        text += string.Format("{0}:{1}\n", RoleAndNumberPirate[n], n);
+                        text += string.Format("{0}:{1}\n", Utils.GetRoleName(RoleAndNumberPirate[n]), n);
                     }
                     break;
             }
