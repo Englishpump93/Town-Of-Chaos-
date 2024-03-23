@@ -1647,7 +1647,10 @@ namespace TownOfHost
                             if (player.GetCustomRole() is not CustomRoles.Assassin and not CustomRoles.NiceGuesser) continue;
                             break;
                         case CustomRoles.Torch:
-                            if (player.Is(CustomRoles.Lighter)) continue;
+                            if (player.GetCustomRole() is CustomRoles.Lighter or CustomRoles.BountyHunter or CustomRoles.Vampire or CustomRoles.Vampress or CustomRoles.Escapist or CustomRoles.Creeper or CustomRoles.Witch or CustomRoles.Silencer or CustomRoles.Warlock or CustomRoles.Consort or CustomRoles.Morphling or CustomRoles.SerialKiller or CustomRoles.Mare or CustomRoles.ImpostorGhost or CustomRoles.Puppeteer or CustomRoles.TimeThief or CustomRoles.Mafia or CustomRoles.FireWorks or CustomRoles.IdentityTheft or CustomRoles.Bomber or CustomRoles.Manipulator or CustomRoles.Sniper or CustomRoles.Swooper or CustomRoles.Camouflager or CustomRoles.Pickpocket or CustomRoles.YingYanger or CustomRoles.Grenadier or CustomRoles.Freezer or CustomRoles.Cleaner or CustomRoles.Miner or CustomRoles.Ninja or CustomRoles.CorruptedSheriff or CustomRoles.Disperser or CustomRoles.Assassin) continue;
+                            break;
+                        case CustomRoles.Trapper:
+                            if (player.Is(CustomRoles.Kamikaze)) continue;
                             break;
                         case CustomRoles.Doctor:
                             if (player.GetCustomRole() is CustomRoles.Paramedic or CustomRoles.PUMPkinsPotion) continue;

@@ -301,6 +301,16 @@ namespace TownOfHost
                         Utils.killercount(player);
                         canceled = true;
                         break;
+                    case "/tpout":
+                        canceled = true;
+                        if (!GameStates.IsLobby) break;
+                        PlayerControl.LocalPlayer.RpcTeleport(new UnityEngine.Vector2(0.1f, 6.4f));
+                        break;
+                    case "/tpin":
+                        canceled = true;
+                        if (!GameStates.IsLobby) break;
+                        PlayerControl.LocalPlayer.RpcTeleport(new UnityEngine.Vector2(-0.2f, 1.3f));
+                        break;
                     case "/perc":
                     case "/percentages":
                         canceled = true;
@@ -1110,8 +1120,16 @@ namespace TownOfHost
                 case "/kc":
                 case "/kcount":
                     Utils.killercount(player);
-
                     break;
+                case "/tpout":
+                    if (!GameStates.IsLobby) break;
+                    player.RpcTeleport(new UnityEngine.Vector2(0.1f, 6.4f));
+                    break;
+                case "/tpin":
+                    if (!GameStates.IsLobby) break;
+                    player.RpcTeleport(new UnityEngine.Vector2(-0.2f, 1.3f));
+                    break;
+                    
                 case "/perc":
                 case "/percentages":
                     Utils.ShowPercentages(player.PlayerId);

@@ -2407,6 +2407,76 @@ namespace TownOfHost
                 }
             }
         }
+        public static void RpcTeleport(this PlayerControl player, Vector2 location, bool isRandomSpawn = false, bool sendInfoInLogs = true)
+        {
+            if (sendInfoInLogs)
+            {
+                Logger.Info($" {player.GetNameWithRole().RemoveHtmlTags()} => {location}", "RpcTeleport");
+                Logger.Info($" Player Id: {player.PlayerId}", "RpcTeleport");
+            }
+
+            // Don't check player status during random spawn
+            if (!isRandomSpawn)
+            {
+                var cancelTeleport = false;
+
+                if (player.inVent
+                    || player.MyPhysics.Animations.IsPlayingEnterVentAnimation())
+                {
+                    Logger.Info($"Target: ({player.GetNameWithRole().RemoveHtmlTags()}) in vent", "RpcTeleport");
+                    cancelTeleport = true;
+                }
+
+                else if (player.onLadder
+                    || player.MyPhysics.Animations.IsPlayingAnyLadderAnimation())
+                {
+                    Logger.Warn($"Teleporting canceled - Target: ({player.GetNameWithRole().RemoveHtmlTags()}) is in on Ladder", "RpcTeleport");
+                    cancelTeleport = true;
+                }
+
+                else if (player.inMovingPlat)
+                {
+                    Logger.Warn($"Teleporting canceled - Target: ({player.GetNameWithRole().RemoveHtmlTags()}) use moving platform (Airship/Fungle)", "RpcTeleport");
+                    cancelTeleport = true;
+                }
+
+
+            }
+
+            var playerNetTransform = player.NetTransform;
+            var numHost = (ushort)(playerNetTransform.lastSequenceId + 6);
+            var numLocalClient = (ushort)(playerNetTransform.lastSequenceId + 48);
+            var numGlobal = (ushort)(playerNetTransform.lastSequenceId + 100);
+
+            // Host side
+            if (AmongUsClient.Instance.AmHost)
+            {
+                playerNetTransform.SnapTo(location, numHost);
+            }
+
+            var sender = CustomRpcSender.Create("TeleportPlayer");
+            {
+                // Local Teleport For Client
+                if (PlayerControl.LocalPlayer.PlayerId != player.PlayerId)
+                {
+                    sender.AutoStartRpc(playerNetTransform.NetId, (byte)RpcCalls.SnapTo, targetClientId: player.GetClientId());
+                    {
+                        NetHelpers.WriteVector2(location, sender.stream);
+                        sender.Write(numLocalClient);
+                    }
+                    sender.EndRpc();
+                }
+
+                // Global Teleport
+                sender.AutoStartRpc(playerNetTransform.NetId, (byte)RpcCalls.SnapTo);
+                {
+                    NetHelpers.WriteVector2(location, sender.stream);
+                    sender.Write(numGlobal);
+                }
+                sender.EndRpc();
+            }
+            sender.SendMessage();
+        }
 
         public static bool IsProtectedByMedic(PlayerControl player)
         {
@@ -2753,7 +2823,7 @@ namespace TownOfHost
         }
         public static string SummaryTexts(byte id, bool disableColor = false)
         {
-            string summary = $"{Helpers.ColorString(Main.PlayerColors[id], Main.AllPlayerNames[id])}<pos=25%> {Helpers.ColorString(GetRoleColor(Main.LastPlayerCustomRoles[id]), GetRoleName(Main.LastPlayerCustomRoles[id]))}{GetShowLastSubRolesText(id)}</pos><pos=80%> {GetProgressText(id)}</pos><pos=90%> {GetVitalText(id)}</pos>";
+            string summary = $"{Helpers.ColorString(Main.PlayerColors[id], Main.AllPlayerNames[id])} {Helpers.ColorString(GetRoleColor(Main.LastPlayerCustomRoles[id]), GetRoleName(Main.LastPlayerCustomRoles[id]))}{GetShowLastSubRolesText(id)} {GetProgressText(id)} {GetVitalText(id)}";
             var killCountFound = Main.KillCount.TryGetValue(id, out var killAmt);
             if (killCountFound && killAmt != 0)
                 summary += $" [Kill Count: {killAmt}]";

@@ -83,6 +83,11 @@ New Additions:
 - transporter now has 99
 - /perc now shows in color
 - /l and /shoot show now have color
+- Added /tpout and /tpin from tohe as people join and do it lmao 
+- fixxed /l words covering each other
+- blocked impsand torch
+- blocked trapper and kamikaze
+- Added IdentityTheft to /info
 - more changes but honestly i forgot
 
 
