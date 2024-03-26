@@ -32,29 +32,29 @@ namespace
     /// <summary>Provides access to the git information for the current assembly.</summary>
     public partial class Git
     {
-      /// <summary>IsDirty: false</summary>
-      public const bool IsDirty = false;
+      /// <summary>IsDirty: true</summary>
+      public const bool IsDirty = true;
 
-      /// <summary>IsDirtyString: false</summary>
-      public const string IsDirtyString = "false";
+      /// <summary>IsDirtyString: true</summary>
+      public const string IsDirtyString = "true";
 
-      /// <summary>Branch: master</summary>
-      public const string Branch = "master";
+      /// <summary>Branch: main</summary>
+      public const string Branch = "main";
 
-      /// <summary>Commit: </summary>
-      public const string Commit = "";
+      /// <summary>Commit: 661c76a</summary>
+      public const string Commit = "661c76a";
 
-      /// <summary>Sha: </summary>
-      public const string Sha = "";
+      /// <summary>Sha: 661c76a51a2f6311da48a3debd7d2aaaedd67e99</summary>
+      public const string Sha = "661c76a51a2f6311da48a3debd7d2aaaedd67e99";
 
-      /// <summary>Commits on top of base version: 0</summary>
-      public const string Commits = "0";
+      /// <summary>Commits on top of base version: 22</summary>
+      public const string Commits = "22";
 
-      /// <summary>Tag: </summary>
-      public const string Tag = "";
+      /// <summary>Tag: Chaos2.8.1-7-g661c76a</summary>
+      public const string Tag = "Chaos2.8.1-7-g661c76a";
 
-      /// <summary>Base tag: </summary>
-      public const string BaseTag = "";
+      /// <summary>Base tag: Chaos2.8.1</summary>
+      public const string BaseTag = "Chaos2.8.1";
 
       /// <summary>Provides access to the base version information used to determine the <see cref="SemVer" />.</summary>      
       public partial class BaseVersion
@@ -78,8 +78,8 @@ namespace
         /// <summary>Minor: 0</summary>
         public const string Minor = "0";
 
-        /// <summary>Patch: 0</summary>
-        public const string Patch = "0";
+        /// <summary>Patch: 22</summary>
+        public const string Patch = "22";
 
         /// <summary>Label: </summary>
         public const string Label = "";

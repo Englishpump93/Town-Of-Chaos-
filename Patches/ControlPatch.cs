@@ -389,12 +389,12 @@ namespace TownOfHost
                     ShipStatus.Instance.RpcUpdateSystem(SystemTypes.Doors, 81);
                     ShipStatus.Instance.RpcUpdateSystem(SystemTypes.Doors, 82);
                 }
-            if (Input.GetKeyDown(KeyCode.I))
+            /*if (Input.GetKeyDown(KeyCode.I))
             {
                 var pos = PlayerControl.LocalPlayer.GetTruePosition().ToString();
                 Logger.Info(pos, "GetLocalPlayerPos");
                 Logger.SendInGame($"position: {pos}");
-            } 
+            } */
             //ShipStatus.Instance.
             if (Input.GetKeyDown(KeyCode.U))
             {

@@ -165,6 +165,7 @@ namespace TownOfHost
                 CustomRoles.EgoSchrodingerCat or
                 CustomRoles.GuardianAngelTOU or
                 CustomRoles.Lawyer or
+                CustomRoles.Pirate or
                 CustomRoles.Amnesiac or
                 CustomRoles.JSchrodingerCat or
                 CustomRoles.Hacker;
@@ -214,7 +215,6 @@ namespace TownOfHost
                 CustomRoles.AgiTater or
                 CustomRoles.Marksman or
                 CustomRoles.Werewolf or
-                CustomRoles.Pirate or
                 CustomRoles.BloodKnight or
                 CustomRoles.Juggernaut or
                 CustomRoles.Hustler or
@@ -469,11 +469,78 @@ namespace TownOfHost
         public static bool PetActivatedAbility(this CustomRoles role)
         {
             return
-                role is CustomRoles.Veteran or
-                CustomRoles.Miner or
-                CustomRoles.Escapist or
+                role is CustomRoles.Arsonist or
+                CustomRoles.Egoist or
+                CustomRoles.Jackal or
+                CustomRoles.PlagueBearer or
+                CustomRoles.Pestilence or
+                CustomRoles.CrewPostor or
+                CustomRoles.Satan or
+                CustomRoles.Magician or
+                CustomRoles.Sidekick or
                 CustomRoles.TheGlitch or
-                CustomRoles.Transporter;
+                CustomRoles.AgiTater or
+                CustomRoles.Marksman or
+                CustomRoles.Werewolf or
+                CustomRoles.Pirate or
+                CustomRoles.BloodKnight or
+                CustomRoles.Juggernaut or
+                CustomRoles.Hustler or
+                CustomRoles.Dracula or
+                CustomRoles.Jester or
+                CustomRoles.Vulture or
+                CustomRoles.Opportunist or
+                CustomRoles.Survivor or
+                CustomRoles.SchrodingerCat or
+                CustomRoles.Terrorist or
+                CustomRoles.Executioner or
+                CustomRoles.EgoSchrodingerCat or
+                CustomRoles.GuardianAngelTOU or
+                CustomRoles.Lawyer or
+                CustomRoles.Amnesiac or
+                CustomRoles.JSchrodingerCat or
+                CustomRoles.Hacker or
+                CustomRoles.Impostor or
+                CustomRoles.Shapeshifter or
+                CustomRoles.BountyHunter or
+                CustomRoles.Vampire or
+                CustomRoles.Vampress or
+                CustomRoles.Escapist or
+                CustomRoles.Creeper or
+                CustomRoles.Witch or
+                CustomRoles.Silencer or
+                CustomRoles.Warlock or
+                CustomRoles.Consort or
+                CustomRoles.Morphling or
+                CustomRoles.SerialKiller or
+                CustomRoles.Mare or
+                CustomRoles.ImpostorGhost or
+                CustomRoles.Puppeteer or
+                CustomRoles.TimeThief or
+                CustomRoles.Mafia or
+                CustomRoles.FireWorks or
+                CustomRoles.IdentityTheft or
+                CustomRoles.Bomber or
+                CustomRoles.Manipulator or
+                CustomRoles.Sniper or
+                CustomRoles.Swooper or
+                CustomRoles.Camouflager or
+                CustomRoles.Pickpocket or
+                CustomRoles.YingYanger or
+                CustomRoles.Grenadier or
+                CustomRoles.Freezer or
+                CustomRoles.Cleaner or
+                CustomRoles.Miner or
+                CustomRoles.Ninja or
+                CustomRoles.CorruptedSheriff or
+                CustomRoles.Disperser or
+                CustomRoles.Assassin or
+                CustomRoles.Sheriff or
+                CustomRoles.Wizard or
+                CustomRoles.Oracle or
+                CustomRoles.Bodyguard or
+                CustomRoles.Reviver or
+                CustomRoles.Paramedic;
         }
         public static bool IsEngineer(this CustomRoles role) //vents
         {

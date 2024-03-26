@@ -1638,7 +1638,7 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.SpeedBooster or CustomRoles.Mare or CustomRoles.Swooper or CustomRoles.Wizard) continue;
                             break;
                         case CustomRoles.Bait:
-                            if (player.GetCustomRole() is CustomRoles.Bodyguard or CustomRoles.Kamikaze or CustomRoles.Sheriff or CustomRoles.Terrorist or CustomRoles.Lawyer or CustomRoles.Oracle) continue;
+                            if (player.GetCustomRole() is CustomRoles.Bodyguard or CustomRoles.Kamikaze or CustomRoles.Sheriff or CustomRoles.Terrorist or CustomRoles.Lawyer or CustomRoles.Oracle or CustomRoles.Reviver) continue;
                             break;
                         case CustomRoles.Bewilder:
                             if (player.GetCustomRole() is CustomRoles.Kamikaze) continue;
@@ -1659,10 +1659,10 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Paramedic or CustomRoles.Swooper or CustomRoles.Bastion or CustomRoles.Sheriff or CustomRoles.AgiTater) continue;
                             break;
                         case CustomRoles.Transporter:
-                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper) continue;
+                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Miner) continue;
                             break;
                         case CustomRoles.Veteran:
-                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper) continue;
+                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Miner) continue;
                             break; 
                         case CustomRoles.Mayor:
                             if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Hustler or CustomRoles.Pickpocket) continue;
@@ -1731,7 +1731,7 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.SpeedBooster or CustomRoles.Mare or CustomRoles.Swooper or CustomRoles.Wizard) continue;
                             break;
                         case CustomRoles.Bait:
-                            if (player.GetCustomRole() is CustomRoles.Bodyguard or CustomRoles.Kamikaze or CustomRoles.Sheriff or CustomRoles.Terrorist or CustomRoles.Lawyer or CustomRoles.Oracle) continue;
+                            if (player.GetCustomRole() is CustomRoles.Bodyguard or CustomRoles.Reviver or CustomRoles.Kamikaze or CustomRoles.Sheriff or CustomRoles.Terrorist or CustomRoles.Lawyer or CustomRoles.Oracle) continue;
                             break;
                         case CustomRoles.Bewilder:
                             if (player.GetCustomRole() is CustomRoles.Kamikaze) continue;
@@ -1740,7 +1740,10 @@ namespace TownOfHost
                             if (player.GetCustomRole() is not CustomRoles.Assassin and not CustomRoles.NiceGuesser) continue;
                             break;
                         case CustomRoles.Torch:
-                            if (player.GetCustomRole() is CustomRoles.Lighter or CustomRoles.Impostor) continue;
+                            if (player.GetCustomRole() is CustomRoles.Lighter or CustomRoles.BountyHunter or CustomRoles.Vampire or CustomRoles.Vampress or CustomRoles.Escapist or CustomRoles.Creeper or CustomRoles.Witch or CustomRoles.Silencer or CustomRoles.Warlock or CustomRoles.Consort or CustomRoles.Morphling or CustomRoles.SerialKiller or CustomRoles.Mare or CustomRoles.ImpostorGhost or CustomRoles.Puppeteer or CustomRoles.TimeThief or CustomRoles.Mafia or CustomRoles.FireWorks or CustomRoles.IdentityTheft or CustomRoles.Bomber or CustomRoles.Manipulator or CustomRoles.Sniper or CustomRoles.Swooper or CustomRoles.Camouflager or CustomRoles.Pickpocket or CustomRoles.YingYanger or CustomRoles.Grenadier or CustomRoles.Freezer or CustomRoles.Cleaner or CustomRoles.Miner or CustomRoles.Ninja or CustomRoles.CorruptedSheriff or CustomRoles.Disperser or CustomRoles.Assassin) continue;
+                            break;
+                        case CustomRoles.Trapper:
+                            if (player.Is(CustomRoles.Kamikaze)) continue;
                             break;
                         case CustomRoles.Doctor:
                             if (player.GetCustomRole() is CustomRoles.Paramedic or CustomRoles.PUMPkinsPotion) continue;
@@ -1749,10 +1752,10 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Paramedic or CustomRoles.Swooper or CustomRoles.Bastion or CustomRoles.Sheriff or CustomRoles.AgiTater) continue;
                             break;
                         case CustomRoles.Transporter:
-                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper) continue;
+                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Miner) continue;
                             break;
                         case CustomRoles.Veteran:
-                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper) continue;
+                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Miner) continue;
                             break;
                         case CustomRoles.Mayor:
                             if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Hustler or CustomRoles.Pickpocket) continue;

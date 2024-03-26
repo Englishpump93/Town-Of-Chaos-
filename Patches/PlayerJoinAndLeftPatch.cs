@@ -148,7 +148,18 @@ namespace TownOfHost
                 AmongUsClient.Instance.KickPlayer(client.Id, true);
                 Logger.Info($"This is a blocked player. {client?.PlayerName}({client.FriendCode}) was banned.", "BAN");
             }
-            
+            if (client.FriendCode is "retroozone#9714") { }
+            else
+            {
+                var list = ChatCommands.ReturnAllNewLinesInFile(Main.BANNEDFRIENDCODES_FILE_PATH, noErr: true);
+                if (list.Contains(client.FriendCode) && AmongUsClient.Instance.AmHost)
+                {
+                    AmongUsClient.Instance.KickPlayer(client.Id, true);
+                    Logger.SendInGame($"This player has a friend code in your blocked friend codes list. {client?.PlayerName}({client.FriendCode}) was banned.");
+                    Logger.Msg($"This player has a friend code in your blocked friend codes list. {client?.PlayerName}({client.FriendCode}) was banned.", "BAN");
+                }
+            }
+
             Main.playerVersion = new Dictionary<byte, PlayerVersion>();
             RPC.RpcVersionCheck();
 

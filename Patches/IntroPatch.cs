@@ -473,6 +473,7 @@ namespace TownOfHost
                 foreach (var pc in PlayerControl.AllPlayerControls)
                 {
                     pc.RpcSetRole(RoleTypes.Shapeshifter);
+                    
                     pc.RpcResetAbilityCooldown();
                     if (pc.GetCustomRole().PetActivatedAbility())
                     {
@@ -483,9 +484,31 @@ namespace TownOfHost
                 if (givePets)
                 {
                     Main.CanUseShapeshiftAbilites = false;
-                    _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => PetUtils.SetPet(pc, "pet_Doggy", true)), 0.3f, "Grant Pet For Everyone");
-                    _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => pc.RpcShapeshift(pc, false)), 0.4f, "Show Pet For Everyone");
-                    _ = new LateTask(() => Main.CanUseShapeshiftAbilites = true, 1f, "Can Shapeshift");
+                    _ = new LateTask(() => {
+                        var petOptions = new List<string>
+                        {
+                            "pet_Robot", 
+                            "pet_poro", //sleepy
+                            "pet_test",  //me
+                            "pet_clank", //mama
+                            "pet_Cube", 
+                            "pet_YuleGoatPet", //cat
+                            "pet_Crewmate",   //lina
+                            "pet_Hamster",    //spicy
+                            "pet_BredPet",    //timmay
+                            "pet_Pusheen",   // bow
+                            "pet_ChewiePet"  //howdy
+                        };
+
+                        foreach (var pc in PlayerControl.AllPlayerControls)
+                        {
+                            int index = UnityEngine.Random.Range(0, petOptions.Count);
+                            string petId = petOptions[index];
+                            PetUtils.SetPet(pc, petId, true);
+                        }
+                    }, 9f, "Grant Random Pet");
+                    _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => pc.RpcShapeshift(pc, false)), 9.4f, "Show Pet For Everyone");
+                    _ = new LateTask(() => Main.CanUseShapeshiftAbilites = true, 10f, "Can Shapeshift");
                 }
 
                 if (PlayerControl.LocalPlayer.Is(CustomRoles.GM))

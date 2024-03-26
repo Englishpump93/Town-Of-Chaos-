@@ -40,6 +40,7 @@ namespace TownOfHost
         public static readonly string KOFISARH_FILE_PATH = "./CHAOS/fluffycord#2605.txt";
         public static readonly string MEH_FILE_PATH = "./CHAOS/basketsane#0222.txt";
         public static readonly string KOFIAZA_FILE_PATH = "./CHAOS/tidalcliff#9534.txt";
+        public static readonly string KOFISPICY_FILE_PATH = "./CHAOS/smokyspawn#9072.txt";
         public static readonly string KOFITASHA_FILE_PATH = "./CHAOS/awayfluid#4720.txt";
         public static readonly string HOWTO_FILE_PATH = "./CHAOS/HOW-TO-MAKE-TAGS.txt";
         public static readonly string NEWTAG_FILE_PATH = "./CHAOS/NEW-TAG.txt";
@@ -48,7 +49,7 @@ namespace TownOfHost
         public static readonly string RSETTINGS_FILE_PATH = @"CHAOS\RSETTINGS.txt";
         public static readonly string DiscordInviteUrl = "https://discord.gg/tohtor";
         public static readonly bool ShowDiscordButton = true;
-        public const string PluginVersion = "0.3.3.4";
+        public const string PluginVersion = "0.3.3.5";
         public const string DevVersion = "2.2";
         public const string FullDevVersion = $" dev {DevVersion}";
         public Harmony Harmony { get; } = new Harmony(PluginGuid);
@@ -1641,7 +1642,7 @@ namespace TownOfHost
                     else
                     {
                         TownOfHost.Logger.Info("No bannedwords.txt file found.", "BannedWordsManager");
-                        File.WriteAllText(BANNEDWORDS_FILE_PATH, $"Enter banned words here. Note, the game will take each message and turn each character into the lowercase version. So no need to include every variation of one word.");
+                        File.WriteAllText(BANNEDWORDS_FILE_PATH, $"Enter banned words here. Note, the game will take each message and turn each character into the lowercase version. So no need to include every variation of one word.\nPumpkins ban list\n\nlinogrown#6060\nbornbee#4439\nlovelypea#0516\nvapourvast#7097\nsmallbaths#2251\nspicylyric#2183\nfoo1dbriny#6393\nepicgoody#3160\nfoxcounter#6496\ngoodradar#5527\npandanovel#9054\nazurebay#4412\nsiltyexam#8486\nmeetcrab#7430\nbumperkelp#7132\ncookcopper#6239\nsparemetre#1375\nbeigecombe#8288\nknightepic#7360\nbayplain#9552\nlatesister#1912\nfeetwide#3066\nsparnoble#7435\nthreesnail#4885\naptbride#8352\neachspree#6165\nlonebreach#0115\nvertexhazy#8624\nfeetwide#3066\nvertexhazy#8624\nremotepath#4241\nbasekitbag#6327\ncomicgood#7981\nfawnhusky#3075\nuneventap#8652\nroseclever#7362\nheatarcane#3621\nawakecrust#4001\nmuskthere#0265\ncordredox#2417\njewelquits#3303\nmammothant#5088\ndualdray#1844\nbronzebag#7233\nhomingship#3425\nparkclose#1584\nshadowytap#6175\nforgesnowy#1587\nwavywire#7713\nhaleloft#7027\nsaneclaw#8255\nmanyforage#2072\nsteelrose#8082\npucefaun#1428\nsupermodel#0428\npillsleepy#3873\ngaolhalf#1964\nfoamcrisp#5124\nrosefiscal#4338\ndawndear#3200\nmutualcash#3783\nfirelean#9988\noastsmooth#5367\noffsidecar#6572\nfuturehalf#6722\npupalsword#4551\nlatevoice#4590\nsoloruff#8162\nassuredsup#5171\npucechess#8964\ncoralwipe#5367\noffsideweb#1152\npuppink#0646\nfussroan#0329\ndigitalkin#3000\nstreamrare#3594\n\nMauls server ban list\n\nvestactive#8571\nlarvashy#8151\nhastyplan#7264\norderdamp#1354\ndustyfloor#6274\nworthpiano#7218\nbroadfence#3357\nsassymire#2326\nboldsnack#8139\ncrowminded#5961\nbroadbarn#7413\ntidytrice#2024\nprimjog#9187\njammylot#6327\nlorrybay#4026\nmotorenvoy#8792\nsoilstable#3054\npeakbass#6507\noccultdisc#1148\nroyalproof#3452\ncrispyweb#9129\n\n\n\nREPORTED HACKERS\npairseated#4990\nvestweird#1710\nsnaketangy#9830\nlipwavy#5535\nLIKE AND SUBSCRIBE FOR MODDED GAMES AT PUMPKINGAMING5548 ON YOUTUBE NEW CODE EVERYGAME");
                     }
                 }
                 catch (Exception ex)
@@ -1962,6 +1963,27 @@ namespace TownOfHost
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
                             File.WriteAllText(KOFITASHA_FILE_PATH, "type:sforce\r\ncode:awayfluid#4720\r\ncolor:#E10505\r\ntoptext: <color=#ffffff>♡</color><color=#FF3030>D</color><color=#FF4C28>I</color><color=#FF6820>S</color><color=#FF8518>C</color><color=#FFA110>O</color><color=#FFBD08>R</color><color=#FFD900>D</color><color=#FFD900>.</color><color=#C0D111>G</color><color=#82CA21>G</color><color=#43C232>/</color><color=#0AFFFB>M</color><color=#47BBDF>A</color><color=#8576C4>U</color><color=#C232A8>L</color><color=#ffffff>♡</color>\r\nname:<color=#FF00FF>TASHA</color>\r\nfontSizeTop:1.2\r\nfontSizeBottom:1.0");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TownOfHost.Logger.Exception(ex, "TemplateManager");
+                    }
+                }
+                //spicy
+                if (!File.Exists(KOFISPICY_FILE_PATH))
+                {
+                    try
+                    {
+                        if (!Directory.Exists(@"CHAOS")) Directory.CreateDirectory(@"CHAOS");
+                        if (File.Exists(@"./smokyspawn#9072.txt"))
+                        {
+                            File.Move(@"./smokyspawn#9072.txt", KOFISPICY_FILE_PATH);
+                        }
+                        else
+                        {
+                            TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
+                            File.WriteAllText(KOFISPICY_FILE_PATH, "type:sforce\r\ncode:smokyspawn#9072\r\ncolor:#F391EE\r\ntoptext:<color=#FF578B>CA</color><color=#FF6578>T </color><color=#FF7264>A</color><color=#FF7F50>ND </color><color=#F48D5F>L</color><color=#E99A6E>IN</color><color=#DEA77D>A'</color><color=#D2B48C>S B</color><color=#B6B2A6>A</color><color=#99AFC0>BY</color>\r\nname:<color=#99AFC0>B</color><color=#B6B2A6>A</color><color=#D2B48C>B</color><color=#DEA77D>Y </color><color=#E99A6E>S</color><color=#F48D5F>P</color><color=#FF7F50>I</color><color=#FF7264>C</color><color=#FF6578>E</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2\r\n");
                         }
                     }
                     catch (Exception ex)
