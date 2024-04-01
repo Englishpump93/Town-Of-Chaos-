@@ -608,6 +608,7 @@ Distance.Infinite,Infinite,Infinite,Infinite,Infinite,Infinite
 ColorNameMode,Color Name Mode,Цветной Режим,色名前モード,显示颜色名称,名字將被顏色名稱替換
 GhostCanSeeOtherRoles,KEEP THIS SETTING OFF,Призраки Могут Видеть Все Роли,幽霊が他人の役職を見ることができる,幽灵可见他人职业,幽靈可以看見所有玩家職業
 GhostCanSeeOtherVotes,Ghost Can See Other Votes,Призраки Могут Видеть Цвета Голосов,幽霊が他人の投票先を見ることができる,幽灵可见投票情况,幽靈可以看見所有玩家的投票
+CrazyPets,Crazy Pets (NO SS ROLES),Призраки Могут Видеть Цвета Голосов,幽霊が他人の投票先を見ることができる,幽灵可见投票情况,幽靈可以看見所有玩家的投票
 KickPlayerFriendCodeNotExist,FORCE SHOWN FRINDCODE,Призраки Могут Видеть Цвета Голосов,幽霊が他人の投票先を見ることができる,幽灵可见投票情况,幽靈可以看見所有玩家的投票
 HideGameSettings,Hide Game Settings,Скрыть Настройки Игры,ゲーム設定を隠す,隐藏游戏设置,隱藏遊戲設定
 RoleOptions,Role Options,Настройка Ролей,役職設定,职业设置,職業設定

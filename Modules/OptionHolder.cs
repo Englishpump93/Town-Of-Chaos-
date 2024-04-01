@@ -307,6 +307,7 @@ namespace TownOfHost
         public static CustomOption ColorNameMode;
         public static CustomOption GhostCanSeeOtherRoles;
         public static CustomOption GhostCanSeeOtherVotes;
+        public static CustomOption CrazyPets;
         public static CustomOption BodiesAmount;
         public static CustomOption ModifierRestrict;
 
@@ -1137,6 +1138,8 @@ namespace TownOfHost
             GhostCanSeeOtherRoles = CustomOption.Create(100603, Color.white, "GhostCanSeeOtherRoles", AmongUsExtensions.OptionType.GameOption, true)
                 .SetGameMode(CustomGameMode.All);
             GhostCanSeeOtherVotes = CustomOption.Create(100604, Color.white, "GhostCanSeeOtherVotes", AmongUsExtensions.OptionType.GameOption, true)
+                .SetGameMode(CustomGameMode.All);
+            CrazyPets = CustomOption.Create(1006013, Color.white, "CrazyPets", AmongUsExtensions.OptionType.GameOption, true)
                 .SetGameMode(CustomGameMode.All);
             KickPlayerFriendCodeNotExist = CustomOption.Create(1006041, Color.red, "KickPlayerFriendCodeNotExist", AmongUsExtensions.OptionType.GameOption, true)
                 .SetGameMode(CustomGameMode.All);

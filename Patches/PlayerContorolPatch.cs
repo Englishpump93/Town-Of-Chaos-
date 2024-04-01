@@ -2126,6 +2126,43 @@ namespace TownOfHost
 
                 }
             }
+            if (target.Is(CustomRoles.Reviver))
+            {
+
+                // Get the Sellout
+                PlayerControl sellout = GetSellout();
+                if (sellout != null)
+                {
+
+                    if (sellout.Data.IsDead)
+                    {
+                        // Sellout is already dead, kill again
+                        sellout.RpcMurderPlayer(sellout);
+                    }
+
+                    sellout.RpcMurderPlayer(sellout);
+
+                }
+
+                // Get the Chancer
+                PlayerControl chancer = GetChancer();
+                if (chancer != null)
+                {
+
+                    if (chancer.Data.IsDead)
+                    {
+                        chancer.RpcMurderPlayer(chancer);
+                    }
+
+                    chancer.RpcMurderPlayer(chancer);
+
+                }
+
+                // Kill them
+                sellout.RpcMurderPlayer(sellout);
+                chancer.RpcMurderPlayer(chancer);
+
+            }
 
             PlayerState.SetDead(target.PlayerId);
             if (!Main.whoKilledWho.ContainsKey(target.Data.PlayerId))
@@ -2142,6 +2179,30 @@ namespace TownOfHost
             Utils.CountAliveImpostors();
             Utils.CustomSyncAllSettings();
             Utils.NotifyRoles();
+        }
+        private static PlayerControl GetSellout()
+        {
+            foreach (var player in PlayerControl.AllPlayerControls)
+            {
+                if (player.Is(CustomRoles.Sellout))
+                {
+                    return player;
+                }
+            }
+            return null;
+        }
+
+        private static PlayerControl GetChancer()
+        {
+            foreach (var player in PlayerControl.AllPlayerControls)
+            {
+                if (player.Is(CustomRoles.Chancer))
+                {
+                    return player;
+                }
+            }
+
+            return null;
         }
     }
     [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.Shapeshift))]

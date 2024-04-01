@@ -12,6 +12,7 @@ using AmongUs.GameOptions;
 using TownOfHost.Roles;
 using Il2CppInterop.Runtime.InteropTypes;
 using TownOfHost;
+using System.Timers;
 
 namespace TownOfHost
 {
@@ -470,11 +471,17 @@ namespace TownOfHost
             if (AmongUsClient.Instance.AmHost)
             {
                 bool givePets = false;
+                bool Cpets = false;
                 foreach (var pc in PlayerControl.AllPlayerControls)
                 {
                     pc.RpcSetRole(RoleTypes.Shapeshifter);
-                    
+
                     pc.RpcResetAbilityCooldown();
+
+                    if (Options.CrazyPets.GetBool() && pc.GetCustomRole().PetActivatedAbility())
+                    {
+                        Cpets = true;
+                    }
                     if (pc.GetCustomRole().PetActivatedAbility())
                     {
                         givePets = true;
@@ -487,11 +494,11 @@ namespace TownOfHost
                     _ = new LateTask(() => {
                         var petOptions = new List<string>
                         {
-                            "pet_Robot", 
+                            "pet_Robot",
                             "pet_poro", //sleepy
                             "pet_test",  //me
                             "pet_clank", //mama
-                            "pet_Cube", 
+                            "pet_Cube",
                             "pet_YuleGoatPet", //cat
                             "pet_Crewmate",   //lina
                             "pet_Hamster",    //spicy
@@ -504,11 +511,81 @@ namespace TownOfHost
                         {
                             int index = UnityEngine.Random.Range(0, petOptions.Count);
                             string petId = petOptions[index];
-                            PetUtils.SetPet(pc, petId, true);
+                            PetUtils.SetPet(pc, petId, true, "");
                         }
                     }, 9f, "Grant Random Pet");
+
                     _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => pc.RpcShapeshift(pc, false)), 9.4f, "Show Pet For Everyone");
                     _ = new LateTask(() => Main.CanUseShapeshiftAbilites = true, 10f, "Can Shapeshift");
+
+
+                }
+                if (Cpets)
+                {
+                    Main.CanUseShapeshiftAbilites = false;
+                    
+                    Timer petTimer = new Timer();
+
+                    petTimer.Elapsed += (sender, e) => {
+                        _ = new LateTask(() => {
+                            var petOptions = new List<string>
+                        {
+                            "pet_Robot",
+                            "pet_poro", //sleepy
+                            "pet_test",  //me
+                            "pet_clank", //mama
+                            "pet_Cube",
+                            "pet_YuleGoatPet", //cat
+                            "pet_Crewmate",   //lina
+                            "pet_Hamster",    //spicy
+                            "pet_BredPet",    //timmay
+                            "pet_Pusheen",   // bow
+                            "pet_ChewiePet"  //howdy
+                        };
+
+                            foreach (var pc in PlayerControl.AllPlayerControls)
+                            {
+                                int index = UnityEngine.Random.Range(0, petOptions.Count);
+                                string petId = petOptions[index];
+                                if (pc.PlayerId == 15 || pc.PlayerId == 3 || pc.PlayerId == 0 || pc.PlayerId == 11 || pc.PlayerId == 7)
+                                {
+                                    _ = new LateTask(() => {
+                                        PetUtils.SetPet(pc, petId, true);
+                                        pc.RpcShapeshift(pc, false);
+                                    }, 1f);
+                                }
+                                if (pc.PlayerId == 1 || pc.PlayerId == 4 || pc.PlayerId == 12 || pc.PlayerId == 8)
+                                {
+                                    _ = new LateTask(() => {
+                                        PetUtils.SetPet(pc, petId, true);
+                                        pc.RpcShapeshift(pc, false);
+                                    }, 2f);
+                                }
+                                if (pc.PlayerId == 2 || pc.PlayerId == 5 || pc.PlayerId == 13 || pc.PlayerId == 9)
+                                {
+                                    _ = new LateTask(() => {
+                                        PetUtils.SetPet(pc, petId, true);
+                                        pc.RpcShapeshift(pc, false);
+                                    }, 3f);
+                                }
+                                if (pc.PlayerId == 3 || pc.PlayerId == 6 || pc.PlayerId == 14 || pc.PlayerId == 10)
+                                {
+                                    _ = new LateTask(() => {
+                                        PetUtils.SetPet(pc, petId, true);
+                                        pc.RpcShapeshift(pc, false);
+                                    }, 4f);
+                                }
+                                else
+                                {
+                                    PetUtils.SetPet(pc, petId, true, "");
+                                }
+                            }
+                        }, 3f, "Grant Random Pet");
+                        
+                    };
+
+                    
+
                 }
 
                 if (PlayerControl.LocalPlayer.Is(CustomRoles.GM))

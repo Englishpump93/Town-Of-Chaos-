@@ -2,7 +2,7 @@
 
 public static class PetUtils
 {
-    public static void SetPet(PlayerControl player, string petId, bool applyNow = false)
+    public static void SetPet(PlayerControl player, string petId, bool applyNow = false, string prefix = null, float extraTime = 0f)
     {
         if (player.Is(CustomRoles.GM)) return;
         if (player.AmOwner) {
