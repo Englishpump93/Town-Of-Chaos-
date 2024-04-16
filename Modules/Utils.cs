@@ -248,7 +248,9 @@ namespace TownOfHost
 
             return (RoleText, GetRoleColor(cRole));
         }
-
+        public static string GetVitalTextDoc(byte player) =>
+            PlayerState.isDead[player] | GetPlayerById(player).Data.IsDead ? GetString("DeathReason." + PlayerState.GetDeathReason(player)) : GetString("Alive");
+        
         public static string GetVitalText(byte player) =>
             PlayerState.isDead[player] | GetPlayerById(player).Data.IsDead ? GetString("DeathReason." + PlayerState.GetDeathReason(player)) : GetString("Alive");
         public static (string, Color) GetRoleTextHideAndSeek(RoleTypes oRole, CustomRoles hRole)
@@ -932,6 +934,37 @@ namespace TownOfHost
             // Send message
             SendMessage(message, callingPlayer.PlayerId);
 
+        }
+        public static void ShowDeathCauses(PlayerControl player)
+        {
+            if (player.Is(CustomRoles.Doctor))
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var pc in PlayerControl.AllPlayerControls)
+                {
+                    if (pc.Data.IsDead)
+                    {
+                        sb.AppendLine($"{pc.GetRealName()}: {GetVitalText(pc.PlayerId)}");
+                    }
+                }
+                SendMessage(sb.ToString(), player.PlayerId);
+            }
+            if (player.Is(CustomRoles.Paramedic))
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var pc in PlayerControl.AllPlayerControls)
+                {
+                    if (pc.Data.IsDead)
+                    {
+                        sb.AppendLine($"{pc.GetNameWithRole()}: {GetVitalText(pc.PlayerId)}");
+                    }
+                }
+                SendMessage(sb.ToString(), player.PlayerId);
+            }
+            else
+            {
+                SendMessage("You do not have the ability to see death causes.", player.PlayerId);
+            }
         }
         public static void ShowDeathReason(PlayerControl player)
         {
@@ -1946,7 +1979,7 @@ namespace TownOfHost
 
                         //他人のタスクはtargetがタスクを持っているかつ、seerが死んでいる場合のみ表示されます。それ以外の場合は空になります。
                         string TargetTaskText = "";
-                        if (seer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool())
+                        if (seer.Data.IsDead && GameStates.IsMeeting && Options.GhostCanSeeOtherRoles.GetBool())
                             TargetTaskText = $"{GetProgressText(target)}";
 
                         //名前の後ろに付けるマーカー
@@ -2156,8 +2189,7 @@ namespace TownOfHost
                         
                             //他人の役職とタスクは幽霊が他人の役職を見れるようになっていてかつ、seerが死んでいる場合のみ表示されます。それ以外の場合は空になります。
                             string TargetRoleText = "";
-                        if (seer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool() || Main.rolesRevealedNextMeeting.Contains(target.PlayerId) && startOfMeeting)
-                            if (Options.GhostCanSeeOtherRoles.GetBool() || Main.rolesRevealedNextMeeting1.Contains(target.PlayerId) && startOfMeeting)
+                        if (seer.Data.IsDead && GameStates.IsMeeting && Options.GhostCanSeeOtherRoles.GetBool() || Main.rolesRevealedNextMeeting.Contains(target.PlayerId) && startOfMeeting)
                                 if (!Options.RolesLikeToU.GetBool())
                                 TargetRoleText = $"<size={fontSize}>{Helpers.ColorString(target.GetRoleColor(), target.GetRoleName())}{TargetTaskText}</size>\r\n";
                             else
@@ -2255,9 +2287,7 @@ namespace TownOfHost
                             target.PlayerId == LawyerTarget.Value) //target
                                 TargetMark += $"<color={Utils.GetRoleColorCode(CustomRoles.Lawyer)}>♦</color>";
                         }
-                        if (seer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool() || Main.rolesRevealedNextMeeting.Contains(target.PlayerId) && startOfMeeting)
-                            TargetPlayerName = Helpers.ColorString(GetRoleColor(target.GetCustomRole()), TargetPlayerName);
-                        if (Options.GhostCanSeeOtherRoles.GetBool() || Main.rolesRevealedNextMeeting1.Contains(target.PlayerId) && startOfMeeting)
+                        if (seer.Data.IsDead && GameStates.IsMeeting && Options.GhostCanSeeOtherRoles.GetBool() || Main.rolesRevealedNextMeeting.Contains(target.PlayerId) && startOfMeeting)
                             TargetPlayerName = Helpers.ColorString(GetRoleColor(target.GetCustomRole()), TargetPlayerName);
                         if (seer.Is(CustomRoles.HexMaster) && isMeeting)
                         {
@@ -2360,8 +2390,8 @@ namespace TownOfHost
                         }
 
                         string TargetDeathReason = "";
-                        if (seer.Is(CustomRoles.Doctor) && target.Data.IsDead && !seer.Data.IsDead)
-                            TargetDeathReason = $"({Helpers.ColorString(GetRoleColor(CustomRoles.Doctor), GetVitalText(target.PlayerId))})";
+                        if (seer.Is(CustomRoles.Doctor) && GameStates.IsMeeting && target.Data.IsDead && !seer.Data.IsDead)
+                            TargetDeathReason = $"({Helpers.ColorString(GetRoleColor(CustomRoles.Doctor), GetVitalTextDoc(target.PlayerId))})";
                         if (seer.Is(CustomRoles.Paramedic) && target.Data.IsDead && !seer.Data.IsDead)
                             TargetDeathReason = $"({Helpers.ColorString(GetRoleColor(CustomRoles.Paramedic), GetVitalText(target.PlayerId))})";
                         //全てのテキストを合成します。

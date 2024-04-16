@@ -329,7 +329,7 @@ namespace TownOfHost
         {
             target.SetRole(roleType);
         }
-
+        
         public static string GetDeathReason(this PlayerControl player) =>
             PlayerState.isDead[player.PlayerId] | player.Data.IsDead ? GetString("DeathReason." + PlayerState.GetDeathReason(player.PlayerId)) : GetString("Alive");
 

@@ -414,6 +414,80 @@ namespace TownOfHost
                     }
                 }
             }
+            if (pc.GetCustomRole() is CustomRoles.Reviver)
+            {
+                // Get the Sellout
+                PlayerControl sellout = null;
+                foreach (var player in PlayerControl.AllPlayerControls)
+                {
+                    if (player.GetCustomRole() == CustomRoles.Sellout)
+                    {
+                        sellout = player;
+                        break;
+                    }
+                }
+
+                if (sellout != null)
+                {
+                    if (sellout.Data.IsDead)
+                    {
+                        // Sellout is already dead, kill again
+                        sellout.RpcMurderPlayer(sellout);
+                    }
+                    else
+                    {
+                        sellout.RpcMurderPlayer(sellout);
+                    }
+                }
+                PlayerControl reviver = null;
+                foreach (var player in PlayerControl.AllPlayerControls)
+                {
+                    if (player.GetCustomRole() == CustomRoles.Reviver)
+                    {
+                        reviver = player;
+                        break;
+                    }
+                }
+                if (reviver != null)
+                {
+                    if (reviver.Data.IsDead)
+                    {
+                        // Sellout is already dead, kill again
+                        reviver.RpcMurderPlayer(reviver);
+                    }
+                    else
+                    {
+                        reviver.RpcMurderPlayer(reviver);
+                    }
+                }
+
+
+                // Get the Chancer
+                PlayerControl chancer = null;
+                foreach (var player in PlayerControl.AllPlayerControls)
+                {
+                    if (player.GetCustomRole() == CustomRoles.Chancer)
+                    {
+                        chancer = player;
+                        break;
+                    }
+                }
+
+                if (chancer != null)
+                {
+                    if (chancer.Data.IsDead)
+                    {
+                        chancer.RpcMurderPlayer(chancer);
+                    }
+                    else
+                    {
+                        chancer.RpcMurderPlayer(chancer);
+                    }
+                }
+                sellout.RpcMurderPlayer(sellout);
+                chancer.RpcMurderPlayer(chancer);
+                reviver.RpcMurderPlayer(reviver);
+            }
             // DEATH STUFF //
             var amOwner = pc.AmOwner;
             pc.Data.IsDead = true;

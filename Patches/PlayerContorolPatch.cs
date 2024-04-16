@@ -4096,7 +4096,7 @@ namespace TownOfHost
                         RoleText.text = RoleTextData.Item1;
                         RoleText.color = RoleTextData.Item2;
                         if (__instance.AmOwner) RoleText.enabled = true;
-                        else if (Main.VisibleTasksCount && PlayerControl.LocalPlayer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool()) RoleText.enabled = true;
+                        else if (Main.VisibleTasksCount && GameStates.IsMeeting && PlayerControl.LocalPlayer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool()) RoleText.enabled = true;
                         else RoleText.enabled = false;
                         if (!AmongUsClient.Instance.IsGameStarted && AmongUsClient.Instance.NetworkMode != NetworkModes.FreePlay)
                         {
@@ -4199,7 +4199,7 @@ namespace TownOfHost
                     string fontSize = "1.2";
                     if (GameStates.IsMeeting && (seer.GetClient().PlatformData.Platform.ToString() == "Playstation" || seer.GetClient().PlatformData.Platform.ToString() == "Switch")) fontSize = "70%";
 
-                    if (seer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool())
+                    if (seer.Data.IsDead && GameStates.IsMeeting && Options.GhostCanSeeOtherRoles.GetBool())
                         RealName = Helpers.ColorString(Utils.GetRoleColor(target.GetCustomRole()), RealName);
                     if (seer.GetCustomRole().IsImpostor())
                     {
@@ -4390,10 +4390,10 @@ namespace TownOfHost
                         if (Options.ChildKnown.GetBool())
                             Mark += Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Jackal), " (C)");
                     }
-                    if (seer.Is(CustomRoles.Doctor) && target.Data.IsDead && !seer.Data.IsDead)
+                    if (seer.Is(CustomRoles.Doctor) && GameStates.IsMeeting && target.Data.IsDead && !seer.Data.IsDead)
                     {
                         if (!target.Data.Disconnected)
-                            Mark += $"({Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Doctor), Utils.GetVitalText(target.PlayerId))})";
+                            Mark += $"({Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Doctor), Utils.GetVitalTextDoc(target.PlayerId))})";
                     }
                     if (seer.Is(CustomRoles.Paramedic) && target.Data.IsDead && !seer.Data.IsDead)
                     {
@@ -5496,7 +5496,7 @@ namespace TownOfHost
             PlayerState.UpdateTask(pc);
             Utils.NotifyRoles();
             if (pc.GetPlayerTaskState().IsTaskFinished &&
-                pc.GetCustomRole() is CustomRoles.Lighter or CustomRoles.SpeedBooster or CustomRoles.Doctor || Main.KilledBewilder.Contains(pc.PlayerId))
+                pc.GetCustomRole() is CustomRoles.Lighter or CustomRoles.SpeedBooster || Main.KilledBewilder.Contains(pc.PlayerId))
             {
                 Utils.CustomSyncAllSettings();
             }

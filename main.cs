@@ -42,6 +42,11 @@ namespace TownOfHost
         public static readonly string KOFIAZA_FILE_PATH = "./CHAOS/tidalcliff#9534.txt";
         public static readonly string KOFISPICY_FILE_PATH = "./CHAOS/smokyspawn#9072.txt";
         public static readonly string KOFITASHA_FILE_PATH = "./CHAOS/awayfluid#4720.txt";
+        //gifted tags
+        public static readonly string KOFISANS_FILE_PATH = "./CHAOS/fivedogged#3140.txt";
+        public static readonly string KOFIILOVECATS_FILE_PATH = "./CHAOS/seafast#4094.txt";
+        public static readonly string KOFIRAINY_FILE_PATH = "./CHAOS/sweetpouty#9258.txt";
+
         public static readonly string HOWTO_FILE_PATH = "./CHAOS/HOW-TO-MAKE-TAGS.txt";
         public static readonly string NEWTAG_FILE_PATH = "./CHAOS/NEW-TAG.txt";
         public static readonly string BANNEDWORDS_FILE_PATH = "./CHAOS/BANNEDWORDS.txt";
@@ -49,7 +54,7 @@ namespace TownOfHost
         public static readonly string RSETTINGS_FILE_PATH = @"CHAOS\RSETTINGS.txt";
         public static readonly string DiscordInviteUrl = "https://discord.gg/tohtor";
         public static readonly bool ShowDiscordButton = true;
-        public const string PluginVersion = "0.3.3.7";
+        public const string PluginVersion = "0.3.3.8";
         public const string DevVersion = "2.2";
         public const string FullDevVersion = $" dev {DevVersion}";
         public Harmony Harmony { get; } = new Harmony(PluginGuid);
@@ -1984,6 +1989,67 @@ namespace TownOfHost
                         {
                             TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
                             File.WriteAllText(KOFISPICY_FILE_PATH, "type:sforce\r\ncode:smokyspawn#9072\r\ncolor:#F391EE\r\ntoptext:<color=#FF578B>CA</color><color=#FF6578>T </color><color=#FF7264>A</color><color=#FF7F50>ND </color><color=#F48D5F>L</color><color=#E99A6E>IN</color><color=#DEA77D>A'</color><color=#D2B48C>S B</color><color=#B6B2A6>A</color><color=#99AFC0>BY</color>\r\nname:<color=#99AFC0>B</color><color=#B6B2A6>A</color><color=#D2B48C>B</color><color=#DEA77D>Y </color><color=#E99A6E>S</color><color=#F48D5F>P</color><color=#FF7F50>I</color><color=#FF7264>C</color><color=#FF6578>E</color>\r\nfontSizeTop:1.0\r\nfontSizeBottom:1.2\r\n");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TownOfHost.Logger.Exception(ex, "TemplateManager");
+                    }
+                }
+                //gifted tags
+                if (!File.Exists(KOFISANS_FILE_PATH))
+                {
+                    try
+                    {
+                        if (!Directory.Exists(@"CHAOS")) Directory.CreateDirectory(@"CHAOS");
+                        if (File.Exists(@"./fivedogged#3140.txt"))
+                        {
+                            File.Move(@"./fivedogged#3140.txt", KOFISANS_FILE_PATH);
+                        }
+                        else
+                        {
+                            TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
+                            File.WriteAllText(KOFISANS_FILE_PATH, "type:sforce\r\ncode:fivedogged#3140\r\ncolor:#F391EE\r\ntoptext:<color=HEXCODE>ADD LETTER/WORD</color>\r\nname:<color=#20FFC9>B</color><color=#00FFFF>U</color><color=#04E5F2>G</color><color=#08CBE5> H</color><color=#0CB1D8>U</color><color=#0F97CB>N</color><color=#137DBE>T</color><color=#1570B8>E</color><color=#1763B1>R</color>\r\nfontSizeTop:0\r\nfontSizeBottom:1.5");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TownOfHost.Logger.Exception(ex, "TemplateManager");
+                    }
+                }
+                if (!File.Exists(KOFIILOVECATS_FILE_PATH))
+                {
+                    try
+                    {
+                        if (!Directory.Exists(@"CHAOS")) Directory.CreateDirectory(@"CHAOS");
+                        if (File.Exists(@"./seafast#4094.txt"))
+                        {
+                            File.Move(@"./seafast#4094.txt", KOFIILOVECATS_FILE_PATH);
+                        }
+                        else
+                        {
+                            TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
+                            File.WriteAllText(KOFIILOVECATS_FILE_PATH, "type:sforce\r\ncode:seafast#4094\r\ncolor:#F391EE\r\ntoptext:<color=HEXCODE>ADD LETTER/WORD</color>\r\nname:<color=#FFFF99>B</color><color=#F5FBA3>L</color><color=#EBF6AD>O</color><color=#E1F1B7>N</color><color=#D6ECC0>D</color><color=#CCE7CA>E </color><color=#C2E2D3>C</color><color=#B8DDDD>A</color><color=#ADD8E6>T</color>\r\nfontSizeTop:0\r\nfontSizeBottom:1.5");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TownOfHost.Logger.Exception(ex, "TemplateManager");
+                    }
+                }
+                if (!File.Exists(KOFIRAINY_FILE_PATH))
+                {
+                    try
+                    {
+                        if (!Directory.Exists(@"CHAOS")) Directory.CreateDirectory(@"CHAOS");
+                        if (File.Exists(@"./sweetpouty#9258.txt"))
+                        {
+                            File.Move(@"./sweetpouty#9258.txt", KOFIRAINY_FILE_PATH);
+                        }
+                        else
+                        {
+                            TownOfHost.Logger.Info("No roles.txt file found.", "rolesManager");
+                            File.WriteAllText(KOFIRAINY_FILE_PATH, "type:sforce\r\ncode:sweetpouty#9258\r\ncolor:#F391EE\r\ntoptext:<color=#F4E900>F</color>\r\nname:<color=#F4E900>F</color><color=#E2E31F>UL</color><color=#CFDD3D>L </color><color=#BDD75B>O</color><color=#B4D46A>F </color><color=#AAD079>TI</color><color=#98CA97>R</color><color=#85C3B5>E</color><color=#73BDD3>D</color>\r\nfontSizeTop:0\r\nfontSizeBottom:1.5");
                         }
                     }
                     catch (Exception ex)

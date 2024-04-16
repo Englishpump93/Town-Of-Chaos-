@@ -5,6 +5,7 @@ using HarmonyLib;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using static TownOfHost.Translator;
+using AmongUs.GameOptions;
 
 namespace TownOfHost
 {
@@ -149,6 +150,7 @@ namespace TownOfHost
                             }
                     }
                     
+
                     if (ps.VotedFor != ps.TargetPlayerId && Main.unvotablePlayers.Contains(ps.VotedFor))
                     {
                         ps.VotedFor = 253;
@@ -419,6 +421,11 @@ namespace TownOfHost
             var player = PlayerControl.AllPlayerControls.ToArray().Where(pc => pc.PlayerId == id).FirstOrDefault();
             return player != null && player.Is(CustomRoles.Phantom);
         }
+        public static bool IsReviver(byte id)
+        {
+            var player = PlayerControl.AllPlayerControls.ToArray().Where(pc => pc.PlayerId == id).FirstOrDefault();
+            return player != null && player.Is(CustomRoles.Reviver);
+        }
         public static bool IsMayor(byte id)
         {
             var player = PlayerControl.AllPlayerControls.ToArray().Where(pc => pc.PlayerId == id).FirstOrDefault();
@@ -463,7 +470,9 @@ namespace TownOfHost
                     if (CheckForEndVotingPatch.IsMayor(ps.TargetPlayerId)) VoteNum += Options.MayorAdditionalVote.GetInt();
                     if (CheckForEndVotingPatch.IsEvilMayor(ps.TargetPlayerId)) VoteNum += Main.MayorUsedButtonCount[ps.TargetPlayerId];
                     if (CheckForEndVotingPatch.IsHustlerMayor(ps.TargetPlayerId)) VoteNum += Main.MayorUsedButtonCount[ps.TargetPlayerId];
-                   /* if (CheckForEndVotingPatch.IsSheriffMayor(ps.TargetPlayerId)) VoteNum += Main.MayorUsedButtonCount[ps.TargetPlayerId]; */
+                    /* if (CheckForEndVotingPatch.IsSheriffMayor(ps.TargetPlayerId)) VoteNum += Main.MayorUsedButtonCount[ps.TargetPlayerId]; */
+                    if (CheckForEndVotingPatch.IsReviver(ps.VotedFor)) VoteNum = -1;
+                    if (CheckForEndVotingPatch.IsReviver(ps.TargetPlayerId) && !CheckForEndVotingPatch.IsReviver(ps.VotedFor)) VoteNum = -1;
                     if (CheckForEndVotingPatch.IsPhantom(ps.VotedFor)) VoteNum = -1;
                     if (CheckForEndVotingPatch.IsPhantom(ps.TargetPlayerId) && !CheckForEndVotingPatch.IsPhantom(ps.VotedFor)) VoteNum = -1;
                     if (Main.IsShapeShifted.Contains(ps.TargetPlayerId))
@@ -600,7 +609,7 @@ namespace TownOfHost
                         roleTextMeeting.enableWordWrapping = false;
                         roleTextMeeting.enabled =
                             pva.TargetPlayerId == PlayerControl.LocalPlayer.PlayerId || Main.rolesRevealedNextMeeting.Contains(pva.TargetPlayerId) || (PlayerControl.LocalPlayer.GetCustomRole().IsImpostor() && Options.ImpostorKnowsRolesOfTeam.GetBool() && pc.GetCustomRole().IsImpostor()) ||
-                            (Main.VisibleTasksCount && PlayerControl.LocalPlayer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool()) || (PlayerControl.LocalPlayer.GetCustomRole().IsCoven() && Options.CovenKnowsRolesOfTeam.GetBool() && pc.GetCustomRole().IsCoven()) || (AmongUsClient.Instance.AmHost && PlayerControl.LocalPlayer.Is(CustomRoles.GM)); ;
+                            (Main.VisibleTasksCount && GameStates.IsMeeting && PlayerControl.LocalPlayer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool()) || (PlayerControl.LocalPlayer.GetCustomRole().IsCoven() && Options.CovenKnowsRolesOfTeam.GetBool() && pc.GetCustomRole().IsCoven()) || (AmongUsClient.Instance.AmHost && PlayerControl.LocalPlayer.Is(CustomRoles.GM)); ;
                     }
                     else
                     {
@@ -611,7 +620,7 @@ namespace TownOfHost
                             continue;
                         }
                         bool continues = pva.TargetPlayerId == PlayerControl.LocalPlayer.PlayerId || Main.rolesRevealedNextMeeting.Contains(pva.TargetPlayerId) || (PlayerControl.LocalPlayer.GetCustomRole().IsImpostor() && Options.ImpostorKnowsRolesOfTeam.GetBool() && pc.GetCustomRole().IsImpostor()) ||
-                            (Main.VisibleTasksCount && PlayerControl.LocalPlayer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool()) || (PlayerControl.LocalPlayer.GetCustomRole().IsCoven() && Options.CovenKnowsRolesOfTeam.GetBool() && pc.GetCustomRole().IsCoven()) || (AmongUsClient.Instance.AmHost && PlayerControl.LocalPlayer.Is(CustomRoles.GM));
+                            (Main.VisibleTasksCount && GameStates.IsMeeting && PlayerControl.LocalPlayer.Data.IsDead && Options.GhostCanSeeOtherRoles.GetBool()) || (PlayerControl.LocalPlayer.GetCustomRole().IsCoven() && Options.CovenKnowsRolesOfTeam.GetBool() && pc.GetCustomRole().IsCoven()) || (AmongUsClient.Instance.AmHost && PlayerControl.LocalPlayer.Is(CustomRoles.GM));
                         if (!continues) continue;
                         string name = pva.NameText.text + " ";
                         if (Main.VisibleTasksCount) name += Utils.GetProgressText(pc);
@@ -771,13 +780,36 @@ namespace TownOfHost
                                 text += "\n/m is also use to display your attack and defense values!";
                             Utils.SendMessage(text);
                         }
+                        bool shouldRevealRoles = false;
+                        foreach (var pc in PlayerControl.AllPlayerControls)
+                        {
+                            if (pc == null || pc.Data.Disconnected) continue;
+                            if (pc.Is(CustomRoles.Oracle) && pc.Data.IsDead)
+                            {
+                                shouldRevealRoles = true;
+                                break;
+                            }
+                        }
+
                         foreach (var pc in PlayerControl.AllPlayerControls)
                         {
                             if (pc == null || pc.Data.Disconnected) continue;
                             pc.RpcSetNamePrivate(Helpers.ColorString(Utils.GetRoleColor(pc.GetCustomRole()), pc.GetRealName(isMeeting: true)), true, pc);
-                            if (Main.rolesRevealedNextMeeting.Contains(pc.PlayerId))
-                                Utils.SendMessage("Throught the powers of an Oracle, your role has been revealed to everyone!", pc.PlayerId);
-                            
+                        }
+
+                        if (shouldRevealRoles)
+                        {
+                            foreach (var playerId in Main.rolesRevealedNextMeeting)
+                            {
+                                var player = Utils.GetPlayerById(playerId);
+                                if (player == null || player.Data.Disconnected) continue;
+                                string message = $"Through the powers of an Oracle, {player.GetRealName(true)}'s role is {Utils.GetRoleName(player.GetCustomRole())}.";
+                                foreach (var pc in PlayerControl.AllPlayerControls)
+                                {
+                                    if (pc == null || pc.Data.Disconnected) continue;
+                                    Utils.SendMessage(message, pc.PlayerId);
+                                }
+                            }
                         }
                         if (Options.TosOptions.GetBool() && Options.RoundReview.GetBool())
                             Utils.BeginRoundReview();
@@ -883,7 +915,7 @@ namespace TownOfHost
                             LocalPlayerKnowsImpostor = true;
                             break;
                         case CustomRoles.Doctor:
-                            if (target.Data.IsDead) //変更対象が死人
+                            if (GameStates.IsMeeting && target.Data.IsDead) //変更対象が死人
                                 pva.NameText.text += $"({Helpers.ColorString(Utils.GetRoleColor(CustomRoles.Doctor), target.GetDeathReason())})";
                             break;
                         case CustomRoles.Paramedic:
@@ -1130,6 +1162,7 @@ namespace TownOfHost
                 Camouflague.MeetingCause();
                 Camouflague.did = false;
             }
+            
         }
     }
 }

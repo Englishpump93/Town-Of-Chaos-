@@ -641,7 +641,7 @@ namespace TownOfHost
                                 else if (role.IsEngineer())
                                     Main.chosenEngiRoles.Add(role);
                                 //Add Vitals to Medic and create Paramedic
-                                else if (role is CustomRoles.Doctor or CustomRoles.Physicist or CustomRoles.Medic or CustomRoles.Paramedic)
+                                else if (role is  CustomRoles.Physicist or CustomRoles.Medic or CustomRoles.Paramedic)
                                     Main.chosenScientistRoles.Add(role);
                                 else
                                     Main.chosenRoles.Add(role);
@@ -1665,7 +1665,7 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Miner) continue;
                             break; 
                         case CustomRoles.Mayor:
-                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Hustler or CustomRoles.Pickpocket) continue;
+                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Miner or  CustomRoles.Swooper or CustomRoles.Hustler or CustomRoles.Pickpocket) continue;
                             break;
                         case CustomRoles.Demolitionist:
                             if (player.GetCustomRole() is CustomRoles.Kamikaze) continue;
@@ -1758,7 +1758,7 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Miner) continue;
                             break;
                         case CustomRoles.Mayor:
-                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Hustler or CustomRoles.Pickpocket) continue;
+                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Miner or CustomRoles.Swooper or CustomRoles.Hustler or CustomRoles.Pickpocket) continue;
                             break;
                         case CustomRoles.Demolitionist:
                             if (player.GetCustomRole() is CustomRoles.Kamikaze) continue;

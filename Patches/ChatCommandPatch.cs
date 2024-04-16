@@ -294,7 +294,11 @@ namespace TownOfHost
                         break;
                     case "/death":
                         Utils.ShowDeathReason(player);
+                        canceled = false;
+                        break;
+                    case "/cause":
                         canceled = true;
+                        Utils.ShowDeathCauses(player);
                         break;
                     case "/kc":
                     case "/kcount":
@@ -1116,6 +1120,9 @@ namespace TownOfHost
                 case "/death":
                     Utils.ShowDeathReason(player);
 
+                    break;
+                case "/cause":
+                    Utils.ShowDeathCauses(player);
                     break;
                 case "/kc":
                 case "/kcount":

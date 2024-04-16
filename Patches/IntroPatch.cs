@@ -504,7 +504,13 @@ namespace TownOfHost
                             "pet_Hamster",    //spicy
                             "pet_BredPet",    //timmay
                             "pet_Pusheen",   // bow
-                            "pet_ChewiePet"  //howdy
+                            "pet_ChewiePet",  //howdy
+                            "pet_D2GhostPet", //sans gifted 
+                            "pet_Pip",  //ilovecats gifted 
+                           
+
+
+                            
                         };
 
                         foreach (var pc in PlayerControl.AllPlayerControls)
@@ -540,7 +546,10 @@ namespace TownOfHost
                             "pet_Hamster",    //spicy
                             "pet_BredPet",    //timmay
                             "pet_Pusheen",   // bow
-                            "pet_ChewiePet"  //howdy
+                            "pet_ChewiePet",  //howdy
+                            "pet_D2GhostPet", //sans gifted 
+                            "pet_D2GhostPet", //sans gifted
+                            "pet_Pip"      // ilovecats
                         };
 
                             foreach (var pc in PlayerControl.AllPlayerControls)

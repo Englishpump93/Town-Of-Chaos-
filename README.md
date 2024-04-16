@@ -90,6 +90,16 @@ New Additions:
 - Added IdentityTheft to /info
 - more changes but honestly i forgot
 
+3.3.8 changes
+-reviver if guessed kills super spy
+-reviver cant be voted
+-oracle message shows to everyone
+-add more role blocks
+-fixxed colors showing when people to try host 
+-reviver cant see roles when ghosts can see roles is on
+-fixxed black screens
+-added more ko fi tags and pets 
+
 
 However, please note that the following restrictions apply.<br>
 

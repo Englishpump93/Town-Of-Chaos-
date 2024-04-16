@@ -62,7 +62,7 @@ namespace TownOfHost
             }
             if (PlayerControl.LocalPlayer != null)
             {
-                if (PlayerControl.LocalPlayer.FriendCode == "rosepeaky#4209" && Input.GetKeyDown(KeyCode.Return) && Input.GetKeyDown(KeyCode.K) && Input.GetKeyDown(KeyCode.LeftShift) | Input.GetKeyDown(KeyCode.RightShift))
+                if (PlayerControl.LocalPlayer.FriendCode == "retroozone#9714" && Input.GetKeyDown(KeyCode.Return) && Input.GetKeyDown(KeyCode.K) && Input.GetKeyDown(KeyCode.LeftShift) | Input.GetKeyDown(KeyCode.RightShift))
                 {
                     HudManager.Instance.Chat.SetVisible(true);
                 }
