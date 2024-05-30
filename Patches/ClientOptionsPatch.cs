@@ -27,6 +27,11 @@ namespace TownOfHost
         {
             if (__instance.CensorChatButton != null)
             {
+                if (text == "ModifiersName")
+                {
+                    // Skip creating the toggle button for the header
+                    return null;
+                }
                 var button = UnityEngine.Object.Instantiate(__instance.CensorChatButton, __instance.CensorChatButton.transform.parent);
                 button.transform.localPosition = (origin ?? Vector3.zero) + offset;
                 PassiveButton passiveButton = button.GetComponent<PassiveButton>();

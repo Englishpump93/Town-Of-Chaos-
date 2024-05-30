@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TownOfHost.PrivateExtensions;
+using HarmonyLib;
 
 namespace TownOfHost
 {
@@ -29,6 +30,8 @@ namespace TownOfHost
         }
         public static void ShapeShiftState(PlayerControl shifter, bool shapeshifting, PlayerControl shiftinginto)
         {
+            
+
             if (DidCamo)
             {
                 if (shapeshifting) return;
@@ -45,31 +48,70 @@ namespace TownOfHost
                     }
                     if (revert.inVent)
                         revert.MyPhysics.ExitAllVents();
-                    revert.CmdCheckRevertShapeshift(false);
+                    revert.RpcShapeshift(revert, false); // Shift each player back to themselves
                 }
                 DidCamo = false;
             }
-            else if (shapeshifting)
+            if (shapeshifting)
             {
-                if (shifter == null || shifter.Data.IsDead || shiftinginto == null) return;
-                Logger.Info($"Camouflager ShapeShift", "Camouflager");
-                foreach (PlayerControl target in PlayerControl.AllPlayerControls)
+                if (shifter == shiftinginto) // Camouflager is shifting back to themselves
                 {
-                    if (target == shifter) continue;
-                    if (target == shiftinginto) continue;
-                    if (target.Is(CustomRoles.Phantom)) continue;
-                    if (target.Data.IsDead)
+                    // Revert all other players to their original form
+                    foreach (PlayerControl target in PlayerControl.AllPlayerControls)
                     {
-                        Utils.SendMessage("We were unable to shift you back into your regular self because of the Innersloth AntiCheat. Sorry!", target.PlayerId);
-                        continue;
+                        if (target == shifter) continue; // Skip the Camouflager
+                        if (target.Is(CustomRoles.Phantom)) continue; // Skip Phantoms
+                        if (target.Data.IsDead) continue; // Skip dead players
+                        if (target.inVent)
+                            target.MyPhysics.ExitAllVents();
+                        target.RpcShapeshift(target, false); // Shift each player back to themselves
                     }
-                    if (target.inVent)
-                        target.MyPhysics.ExitAllVents();
 
-                    target.RpcShapeshift(shiftinginto, false);
+                    // Reset the DidCamo flag
+                    DidCamo = false;
                 }
-                DidCamo = true;
+                else
+                {
+                    if (shifter == null || shifter.Data.IsDead || shiftinginto == null) return;
+                    Logger.Info($"Camouflager ShapeShift", "Camouflager");
+                    foreach (PlayerControl target in PlayerControl.AllPlayerControls)
+                    {
+                        if (target == shifter) continue;
+                        if (target == shiftinginto) continue;
+                        if (target.Is(CustomRoles.Phantom)) continue;
+                        if (target.Data.IsDead)
+                        {
+                            Utils.SendMessage("We were unable to shift you back into your regular self because of the Innersloth AntiCheat. Sorry!", target.PlayerId);
+                            continue;
+                        }
+                        if (target.inVent)
+                            target.MyPhysics.ExitAllVents();
+
+                        target.RpcShapeshift(shiftinginto, false);
+                    }
+                    DidCamo = true;
+                }
             }
+            else if (!shapeshifting)
+            {
+                if (DidCamo)
+                {
+                    // Revert all other players to their original form
+                    foreach (PlayerControl target in PlayerControl.AllPlayerControls)
+                    {
+                        if (target == shifter) continue; // Skip the Camouflager
+                        if (target.Is(CustomRoles.Phantom)) continue; // Skip Phantoms
+                        if (target.Data.IsDead) continue; // Skip dead players
+                        if (target.inVent)
+                            target.MyPhysics.ExitAllVents();
+                        target.RpcShapeshift(target, false); // Shift each player back to themselves
+                    }
+
+                    // Reset the DidCamo flag
+                    DidCamo = false;
+                }
+            }
+           
         }
     }
 }

@@ -32,29 +32,29 @@ namespace
     /// <summary>Provides access to the git information for the current assembly.</summary>
     public partial class Git
     {
-      /// <summary>IsDirty: true</summary>
-      public const bool IsDirty = true;
+      /// <summary>IsDirty: false</summary>
+      public const bool IsDirty = false;
 
-      /// <summary>IsDirtyString: true</summary>
-      public const string IsDirtyString = "true";
+      /// <summary>IsDirtyString: false</summary>
+      public const string IsDirtyString = "false";
 
-      /// <summary>Branch: main</summary>
-      public const string Branch = "main";
+      /// <summary>Branch: master</summary>
+      public const string Branch = "master";
 
-      /// <summary>Commit: b54eca6</summary>
-      public const string Commit = "b54eca6";
+      /// <summary>Commit: </summary>
+      public const string Commit = "";
 
-      /// <summary>Sha: b54eca6146f4bf6bc42e18d60e10c23cd7669626</summary>
-      public const string Sha = "b54eca6146f4bf6bc42e18d60e10c23cd7669626";
+      /// <summary>Sha: </summary>
+      public const string Sha = "";
 
-      /// <summary>Commits on top of base version: 24</summary>
-      public const string Commits = "24";
+      /// <summary>Commits on top of base version: 0</summary>
+      public const string Commits = "0";
 
-      /// <summary>Tag: Chaos2.8.1-9-gb54eca6</summary>
-      public const string Tag = "Chaos2.8.1-9-gb54eca6";
+      /// <summary>Tag: </summary>
+      public const string Tag = "";
 
-      /// <summary>Base tag: Chaos2.8.1</summary>
-      public const string BaseTag = "Chaos2.8.1";
+      /// <summary>Base tag: </summary>
+      public const string BaseTag = "";
 
       /// <summary>Provides access to the base version information used to determine the <see cref="SemVer" />.</summary>      
       public partial class BaseVersion
@@ -78,8 +78,8 @@ namespace
         /// <summary>Minor: 0</summary>
         public const string Minor = "0";
 
-        /// <summary>Patch: 24</summary>
-        public const string Patch = "24";
+        /// <summary>Patch: 0</summary>
+        public const string Patch = "0";
 
         /// <summary>Label: </summary>
         public const string Label = "";

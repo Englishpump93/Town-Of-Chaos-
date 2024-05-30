@@ -1,5 +1,7 @@
 using System.Text.RegularExpressions;
 using System;
+using System.Data;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,7 +27,7 @@ namespace TownOfHost
         public static bool IsActive(SystemTypes type)
         {
             //Logger.Info($"SystemTypes:{type}", "IsActive");
-            int mapId = Main.NormalOptions.MapId;
+            var mapId = Main.NormalOptions.MapId;
             switch (type)
             {
                 case SystemTypes.Electrical:
@@ -187,6 +189,24 @@ namespace TownOfHost
                         pc.CmdReportDeadBody(null);
                 }
             }
+        }
+        public static bool IsActiveDontOpenMeetingSabotage(out SystemTypes sabotage)
+        {
+            sabotage = SystemTypes.Admin;
+            SystemTypes[] Sabotage = { SystemTypes.Electrical, SystemTypes.Comms,
+            SystemTypes.Reactor, SystemTypes.Laboratory,
+            SystemTypes.LifeSupp,  SystemTypes.HeliSabotage };
+
+            foreach (SystemTypes type in Sabotage)
+            {
+                if (IsActive(type))
+                {
+                    sabotage = type;
+                    return true;
+                }
+            }
+
+            return false;
         }
         public static void BeginRoundReview()
         {
@@ -549,13 +569,13 @@ namespace TownOfHost
                     {
                         int amount = Main.lastAmountOfTasks[playerId];
 
-                        if (taskState.CompletedTasksCount != amount) // new task completed //
+                        if (taskState.CompletedTasksCount != amount) // new task completed
                         {
                             Main.lastAmountOfTasks[playerId] = taskState.CompletedTasksCount;
                             var mg = GetPlayerById(playerId);
                             if (!mg.Data.IsDead)
                             {
-                                Vector2 cppos = mg.transform.position;//呪われた人の位置
+                                Vector2 cppos = mg.transform.position; // Position of the cursed player
                                 Dictionary<PlayerControl, float> cpdistance = new();
                                 float dis;
                                 foreach (PlayerControl p in PlayerControl.AllPlayerControls)
@@ -567,9 +587,10 @@ namespace TownOfHost
                                         Logger.Info($"{p?.Data?.PlayerName}の位置{dis}", "Magician");
                                     }
                                 }
-                                var min = cpdistance.OrderBy(c => c.Value).FirstOrDefault();//一番小さい値を取り出す
+                                var min = cpdistance.OrderBy(c => c.Value).FirstOrDefault(); // Get the closest player
                                 PlayerControl targetw = min.Key;
                                 Logger.Info($"{targetw.GetNameWithRole()}was killed", "Magician");
+
                                 if (targetw.Is(CustomRoles.Pestilence))
                                     targetw.RpcMurderPlayerV2(mg);
                                 else if (targetw.Is(CustomRoles.SchrodingerCat))
@@ -579,9 +600,11 @@ namespace TownOfHost
                                     NotifyRoles();
                                     CustomSyncAllSettings();
                                 }
-                                else
+                                else if (!mg.Data.IsDead) // Check if the Magician is alive
+                                {
                                     mg.RpcMurderPlayerV2(targetw);
-                                mg.RpcGuardAndKill(mg);
+                                    mg.RpcGuardAndKill(mg);
+                                }
                             }
                         }
                     }
@@ -778,6 +801,7 @@ namespace TownOfHost
                 if (Options.CamoComms.GetBool()) text += String.Format("\n{0}:{1}", GetString("CamoComms"), GetOnOff(Options.CamoComms.GetBool()));
                 if (Options.CurrentGameMode() == CustomGameMode.Standard)
                 {
+                    
                     text += String.Format("\n{0}:{1}", "Min Neutral Killings", Options.MinNK.GetString());
                     text += String.Format("\n{0}:{1}", "Max Neutral Killings", Options.MaxNK.GetString());
                     text += String.Format("\n{0}:{1}", "Min Neutral Non-Killings", Options.MinNonNK.GetString());
@@ -1958,7 +1982,7 @@ namespace TownOfHost
                     || seer.Is(CustomRoles.PlagueBearer)
                     || seer.Is(CustomRoles.YingYanger)
                     //|| seer.GetCustomSubRole().GetModifierType() != ModifierType.None
-                    || IsActive(SystemTypes.Electrical)
+                    //|| IsActive(SystemTypes.Electrical)
                     || Camouflague.IsActive
                     || NoCache
                     || ForceLoop
@@ -2644,14 +2668,31 @@ namespace TownOfHost
             {
                 var role = pc.GetCustomRole();
                 if (!pc.Data.IsDead)
+                {
+                    if (role == CustomRoles.Magician)
+                    {
+                        // Check if the Magician is dead
+                        if (pc.Data.IsDead)
+                        {
+                            // Skip the rest of the code for the Magician if they are dead
+                            continue;
+                        }
+
+                        Main.lastAmountOfTasks[pc.PlayerId] = 0;
+                        // ...
+                    }
+
                     if (role.IsImpostor() || role.IsCoven() || role.IsNeutralKilling() || role == CustomRoles.Investigator)
                         pc.RpcGuardAndKill(pc);
+                }
                 if (GameOptionsManager.Instance.currentNormalGameOptions.MapId != 4) // other than Airship
+                {
                     if (pc.Is(CustomRoles.Camouflager))
                     {
                         //main.AirshipMeetingTimer.Add(pc.PlayerId , 0f);
                         Main.AllPlayerKillCooldown[pc.PlayerId] *= 2;
                     }
+                }
                 if (pc.Is(CustomRoles.Assassin) || pc.Is(CustomRoles.NiceGuesser) || pc.Is(CustomRoles.Pirate))
                 {
                     Guesser.IsSkillUsed[pc.PlayerId] = false;

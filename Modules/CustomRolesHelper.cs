@@ -57,7 +57,7 @@ namespace TownOfHost
                 CustomRoles.Parasite or
                 CustomRoles.MSchrodingerCat;
         }
-        public static bool IsImpostorTeam(this CustomRoles role) => role.IsImpostor() || role.IsMadmate() || role == CustomRoles.CrewPostor;
+        public static bool IsImpostorTeam(this CustomRoles role) => role.IsImpostor() || role.IsMadmate() || role == CustomRoles.CrewPostor || role == CustomRoles.DCrewPostor;
         public static bool IsNeutral(this CustomRoles role)
         {
             return
@@ -189,14 +189,12 @@ namespace TownOfHost
                 CustomRoles.Sheriff or
                 CustomRoles.Dracula or
                 CustomRoles.Reviver or
-                CustomRoles.Kamikaze or
                 CustomRoles.Wizard or
                 CustomRoles.CrewPostor or
                 CustomRoles.Magician or
                 CustomRoles.NiceGuesser or
                 CustomRoles.Lawyer or
                 CustomRoles.Oracle or
-                CustomRoles.Reviver or
                 CustomRoles.GuardianAngelTOU;
         }
         public static bool IsNeutralKilling(this CustomRoles role)
@@ -560,7 +558,6 @@ namespace TownOfHost
                 CustomRoles.PUMPkinsPotion or
                 CustomRoles.Snitch or
                 CustomRoles.Reviver or
-                CustomRoles.Kamikaze or
                 CustomRoles.Pirate or
                 CustomRoles.CrewPostor or
                 CustomRoles.Magician or

@@ -388,6 +388,11 @@ namespace TownOfHost
                         return false;
                     }
                 }
+                if (target.Is(CustomRoles.Camouflager) && Camouflager.DidCamo)
+                {
+                    Logger.Info($"Camouflager cannot be killed while DidCamo is active", "Camouflager");
+                    return false; // Return false to prevent the kill
+                }
                 if (target.Is(CustomRoles.Pestilence) && !killer.Is(CustomRoles.Vampire) && !killer.Is(CustomRoles.Werewolf) && !killer.Is(CustomRoles.TheGlitch))
                 {
                     target.RpcMurderPlayer(killer, true);
@@ -1916,6 +1921,7 @@ namespace TownOfHost
                 Main.KilledDiseased.Add(killer.PlayerId);
                 killer.ResetKillCooldown();
             }
+            
 
             if (target.Is(CustomRoles.Trapper) && !killer.Is(CustomRoles.Trapper))
                 killer.TrapperKilled(target);
@@ -1992,6 +1998,7 @@ namespace TownOfHost
                     Main.CurrentTarget.Remove(RemoveKey);
                 }
             }
+            
             if (target.Is(CustomRoles.Freezer))
             {
                 if (Main.currentFreezingTarget != 255)
@@ -2126,6 +2133,20 @@ namespace TownOfHost
 
                 }
             }
+            if (target.Is(CustomRoles.Camouflager) && Camouflager.DidCamo)
+            {
+
+                Logger.Info($"Camouflager Revert ShapeShift (Killed Camouflager)", "Camouflager");
+                Camouflager.DidCamo = false;
+                foreach (PlayerControl revert in PlayerControl.AllPlayerControls)
+                {
+                    if (revert.Is(CustomRoles.Phantom) || revert == null || revert.Data.Disconnected || revert.PlayerId == target.PlayerId) continue;
+                    if (revert.inVent)
+                        revert.MyPhysics.ExitAllVents();
+                    revert.RpcRevertShapeshiftV2(true);
+                }
+            }
+            
             if (target.Is(CustomRoles.Reviver))
             {
 
@@ -2185,6 +2206,17 @@ namespace TownOfHost
             foreach (var player in PlayerControl.AllPlayerControls)
             {
                 if (player.Is(CustomRoles.Sellout))
+                {
+                    return player;
+                }
+            }
+            return null;
+        }
+        private static PlayerControl Getcamo()
+        {
+            foreach (var player in PlayerControl.AllPlayerControls)
+            {
+                if (player.Is(CustomRoles.Camouflager))
                 {
                     return player;
                 }
@@ -3133,6 +3165,7 @@ namespace TownOfHost
             //=============================================
 
             Utils.CustomSyncAllSettings();
+            
             if (__instance.Is(CustomRoles.Reviver))
             {
 
@@ -3319,6 +3352,36 @@ namespace TownOfHost
                 {
                     return false;
                 }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Juggernaut))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Jackal))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.AgiTater))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Hitman))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Hustler))
+
+                {
+                    return false;
+                }
+                if (targetPlayer != null && targetPlayer.Is(CustomRoles.Dracula))
+
+                {
+                    return false;
+                }
                 if (target != null) //Reviver message
                 {
                     if (__instance.Is(CustomRoles.Reviver))
@@ -3351,7 +3414,12 @@ namespace TownOfHost
         public static void Postfix(PlayerControl __instance)
         {
             var player = __instance;
-
+            if (__instance == null)
+            {
+                // Log an error or handle the null reference as needed
+                Logger.Error("PlayerControl instance is null in FixedUpdatePatch.Postfix", "FixedUpdatePatch");
+                return;
+            }
             if (AmongUsClient.Instance.AmHost)
             {
                 if (GameStates.IsLobby && (ModUpdater.hasUpdate || ModUpdater.isBroken) && AmongUsClient.Instance.IsGamePublic)

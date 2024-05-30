@@ -323,6 +323,7 @@ namespace TownOfHost
                     Logger.Msg("RoleManager.SelectRoles / Check (1/10)", "Load Check (Select Roles)");
                     List<PlayerControl> AllPlayers = new();
                     List<PlayerControl> AllNKPlayers = new();
+                    List<PlayerControl> AllCrewPlayers = new();
                     List<PlayerControl> AllnonNKPlayers = new();
                     foreach (var pc in PlayerControl.AllPlayerControls)
                     {
@@ -339,19 +340,23 @@ namespace TownOfHost
                     // GIVE PLAYERS ROLE //
 
                     int numofNks = 0;
+                    int numofCrew = 0;
                     bool hunterSpawn = false;
                     int numofNonNks = 0;
 
+                    
                     if (Options.MaxNK.GetInt() != 0)
                         numofNks = UnityEngine.Random.RandomRange(Options.MinNK.GetInt(), Options.MaxNK.GetInt());
                     if (Options.MaxNonNK.GetInt() != 0)
                         numofNonNks = UnityEngine.Random.RandomRange(Options.MinNonNK.GetInt(), Options.MaxNonNK.GetInt());
 
+                    numofCrew = Mathf.RoundToInt(numofCrew);
                     numofNks = Mathf.RoundToInt(numofNks);
                     numofNonNks = Mathf.RoundToInt(numofNonNks);
 
                     Logger.Msg("RoleManager.SelectRoles / Check (2/10)", "Load Check (Select Roles)");
-
+                    
+                    
                     if (Options.MaxNK.GetInt() != 0)
                         for (var i = 0; i < numofNks; i++)
                         {
@@ -459,8 +464,10 @@ namespace TownOfHost
                                 }
                     }
 
+
                     Logger.Msg("RoleManager.SelectRoles / Check (4/10)", "Load Check (Select Roles)");
 
+                    
                     // ASSIGN NON-NK ROLES //
                     List<CustomRoles> rolesChosenNon = new();
                     if (Options.MaxNonNK.GetInt() != 0)
@@ -1641,6 +1648,7 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.Bodyguard or CustomRoles.Kamikaze or CustomRoles.Sheriff or CustomRoles.Terrorist or CustomRoles.Lawyer or CustomRoles.Oracle or CustomRoles.Reviver) continue;
                             break;
                         case CustomRoles.Bewilder:
+                            if (player.IsImpostor()) continue;
                             if (player.GetCustomRole() is CustomRoles.Kamikaze) continue;
                             break;
                         case CustomRoles.DoubleShot:
@@ -1656,7 +1664,7 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.Paramedic or CustomRoles.PUMPkinsPotion) continue;
                             break;
                         case CustomRoles.PUMPkinsPotion:
-                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Paramedic or CustomRoles.Swooper or CustomRoles.Bastion or CustomRoles.Sheriff or CustomRoles.AgiTater) continue;
+                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Hustler or CustomRoles.Jackal or CustomRoles.Juggernaut or CustomRoles.Hitman or CustomRoles.AgiTater or CustomRoles.Paramedic or CustomRoles.Swooper or CustomRoles.Bastion or CustomRoles.Sheriff or CustomRoles.AgiTater or CustomRoles.Reviver) continue;
                             break;
                         case CustomRoles.Transporter:
                             if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Miner) continue;
@@ -1734,6 +1742,7 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.Bodyguard or CustomRoles.Reviver or CustomRoles.Kamikaze or CustomRoles.Sheriff or CustomRoles.Terrorist or CustomRoles.Lawyer or CustomRoles.Oracle) continue;
                             break;
                         case CustomRoles.Bewilder:
+                            if (player.IsImpostor()) continue;
                             if (player.GetCustomRole() is CustomRoles.Kamikaze) continue;
                             break;
                         case CustomRoles.DoubleShot:
@@ -1749,7 +1758,7 @@ namespace TownOfHost
                             if (player.GetCustomRole() is CustomRoles.Paramedic or CustomRoles.PUMPkinsPotion) continue;
                             break;
                         case CustomRoles.PUMPkinsPotion:
-                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Paramedic or CustomRoles.Swooper or CustomRoles.Bastion or CustomRoles.Sheriff or CustomRoles.AgiTater) continue;
+                            if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Hustler or CustomRoles.Jackal or CustomRoles.Juggernaut or CustomRoles.Hitman or CustomRoles.AgiTater or CustomRoles.Paramedic or CustomRoles.Swooper or CustomRoles.Bastion or CustomRoles.Sheriff or CustomRoles.AgiTater or CustomRoles.Reviver) continue;
                             break;
                         case CustomRoles.Transporter:
                             if (player.GetCustomRole() is CustomRoles.Wizard or CustomRoles.Swooper or CustomRoles.Miner) continue;

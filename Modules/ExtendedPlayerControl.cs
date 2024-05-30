@@ -1016,6 +1016,10 @@ namespace TownOfHost
             if (plaguebearer == null) return false;
             if (target == null) return false;
             if (Main.isInfected == null) return false;
+            if (target.Is(CustomRoles.Chancer))
+                return false;
+            if (target.Is(CustomRoles.Sellout))
+                return false;
             Main.isInfected.TryGetValue((plaguebearer.PlayerId, target.PlayerId), out bool isInfected);
             return isInfected;
         }

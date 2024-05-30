@@ -164,6 +164,8 @@ namespace TownOfHost
         public static CustomOption BastionVentsRemoveOnBomb;
         public static CustomOption NameDisplayAddons;
 
+        public static CustomOption ModifierHeader;
+
         public static CustomOption NumOfCoven;
 
         public static CustomOption InfectCooldown;
@@ -310,6 +312,8 @@ namespace TownOfHost
         public static CustomOption CrazyPets;
         public static CustomOption BodiesAmount;
         public static CustomOption ModifierRestrict;
+
+        public static CustomOption ModifierName;
 
         public static CustomOption BewilderVision;
         public static CustomOption FlashSpeed;
@@ -855,10 +859,10 @@ namespace TownOfHost
             VultureHasImpostorVision = CustomOption.Create(6000015, Color.white, "VultureHasImpostorVision", AmongUsExtensions.OptionType.Neutral, false, CustomRoleSpawnChances[CustomRoles.Vulture]);
             VultureArrow = CustomOption.Create(6000019, Color.white, "VultureHasArrow", AmongUsExtensions.OptionType.Neutral, false, CustomRoleSpawnChances[CustomRoles.Vulture]);
 
-            SetupSingleRoleOptions(80500, CustomRoles.TheGlitch, 1, AmongUsExtensions.OptionType.Neutral);
+           /* SetupSingleRoleOptions(80500, CustomRoles.TheGlitch, 1, AmongUsExtensions.OptionType.Neutral);
             GlitchRoleBlockCooldown = CustomOption.Create(80510, Color.white, "RBC", AmongUsExtensions.OptionType.Neutral, 20, 2.5f, 120, 2.5f, CustomRoleSpawnChances[CustomRoles.TheGlitch]);
             GlitchKillCooldown = CustomOption.Create(80511, Color.white, "KillCD", AmongUsExtensions.OptionType.Neutral, 30, 2.5f, 120, 2.5f, CustomRoleSpawnChances[CustomRoles.TheGlitch]);
-            GlitchCanVent = CustomOption.Create(80512, Color.white, "HPV", AmongUsExtensions.OptionType.Neutral, true, CustomRoleSpawnChances[CustomRoles.TheGlitch]);
+            GlitchCanVent = CustomOption.Create(80512, Color.white, "HPV", AmongUsExtensions.OptionType.Neutral, true, CustomRoleSpawnChances[CustomRoles.TheGlitch]); */
 
             SetupSingleRoleOptions(90050, CustomRoles.Werewolf, 1, AmongUsExtensions.OptionType.Neutral);
             RampageCD = CustomOption.Create(90010, Color.white, "RCD", AmongUsExtensions.OptionType.Neutral, 30, 2.5f, 120, 2.5f, CustomRoleSpawnChances[CustomRoles.Werewolf]);
@@ -894,7 +898,10 @@ namespace TownOfHost
             GAknowsRole = CustomOption.Create(9051433, Color.white, "GAKR", AmongUsExtensions.OptionType.Neutral, true, CustomRoleSpawnChances[CustomRoles.GuardianAngelTOU]);
             TargetKnowsGA = CustomOption.Create(9054314, Color.white, "TKGA", AmongUsExtensions.OptionType.Neutral, true, CustomRoleSpawnChances[CustomRoles.GuardianAngelTOU]);
             WhenGaTargetDies = CustomOption.Create(9054315, Color.white, "WhenGAdies", AmongUsExtensions.OptionType.Neutral, GAChangeRoles, GAChangeRoles[2], CustomRoleSpawnChances[CustomRoles.GuardianAngelTOU]);
+
             //NumOfCoven = CustomOption.Create(60010, Color.white, "ArsonistDouseTime", 3, 1, 3, 1, CustomRoleSpawnChances[CustomRoles.Coven]);
+            ModifierHeader = CustomOption.Create(200001, Color.white, "ModifiersName", AmongUsExtensions.OptionType.GameOption, true)
+             .SetGameMode(CustomGameMode.All);
 
             SetupSingleRoleOptions(200045, CustomRoles.Torch, 1, AmongUsExtensions.OptionType.Modifier);
             SetupSingleRoleOptions(20000, CustomRoles.Bait, 1, AmongUsExtensions.OptionType.Modifier);
@@ -1108,6 +1115,7 @@ namespace TownOfHost
             AccurateWinner = CustomOption.Create(49247323, Color.green, "AccurateWinner", AmongUsExtensions.OptionType.GameOption, false, null, true)
                 .SetGameMode(CustomGameMode.Standard);
 
+          
             MinNK = CustomOption.Create(1007012, Color.white, "MinNK", AmongUsExtensions.OptionType.GameOption, 0, 0, 11, 1, null, true)
                 .SetGameMode(CustomGameMode.Standard);
             MaxNK = CustomOption.Create(1007013, Color.white, "MaxNK", AmongUsExtensions.OptionType.GameOption, 0, 0, 11, 1, null, false)
@@ -1173,6 +1181,7 @@ namespace TownOfHost
             CustomRoleSpawnChances.Add(role, spawnOption);
             CustomRoleCounts.Add(role, countOption);
         }
+        
         public static void SetUpCovenOptions(int id, CustomGameMode customGameMode = CustomGameMode.Standard)
         {
             var spawnOption = CustomOption.Create(id, Utils.GetRoleColor(CustomRoles.Coven), CustomRoles.Coven.ToString(), AmongUsExtensions.OptionType.Neutral, rates, rates[0], null, true)
@@ -1215,6 +1224,7 @@ namespace TownOfHost
             CustomRoleSpawnChances.Add(role, spawnOption);
             CustomRoleCounts.Add(role, countOption);
         }
+        
         public class OverrideTasksData
         {
             public static Dictionary<CustomRoles, OverrideTasksData> AllData = new();

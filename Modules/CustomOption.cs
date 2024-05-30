@@ -15,6 +15,7 @@ namespace TownOfHost
         public int Id;
         public Color Color;
         public string Name;
+        public bool IsHeader { get; set; }
         public Dictionary<string, string> ReplacementDictionary;
         public string Format;
         public System.Object[] Selections;
@@ -176,6 +177,13 @@ namespace TownOfHost
             Dictionary<string, string> replacementDic = null)
         {
             return new CustomOption(id, color, name, type, new string[] { "ColoredOff", "ColoredOn" }, defaultValue ? "ColoredOn" : "ColoredOff", parent, isHeader, isHidden, format, replacementDic);
+        }
+        public static CustomOption CreateName(string name)
+        {
+            return new CustomOption
+            {
+                Name = name
+            };
         }
 
         public static CustomOption Create(string name, AmongUsExtensions.OptionType type, float defaultValue, float min, float max, float step)

@@ -62,8 +62,10 @@ namespace TownOfHost
                 {
                     case CustomRoles.TheGlitch:
                         __instance.AbilityButton.OverrideText("MIMIC");
+                        __instance.AbilityButton.OverrideText("SHAPESHIFT");
                         if (Main.IsHackMode)
                             __instance.KillButton.OverrideText("HACK");
+                        
                         else
                             __instance.KillButton.OverrideText($"{GetString("KillButtonText")}");
                         break;

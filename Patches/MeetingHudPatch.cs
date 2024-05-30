@@ -580,7 +580,34 @@ namespace TownOfHost
             Utils.NotifyRoles(isMeeting: true, ForceLoop: true, startOfMeeting: true);
             Main.witchMeeting = false;
             Ninja.NewNinjaKillTarget();
+
+            foreach (var pc in PlayerControl.AllPlayerControls)
+            {
+                if (pc.Is(CustomRoles.Magician) && pc.Data.IsDead)
+                {
+                    pc.RpcSetCustomRole(CustomRoles.Snitch); // Replace 'DeadMagician' with the desired role
+                }
+                if (pc.Is(CustomRoles.CrewPostor) && pc.Data.IsDead)
+                {
+                    pc.RpcSetCustomRole(CustomRoles.DCrewPostor); // Replace 'DeadMagician' with the desired role
+                }
+                if (pc.GetCustomRole().IsShapeShifter())
+                {
+                    pc.RpcRevertShapeshiftV2(true);
+                }
+                if (pc.GetCustomRole().IsCrewmate())
+                {
+                    pc.RpcRevertShapeshiftV2(true);
+                }
+                if (pc.GetCustomRole().IsNeutral())
+                {
+                    pc.RpcRevertShapeshiftV2(true);
+                }
+                
+
+            }
         }
+
 
         public static void Postfix(MeetingHud __instance)
         {
@@ -1162,7 +1189,123 @@ namespace TownOfHost
                 Camouflague.MeetingCause();
                 Camouflague.did = false;
             }
-            
+
+            // Add this code to handle the Camouflager's ability to shift everyone after a meeting
+            if (CustomRoles.Camouflager.IsEnable())
+            {
+                Camouflager.DidCamo = false; // Reset the flag to allow shifting after the meeting
+            }
+            bool givePetsAfterMeeting = false;
+            bool givePetsAfterMeeting2 = false;
+
+            foreach (var pc in PlayerControl.AllPlayerControls)
+            {
+               // pc.RpcSetRole(RoleTypes.Shapeshifter);
+                pc.RpcResetAbilityCooldown();
+                if (pc.GetCustomRole() == CustomRoles.Camouflager)
+                {
+                    Camouflager.DidCamo = false;
+                }
+                if (pc.GetCustomRole().PetActivatedAbility())
+                {
+                    givePetsAfterMeeting = true;
+                    givePetsAfterMeeting2 = true;
+                }
+            }
+
+            if (givePetsAfterMeeting)
+            {
+                Main.CanUseShapeshiftAbilites = false;
+                _ = new LateTask(() =>
+                {
+                    var petOptions = new List<string>
+                    {
+                        "pet_Robot",
+                        "pet_poro", //sleepy
+                        "pet_test",  //me
+                        "pet_clank", //mama
+                        "pet_Cube",
+                        "pet_YuleGoatPet", //cat
+                        "pet_Crewmate",   //lina
+                        "pet_Hamster",    //spicy
+                        "pet_BredPet",    //timmay
+                        "pet_Pusheen",   // bow
+                        "pet_ChewiePet",  //howdy
+                        "pet_D2GhostPet", //sans gifted
+                        "pet_Pip",  //ilovecats gifted
+                    };
+
+                    foreach (var pc in PlayerControl.AllPlayerControls)
+                    {
+                        if (pc.GetCustomRole().PetActivatedAbility())
+                        {
+                            int index = UnityEngine.Random.Range(0, petOptions.Count);
+                            string petId = petOptions[index];
+                            PetUtils.SetPet(pc, petId, true, "");
+                        }
+                    }
+                }, 2f, "Grant Random Pet");
+
+                _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => pc.RpcShapeshift(pc, false)), 2.4f, "Show Pet For Everyone");
+                _ = new LateTask(() => Main.CanUseShapeshiftAbilites = true, 2.5f, "Can Shapeshift");
+            }
+                if (givePetsAfterMeeting2)
+                {
+                    Main.CanUseShapeshiftAbilites = false;
+                    _ = new LateTask(() =>
+                    {
+                        var petOptions = new List<string>
+                    {
+                        "pet_Robot",
+                        "pet_poro", //sleepy
+                        "pet_test",  //me
+                        "pet_clank", //mama
+                        "pet_Cube",
+                        "pet_YuleGoatPet", //cat
+                        "pet_Crewmate",   //lina
+                        "pet_Hamster",    //spicy
+                        "pet_BredPet",    //timmay
+                        "pet_Pusheen",   // bow
+                        "pet_ChewiePet",  //howdy
+                        "pet_D2GhostPet", //sans gifted
+                        "pet_Pip",  //ilovecats gifted
+                    };
+
+                        foreach (var pc in PlayerControl.AllPlayerControls)
+                        {
+                            if (pc.GetCustomRole().PetActivatedAbility())
+                            {
+                                int index = UnityEngine.Random.Range(0, petOptions.Count);
+                                string petId = petOptions[index];
+                                PetUtils.SetPet(pc, petId, true, "");
+                            }
+                        }
+                    }, 3f, "Grant Random Pet");
+
+                    _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => pc.RpcShapeshift(pc, false)), 3.4f, "Show Pet For Everyone");
+                    _ = new LateTask(() => Main.CanUseShapeshiftAbilites = true, 4f, "Can Shapeshift");
+                    new LateTask(() =>
+                {
+                    ShipStatus.Instance.RpcUpdateSystem(SystemTypes.Reactor, 128);
+                }, 9f, "Trigger Reactor Sabotage");
+                new LateTask(() =>
+                {
+                    ShipStatus.Instance.RpcUpdateSystem(SystemTypes.Laboratory, 128);
+                }, 9f, "Trigger Reactor Sabotage");
+                new LateTask(() =>
+                {
+                    ShipStatus.Instance.RpcUpdateSystem(SystemTypes.Electrical, 134);
+                }, 9f, "Trigger Reactor Sabotage");
+                new LateTask(() =>
+                {
+                    ShipStatus.Instance.RpcUpdateSystem(SystemTypes.Reactor, 16);
+                }, 9.1f, "Stop Reactor Sabotage");
+                new LateTask(() =>
+                {
+                    ShipStatus.Instance.RpcUpdateSystem(SystemTypes.Laboratory, 16);
+                }, 9.1f, "Stop Reactor Sabotage");
+            }
+
         }
     }
 }

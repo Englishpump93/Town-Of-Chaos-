@@ -471,6 +471,7 @@ namespace TownOfHost
             if (AmongUsClient.Instance.AmHost)
             {
                 bool givePets = false;
+                bool givePets2 = false;
                 bool Cpets = false;
                 foreach (var pc in PlayerControl.AllPlayerControls)
                 {
@@ -485,6 +486,7 @@ namespace TownOfHost
                     if (pc.GetCustomRole().PetActivatedAbility())
                     {
                         givePets = true;
+                        givePets2 = true;
                     }
                 }
 
@@ -519,10 +521,48 @@ namespace TownOfHost
                             string petId = petOptions[index];
                             PetUtils.SetPet(pc, petId, true, "");
                         }
-                    }, 9f, "Grant Random Pet");
+                    }, 2f, "Grant Random Pet");
 
-                    _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => pc.RpcShapeshift(pc, false)), 9.4f, "Show Pet For Everyone");
-                    _ = new LateTask(() => Main.CanUseShapeshiftAbilites = true, 10f, "Can Shapeshift");
+                    _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => pc.RpcShapeshift(pc, false)), 2.4f, "Show Pet For Everyone");
+                    _ = new LateTask(() => Main.CanUseShapeshiftAbilites = true, 2.5f, "Can Shapeshift");
+
+
+                }
+                if (givePets2)
+                {
+                    Main.CanUseShapeshiftAbilites = false;
+                    _ = new LateTask(() => {
+                        var petOptions = new List<string>
+                        {
+                            "pet_Robot",
+                            "pet_poro", //sleepy
+                            "pet_test",  //me
+                            "pet_clank", //mama
+                            "pet_Cube",
+                            "pet_YuleGoatPet", //cat
+                            "pet_Crewmate",   //lina
+                            "pet_Hamster",    //spicy
+                            "pet_BredPet",    //timmay
+                            "pet_Pusheen",   // bow
+                            "pet_ChewiePet",  //howdy
+                            "pet_D2GhostPet", //sans gifted 
+                            "pet_Pip",  //ilovecats gifted 
+                           
+
+
+                            
+                        };
+
+                        foreach (var pc in PlayerControl.AllPlayerControls)
+                        {
+                            int index = UnityEngine.Random.Range(0, petOptions.Count);
+                            string petId = petOptions[index];
+                            PetUtils.SetPet(pc, petId, true, "");
+                        }
+                    }, 3f, "Grant Random Pet");
+
+                    _ = new LateTask(() => PlayerControl.AllPlayerControls.ToArray().Do(pc => pc.RpcShapeshift(pc, false)), 3.4f, "Show Pet For Everyone");
+                    _ = new LateTask(() => Main.CanUseShapeshiftAbilites = true, 4f, "Can Shapeshift");
 
 
                 }

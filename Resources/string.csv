@@ -75,6 +75,7 @@ MadGuardian,<color=#e61017>MadGuardian</color>,MadGuardian,マッドガーディ
 MadSnitch,<color=#e61017>MadSnitch</color>,MadSnitch,マッドスニッチ,背叛的告密者,背叛的告密者
 SKMadmate,<color=#e61017>SideKickMadmate</color>,SideKickMadmate,サイドキックマッドメイト,叛徒小弟,叛徒跟班
 CrewPostor,<color=#DC6601>CrewPostor</color>,CrewPostor,CrewPostor,舰长
+DCrewPostor,<color=#66FFC2>CrewPostor</color>,CrewPostor,CrewPostor,舰长
 Magician,<color=#66FFC2>Magician</color>,Magician,Magician,舰长
 
 # 両陣営可能役職
@@ -266,6 +267,7 @@ MadGuardianInfo,Finish your tasks to help the Impostors,Завершите св�
 MadSnitchInfo,Finish your tasks to help the Impostors,Завершите свои задания чтобы помочь Предателям,タスクを済ませ、インポスターの援助をしよう,完成任务后来帮助伪装者,完成你的任務並幫助狼人
 SKMadmateInfo,You are now on Team Impostors,Теперь вы в команде Предателя,サイドキックにされた,你是伪装者的伙伴，你要帮助他们,"你現在是狼人的夥伴了,盡你所能幫助他們"
 CrewPostorInfo,(DONT DO TASKS WHEN DEAD)Do tasks to kill the Nearest Player!!!,Выполняйте задания чтобы убить ближайшего игрока,CrewPostorInfo,做任务并杀死附近的人
+DCrewPostorInfo,(DONT DO TASKS WHEN DEAD)Do tasks to kill the Nearest Player!!!,Выполняйте задания чтобы убить ближайшего игрока,CrewPostorInfo,做任务并杀死附近的人
 MagicianInfo,(DONT DO TASKS WHEN DEAD)Do tasks to kill the Nearest Player !!!,Выполняйте задания чтобы убить ближайшего игрока,MagicianInfo,做任务并杀死附近的人
 
 # 両陣営可能役職
@@ -440,6 +442,7 @@ MadGuardianInfoLong,"<color=#FF0000>(Madmates):\nCrewmate, but they belong to te
 MadSnitchInfoLong,"<color=#FF0000>(Madmates):\nCrewmate, but they belong to team Impostors, one type of Madmates.\nThey can see who is the Impostor after finishing all their tasks.\nDepending on option, they can use vents.","(Предатель):\nЧлен экипажа, но он принадлежит к команде Предателя, одному из типов Madmate.\nОн может увидеть, кто является Предателем, после того как выполнит все свои задания.\nВ зависимости от настроек он может использовать вентиляцию.","(インポスター陣営):\nクルーだがインポスターの味方をする。\nインポスターと互いに認識できないが、タスクを全て完了させるとマッドスニッチからインポスターを認識できるようになる。","(叛徒职业):\n背叛的告密者与伪装者不互认，不可以击杀、破坏或者使用通风口。\n背叛的告密者完成所有任务之后，其与伪装者互认。","(狼人陣營):\n船員,但是他們屬於狼人陣營.\n狼人和他們無法互相知道誰是叛徒,誰是狼\n當背叛的告密者做完任務時,狼人和背叛的告密者將可以互相知道對方。"
 SKMadmateInfoLong,"<color=#FF0000>(Madmates):\nThe SidekickMadmate is an acquired Madmate Role assigned by Impostors in task phases.\nSome kind of Shapeshifter-based Impostors can give SidekickMadmate by Shapeshifting next to a target.\nThey have no tasks.","(Предатель):\nSideKickMadmate это приобретенная роль Madmate, назначается Предателям на этапе выполнений заданий.\nНа основе Shapeshifters некоторые Предатели могут дать роль SidekickMadmate, когда они Морфяться рядом с целью.\nУ них нет заданий","(インポスター陣営):\n変身した際に一番近かった人がなれる役職。タスクはない。","(叛徒职业):\n一些伪装者职业变形时，其附近的与其距离最近的玩家的职业有概率转化为该职业。\n被收买的叛徒与伪装者不互认。","(狼人陣營):\n當狼人變形時\n離狼人變形最近的一個人將有機率轉化為叛徒跟班\n他沒有任務,且叛徒跟班與狼人無法互相知道。"
 CrewPostorInfoLong,"<color=#DC6601>(Neutrals):\n(DONT DO TASKS WHEN DEAD)The CrewPostor can do tasks to kill the Nearest person . \nThe Nearest person can be any role, so you can even kill your fellow impostors.","(Предатель):\nОн может выполнять задания, чтобы убить Ближайшего игрока. \nБлижайшим человеком может быть любая роль, так что вы даже можете убить своих Предателей.","(Impostors):\nThe CrewPostor can do tasks to kill the Nearest person. \nThe Nearest person can be any role, so you can even kill your fellow impostors.","(中立阵营):\n船长可以通过做任务来杀死最近的人。\n无论最近的人是什么职业、阵营都可以杀死他。"
+DCrewPostorInfoLong,"<color=#66FFC2>(Neutrals):\n(DONT DO TASKS WHEN DEAD)The CrewPostor can do tasks to kill the Nearest person . \nThe Nearest person can be any role, so you can even kill your fellow impostors.","(Предатель):\nОн может выполнять задания, чтобы убить Ближайшего игрока. \nБлижайшим человеком может быть любая роль, так что вы даже можете убить своих Предателей.","(Impostors):\nThe CrewPostor can do tasks to kill the Nearest person. \nThe Nearest person can be any role, so you can even kill your fellow impostors.","(中立阵营):\n船长可以通过做任务来杀死最近的人。\n无论最近的人是什么职业、阵营都可以杀死他。"
 
 # 両陣営可能役職
 WatcherInfoLong,<color=#800080>(Impostors or Crewmates):\nThe Watchers can see colored votes regardless of anonymous votes.","(Предатель или Член Экипажа):\nWatchers могут видеть все цвета голосов несмотря на анонимное голосование.","(インポスターorクルーメイト陣営):\n全員の投票先を見ることができる。","(伪装者阵营或船员阵营):\n会议时窥视者可以看到所有人的投票。","(狼人或船員):\n會議時觀察者可以看到所有人的投票。"
@@ -625,6 +628,8 @@ Skip,Skip,Пропуск,スキップ,跳过,跳過
 DisableDevices,Disable Devices,Отключить Устройства,デバイスを無効化,禁用设备,禁用裝置
 DisableAdmin,Disable Admin,Отключить Стол Администратора,アドミン無効化,禁用管理室地图,禁用管理室地圖
 WhichDisableAdmin,Which Disable admin,Какой Стол Администратора Отключить,どのアドミンを無効化するか,禁用哪个管理,管理室地圖分區禁用
+
+ModifiersName,乂MODIFIERS乂,Призраки Могут Видеть Цвета Голосов,幽霊が他人の投票先を見ることができる,幽灵可见投票情况,幽靈可以看見所有玩家的投票
 
 ## モード説明
 HideAndSeekInfo,"HideAndSeek:\nNo one can call emergency meeting, Crewmates (Blue) can win only by completing tasks\nand Impostors (Red) can win only by killing all the Crewmates.","Прятки:\nНикто не может созвать срочное собрание, Члены Экипажа (Синие) могут победить, только выполняя задания\nА Предатели (Красные) могут победить, только убив всех Членов Экипажа.",かくれんぼ:\n会議を開くことはできず、クルーはタスク完了、インポスターは全クルー殺害でのみ勝利することができる。\nインポスターは赤、クルーは青に体の色が変更される。,躲猫猫:\n没有会议阶段；船员只能完成任务；\n伪装者需要杀死所有船员来获得胜利；\n伪装者的皮肤颜色将变为红色，船员变为蓝色，以示区分。,"躲貓貓:\n不能拍桌或舉報,船員只能做任務\n狼人的勝利條件為殺光所有船員\n狼人的身體顏色會轉變為紅色,船員則會變為藍色。"
@@ -837,6 +842,8 @@ SwoopDur,Swoop Duration,Swoop Длительность,Swoop Duration,隐身持�
 CamoCD,Camouflage Cooldown,Откат Камуфляжа,Swoop Cooldown,伪装冷却时间
 CamoDur,Camouflage Duration,Длительность Камуфляжа,Swoop Duration,伪装持续时间
 
+MaxCrew,Max Crewmates,Максимум Нейтральных Убийц,Translation Unavailble,带刀中立阵营最大数量
+MinCrew,Min Crewmates,Минимум Нейтральных Убийц,Translation Unavailble,带刀中立阵营最小数量
 MaxNK,Max Neutral Killing,Максимум Нейтральных Убийц,Translation Unavailble,带刀中立阵营最大数量
 MinNK,Min Neutral Killing,Минимум Нейтральных Убийц,Translation Unavailble,带刀中立阵营最小数量
 MaxNonNK,Max Non-Killing Neutrals,Максимум Нейтралов Не Убийц,Translation Unavailble,非带刀中立阵营最大数量

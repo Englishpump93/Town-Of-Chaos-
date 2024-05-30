@@ -111,6 +111,7 @@ class ExternalRpcPetPatch
                 Utils.NotifyRoles(GameStates.IsMeeting, playerControl);
             }
         }
+        
         if (playerControl.Is(CustomRoles.TheGlitch))
         {
             Main.IsHackMode = !Main.IsHackMode;

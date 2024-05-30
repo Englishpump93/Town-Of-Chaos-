@@ -1303,7 +1303,7 @@ namespace TownOfHost
                 case "are we starting":
                 case string a when a.Contains("start"):
                 case "lets begin":
-                case "will":
+                
 
                     AmongUsClient.Instance.KickPlayer(player.GetClientId(), false);
                     break;
