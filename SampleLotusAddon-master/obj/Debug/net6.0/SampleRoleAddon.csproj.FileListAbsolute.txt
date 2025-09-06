@@ -1,0 +1,13 @@
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\bin\Debug\net6.0\SampleRoleAddon.deps.json
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\bin\Debug\net6.0\SampleRoleAddon.dll
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\bin\Debug\net6.0\SampleRoleAddon.pdb
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\SampleRoleAddon.csproj.AssemblyReference.cache
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\SampleRoleAddon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\SampleRoleAddon.AssemblyInfoInputs.cache
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\SampleRoleAddon.AssemblyInfo.cs
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\SampleRoleAddon.csproj.CoreCompileInputs.cache
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\SampleRoleAddon.csproj.Fody.CopyLocal.cache
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\SampleRoleAddon.dll
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\refint\SampleRoleAddon.dll
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\SampleRoleAddon.pdb
+C:\Users\benn9\OneDrive\Desktop\SampleLotusAddon-master\obj\Debug\net6.0\ref\SampleRoleAddon.dll
