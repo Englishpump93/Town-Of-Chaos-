@@ -81,7 +81,7 @@ public class ChaosMayor: Subrole // There are a couple built-in role types you c
     
     public override string Identifier() => "Mayor";
     protected override GameOptionBuilder RegisterOptions(GameOptionBuilder optionStream) =>
-        base.RegisterOptions(optionStream)
+    AddRestrictToCrew(base.RegisterOptions(optionStream))
             .SubOption(sub => sub.KeyName("Mayor Additional Votes", Translations.Options.MayorAdditionalVotes)
                 .AddIntRange(0, 10, 1, 1)
                 .BindInt(i => additionalVotes = i)

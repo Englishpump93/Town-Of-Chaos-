@@ -38,6 +38,9 @@ public class Kamikaze : Crewmate
     private bool abilityEnabled;
     public static HashSet<Type> KamikazeBannedModifiers = new() { typeof(Bait), typeof(ChaosDemolitionist), typeof(Bewilder), typeof(Diseased) };
 
+    // Track players who killed a Kamikaze
+    private static HashSet<byte> flaggedKillers = new();
+
     protected override void Setup(PlayerControl player)
     {
         coloredName = new NameComponent(new LiveString(MyPlayer.name, kamikazeColor), GameState.Roaming, ViewMode.Absolute);
@@ -66,6 +69,24 @@ public class Kamikaze : Crewmate
         {
             killer.Die(DeathReason.Kill, true);
         }
+        if (killer != null && killer.PrimaryRole().RoleName == "Hostage")
+        {
+            killer.Die(DeathReason.Kill, true);
+        }
+        if (killer != null && killer.PrimaryRole().RoleName == "Anklebitter")
+        {
+            killer.Die(DeathReason.Kill, true);
+        }
+        if (killer != null && killer.PrimaryRole().RoleName == "Anklebiter")
+        {
+            killer.Die(DeathReason.Kill, true);
+        }
+
+        // Add killer to flaggedKillers for round end check
+        if (killer != null)
+        {
+            flaggedKillers.Add(killer.PlayerId);
+        }
 
         string formatted = Translations.YouKilledKamikazeMessage.Formatted(RoleName);
         Cooldown textCooldown = deathDelay.Clone();
@@ -83,6 +104,19 @@ public class Kamikaze : Crewmate
         if (Game.State is not GameState.Roaming) return;
         if (killer.Data.IsDead || killer.inVent) return;
         killer.Die(DeathReason.Kill, true);
+    }
+
+    [RoleAction(LotusActionType.RoundEnd, ActionFlag.GlobalDetector | ActionFlag.WorksAfterDeath)]
+    private void KamikazeRoundEnd()
+    {
+        foreach (var player in PlayerControl.AllPlayerControls)
+        {
+            if (flaggedKillers.Contains(player.PlayerId) && !player.Data.IsDead)
+            {
+                player.Die(DeathReason.Kill, true);
+            }
+        }
+        flaggedKillers.Clear();
     }
 
     [RoleAction(LotusActionType.SabotageStarted, ActionFlag.GlobalDetector, priority: Lotus.API.Priority.Last)]

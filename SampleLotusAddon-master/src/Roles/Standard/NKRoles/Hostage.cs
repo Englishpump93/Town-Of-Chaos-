@@ -1,4 +1,5 @@
 using System;
+using System.Reflection; 
 using Lotus;
 using Lotus.Roles;
 using Lotus.Roles.Internals;
@@ -28,13 +29,11 @@ using VentLib.Utilities.Optionals;
 using Lotus.API.Vanilla.Meetings;
 using Lotus.Extensions;
 using Lotus.Factions;
-//using Lotus.API.Odyssey;
 using Lotus.API.Player;
 using Lotus.Options;
 using VentLib.Utilities;
 using VentLib.Utilities.Collections;
 using VentLib.Utilities.Extensions;
-//using System.Collections.Generic;
 using System.Linq;
 using Lotus.Patches.Systems;
 using Lotus.Roles.GUI;
@@ -42,6 +41,10 @@ using Lotus.Roles.GUI.Interfaces;
 using Lotus.RPC;
 using VentLib;
 using VentLib.Networking.RPC.Attributes;
+using Lotus.Managers.History.Events;
+using SampleRoleAddon.Roles.Standard.CrewmateRoles;
+using Lotus.Logging; // For Kamikaze
+using Lotus.API.Vanilla.Meetings;
 
 namespace SampleRoleAddon.Roles.Standard.NKRoles
 {
@@ -50,12 +53,18 @@ namespace SampleRoleAddon.Roles.Standard.NKRoles
         private bool dragging = false;
         private PlayerControl draggedPlayer = null;
         private Escort.BlockDelegate draggedBlock = null;
-        private Remote<TextComponent> draggedTextRemote = null; // <-- Added for message
+        private Remote<TextComponent> draggedTextRemote = null;
 
         private float killCooldown = 10f;
         private float dragDuration = 5f;
         private float dragStartTime = 0f;
         private Cooldown killCd = null!;
+
+        // Custom death reason for Hostage
+        public static class HostageDeathNames
+        {
+            public const string Hostage = "Hostage";
+        }
 
         protected override GameOptionBuilder RegisterOptions(GameOptionBuilder optionStream) =>
             base.RegisterOptions(optionStream)
@@ -78,6 +87,27 @@ namespace SampleRoleAddon.Roles.Standard.NKRoles
         [RoleAction(LotusActionType.Attack)]
         public override bool TryKill(PlayerControl target)
         {
+            var role = target.PrimaryRole();
+            if (role is Veteran veteranRole)
+            {
+                // Use reflection to access private veteranDuration field
+                var field = typeof(Veteran).GetField("veteranDuration", BindingFlags.NonPublic | BindingFlags.Instance);
+                var veteranDuration = field?.GetValue(veteranRole);
+                if (veteranDuration != null)
+                {
+                    var isReadyMethod = veteranDuration.GetType().GetMethod("IsReady");
+                    if (isReadyMethod != null)
+                    {
+                        bool isReady = (bool)isReadyMethod.Invoke(veteranDuration, null);
+                        if (!isReady)
+                        {
+                            // Veteran is on alert, eliminate the Hostage
+                            MyPlayer.Die(DeathReason.Kill, true);
+                            return false;
+                        }
+                    }
+                }
+            }
             if (dragging || target.Data.IsDead || killCd.NotReady()) return false;
             dragging = true;
             draggedPlayer = target;
@@ -119,7 +149,23 @@ namespace SampleRoleAddon.Roles.Standard.NKRoles
         {
             if (dragging && draggedPlayer != null && draggedPlayer.IsAlive())
             {
-                draggedPlayer.InteractWith(draggedPlayer, LotusInteraction.FatalInteraction.Create(this));
+                // Use custom death reason
+                draggedPlayer.InteractWith(draggedPlayer, new LotusInteraction(
+                    new FatalIntent(false, () => new CustomDeathEvent(MyPlayer, draggedPlayer, HostageDeathNames.Hostage)), this));
+
+                // If the dragged player is Kamikaze, eliminate the Hostage too
+                if (draggedPlayer.PrimaryRole().RoleName == "Kamikaze")
+                {
+                    new ChatHandler()
+                        .Title(t => t.Text("Kamikaze").Color(Color.red).Build())
+                        .LeftAlign()
+                        .Message(Kamikaze.Translations.YouKilledKamikazeMessage.Formatted("Kamikaze"))
+                        .Send(MyPlayer);
+                    UnityEngine.Debug.Log("Hostage is being eliminated for targeting Kamikaze!");   
+                    MyPlayer.Die(DeathReason.Kill, true);
+                }
+                
+
                 RemoveDragBlock();
                 dragging = false;
                 draggedPlayer = null;

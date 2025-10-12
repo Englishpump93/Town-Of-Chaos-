@@ -20,7 +20,7 @@ public class SampleRoleAddon: LotusAddon
         // Create instances first
         List<CustomRole> allRoles = new() {
       new ChaosMayor(), new Dracula(), new Magician(), new ChaosDemolitionist(), new ChaosDoctor(), new ChaosTransporter(), new Hustler(), new Lawyer(), 
-     new Kamikaze(), new Paramedic(), new Reviver(), new Hostage()
+     new Kamikaze(), new Paramedic(), new Reviver(), new Hostage(), new ShopKeeper(), new AnkleBitter(), new God()
         };
         
         

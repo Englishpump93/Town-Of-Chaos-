@@ -3,6 +3,7 @@ using Lotus.Roles.Internals.Attributes;
 using Lotus.Roles.RoleGroups.Vanilla;
 using Lotus.API.Player;
 using Lotus.Chat;
+using Lotus.GUI.Name;
 using Lotus.GUI.Name.Components;
 using Lotus.GUI.Name.Holders;
 using Lotus.Options;
@@ -29,8 +30,22 @@ using VentLib.Utilities.Collections;
 using VentLib.Utilities.Extensions;
 using static Lotus.Options.GeneralOptionTranslations;
 using static Lotus.Roles.RoleGroups.Crew.Medic.MedicTranslations;
+using static Lotus.Roles.RoleGroups.Crew.Doctor.Translations;
 using Lotus.Roles.Interfaces;
 using SampleRoleAddon.Roles.Standard.Modifiers;
+using Lotus;
+using Lotus.Roles;
+using Lotus.Utilities;
+using Lotus.Patches.Systems;
+using Lotus.Roles.GUI;
+using Lotus.Roles.GUI.Interfaces;
+using Lotus.RPC;
+using VentLib;
+using VentLib.Networking.RPC.Attributes;
+using Lotus.GUI;
+using VentLib.Utilities;
+
+
 
 namespace SampleRoleAddon.Roles.Standard.CrewmateRoles;
 
@@ -43,15 +58,39 @@ public class Paramedic : Crewmate
     private Remote<IndicatorComponent>? protectedIndicator;
     public static HashSet<Type> ParamedicBannedModifiers = new() { typeof(Romantic), typeof(LastResort), typeof(ChaosDoctor) };
 
-    private const string CrossText = "<size=1.2><b>+</b></size>";
+    private const string CrossText = "<size=2><b>+</b></size>";
+
+    // --- Cause of Death display ---
+    [NewOnSetup] private Dictionary<byte, Remote<TextComponent>> codComponents = null!;
+
+    [RoleAction(LotusActionType.PlayerDeath)]
+    private void ParamedicAnyDeath(PlayerControl dead, IDeathEvent causeOfDeath)
+    {
+        if (codComponents.ContainsKey(dead.PlayerId)) codComponents[dead.PlayerId].Delete();
+        string coloredString = "<size=1.6>" + Color.white.Colorize($"({RoleColor.Colorize(causeOfDeath.SimpleName())})") + "</size>";
+
+        TextComponent textComponent = new(new LiveString(coloredString), GameState.InMeeting, viewers: MyPlayer);
+        codComponents[dead.PlayerId] = dead.NameModel().GetComponentHolder<TextHolder>().Add(textComponent);
+    }
+    // --- End Cause of Death display ---
 
     [RoleAction(LotusActionType.RoundEnd)]
     private void RoundEndMessage()
     {
-        confirmedVote = false;
-        targetLockedIn = false;
-        protectedPlayer = byte.MaxValue;
-        protectedIndicator?.Delete();
+        // Clean up cause of death components
+       // foreach (var remote in codComponents.Values)
+        //    remote.Delete();
+      //  codComponents.Clear();
+
+        // Do NOT reset protection at round end!
+        // Only clean up indicator if protected player is dead
+        if (protectedPlayer != byte.MaxValue && Players.FindPlayerById(protectedPlayer)?.Data.IsDead == true)
+        {
+            protectedIndicator?.Delete();
+            protectedPlayer = byte.MaxValue;
+            targetLockedIn = false;
+            confirmedVote = false;
+        }
         ResendMessages();
     }
 
@@ -59,8 +98,10 @@ public class Paramedic : Crewmate
     {
         if (protectedPlayer == byte.MaxValue)
             CHandler("You are a Paramedic! Vote a player to protect during meetings.").Send(MyPlayer);
+        else if (Players.FindPlayerById(protectedPlayer)?.Data.IsDead == true)
+            CHandler("Your protected player is dead. You can no longer protect anyone.").Send(MyPlayer);
         else
-            CHandler($"You are protecting {Players.FindPlayerById(protectedPlayer)?.name} until you die!").Send(MyPlayer);
+            CHandler($"You are still protecting {Players.FindPlayerById(protectedPlayer)?.name} until you die!").Send(MyPlayer);
     }
 
     [RoleAction(LotusActionType.Vote)]
@@ -101,11 +142,11 @@ public class Paramedic : Crewmate
 
         if (!confirmedVote)
         {
-            // Second vote: confirm protection
+            // Second vote: confirm protection and lock it in for the rest of the game
             confirmedVote = true;
             targetLockedIn = true;
             handle.Cancel(); // Cancel this vote, allow normal voting next
-            CHandler($"You are now protecting {Players.FindPlayerById(protectedPlayer)?.name}! Vote again to cast your actual vote.").Send(MyPlayer);
+            CHandler($"You are now protecting {Players.FindPlayerById(protectedPlayer)?.name} until you die!").Send(MyPlayer);
             return;
         }
 
@@ -119,6 +160,7 @@ public class Paramedic : Crewmate
         protectedIndicator?.Delete();
         protectedPlayer = byte.MaxValue;
         targetLockedIn = false;
+        confirmedVote = false;
     }
 
     [RoleAction(LotusActionType.Interaction, ActionFlag.GlobalDetector)]

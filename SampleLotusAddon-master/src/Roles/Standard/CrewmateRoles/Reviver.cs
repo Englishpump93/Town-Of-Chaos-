@@ -66,7 +66,7 @@ public class Reviver : Crewmate, IRoleCandidate, IRoleUI
         GeneralOptions.GameplayOptions.GhostsSeeInfo = false;
     }
      
-	 private Remote<IndicatorComponent>? arrowComponent; // Add this field
+    private Remote<IndicatorComponent>? arrowComponent; // Add this field
 
     [RoleAction(LotusActionType.ReportBody)]
     private void OnReport(Optional<NetworkedPlayerInfo> body, ActionHandle handle)
@@ -78,17 +78,29 @@ public class Reviver : Crewmate, IRoleCandidate, IRoleUI
         handle.Cancel();
         RevivePlayer(deadPlayer);
         GeneralOptions.GameplayOptions.GhostsSeeInfo = false;
-		// Remove the arrow indicator after reporting
-		var bodyObj = Object.FindObjectsOfType<DeadBody>().FirstOrDefault(b => b.ParentId == deadPlayer.PlayerId);
+        // Remove the arrow indicator after reporting
+        var bodyObj = Object.FindObjectsOfType<DeadBody>().FirstOrDefault(b => b.ParentId == deadPlayer.PlayerId);
         if (bodyObj != null)
         {
             Object.Destroy(bodyObj.gameObject);
         }
-            arrowComponent?.Delete();
+        arrowComponent?.Delete();
     }
 
+    // --- Teleport revived player to their body ---
     private void RevivePlayer(PlayerControl player)
     {
+        // Find the dead body for the player
+        Vector2 position = player.GetTruePosition();
+        var body = Object.FindObjectsOfType<DeadBody>().FirstOrDefault(b => b.ParentId == player.PlayerId);
+        if (body != null)
+        {
+            position = body.transform.position;
+        }
+
+        // Teleport the player to their body's position
+        Utils.Teleport(player.NetTransform, position);
+
         player.PrimaryRole().Revive();
         revivedPlayers.Add(player);
         Game.MatchData.GameHistory.AddEvent(new GenericTargetedEvent(MyPlayer, player, $"{MyPlayer.name} revived {player.GetNameWithRole()} successfully."));
